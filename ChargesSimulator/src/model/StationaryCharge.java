@@ -1,5 +1,5 @@
 package model;
-
+//dodaj autora
 public class StationaryCharge {
 
 	public StationaryCharge() {
