@@ -1,6 +1,6 @@
 package model;
-
-public class StationaryCharge {
+//Author: rafdam
+public class StationaryCharge extends TestPoint {
 		
 		public double getX() {
 			return xCord;
@@ -33,22 +33,27 @@ public class StationaryCharge {
 		public void setValue(double value) {
 			this.value = value;
 		}
+		
+		public double getDistanceFromZero(){
+			return distanceFromZero;
+		}
+		
 		double xCord = 0;
 		double yCord = 0;
 		double zCord = 0;
 		double value = 0;
-
+		double distanceFromZero=0;
+	
 	public StationaryCharge(){
-		xCord= 0;
-		yCord = 0;
-		zCord = 0;
-		value = 0;
+		
 	}
 	public StationaryCharge(double a, double b, double c, double d) {
-		xCord=a;
-		yCord=b;
-		zCord=c;
-		value=d;
+		xCord = a;
+		yCord = b;
+		zCord = c;
+		value = d;
+		distanceFromZero = Math.sqrt(a*a+b*b+c*c);
+		
 	}
 	
 

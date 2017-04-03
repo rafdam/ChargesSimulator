@@ -1,5 +1,5 @@
 package model;
-
+//Author: rafdam
 import java.util.ArrayList;
 
 public class ChargesList extends ArrayList<StationaryCharge> {
