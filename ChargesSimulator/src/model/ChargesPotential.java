@@ -12,7 +12,7 @@ public class ChargesPotential extends ChargesList {
 	int a=1;
 	double Potential = 0;
 	for (int ii=0; ii<l.size(); ii++){
-	Potential =+ (k * l.get(ii).getValue())/(Math.sqrt(a+l.get(ii).getX()*l.get(ii).getX()));
+	Potential += (k * l.get(ii).getValue())/(Math.sqrt(a+l.get(ii).getX()*l.get(ii).getX()));
 	}
 	System.out.println(Potential);
 	}
