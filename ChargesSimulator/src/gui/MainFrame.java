@@ -1,14 +1,38 @@
 package gui;
-
+import java.awt.Dimension;
+//author: Mikolaj Czajka
 import java.awt.GraphicsConfiguration;
 import java.awt.HeadlessException;
 
 import javax.swing.JFrame;
 
+import com.sun.javafx.tk.Toolkit;
+import com.sun.prism.paint.Color;
+
 public class MainFrame extends JFrame {
 
 	public MainFrame() throws HeadlessException {
 		setTitle("Charges Simulator");
+		setDefaultCloseOperation(EXIT_ON_CLOSE);		
+		setPreferredSize(new Dimension(1200,800));
+		setSize(1200,800);
+		setLayout(null);
+		
+		StationaryQPanel stationaryQpanel = new StationaryQPanel(); // Panel for table and buttons with stationary charges
+		add(stationaryQpanel);
+		
+		MotionQPanel motionQpanel = new MotionQPanel(); // Panel for table and buttons with moving charges
+		add(motionQpanel);
+		
+		MainFrameTitleLabel titlelabel = new MainFrameTitleLabel();
+		add(titlelabel);
+		
+		
+	     
+		
+		
+		
+		
 		// TODO Auto-generated constructor stub
 	}
 
@@ -28,7 +52,9 @@ public class MainFrame extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	MainFrame mFrame = new MainFrame();
+	mFrame.setVisible(true);
+	
 
 	}
 
