@@ -51,6 +51,8 @@ public class TestChargeMotion extends TestCharge implements ChargesPotentialInte
 	List.add(ch3);	
 	ChargesPotential Potential = new ChargesPotential(List, Point);
 	System.out.println(Potential.getElectricForceX());
+	System.out.println(Potential.getElectricForceY());
+	System.out.println(Potential.getElectricForceZ());
 
 	}
 }
