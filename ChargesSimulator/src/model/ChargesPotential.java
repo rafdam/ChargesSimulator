@@ -34,30 +34,30 @@ public class ChargesPotential extends ChargesList {
 	
 	for (int ii=0; ii<l.size(); ii++){
 		
-	xMotionValue=-l.get(ii).getX()+w.getTestXCord();
-	yMotionValue=-l.get(ii).getY()+w.getTestYCord();
-	zMotionValue=-l.get(ii).getZ()+w.getTestZCord();
-	Potential += (k * l.get(ii).getValue())/(Math.sqrt(Math.pow(yMotionValue,2)+Math.pow(xMotionValue,2)+Math.pow(zMotionValue,2)));
+	xMotionValue = -l.get(ii).getX() + w.getTestXCord();
+	yMotionValue = -l.get(ii).getY() + w.getTestYCord();
+	zMotionValue = -l.get(ii).getZ() + w.getTestZCord();
+	Potential += (k * l.get(ii).getValue()) / (Math.sqrt(Math.pow(yMotionValue,2) + Math.pow(xMotionValue,2) + Math.pow(zMotionValue,2)));
 	
 	}
 	
 	
 	double deltaElectricForceX = 0; //Potential(x+ultraSmallH,y,z)
-	double deltaElectricForceY= 0; //Potential(x,y+ultraSmallH,z)
+	double deltaElectricForceY = 0; //Potential(x,y+ultraSmallH,z)
 	double deltaElectricForceZ = 0; //Potential(x,y,z+ultraSmallH)
 	
 	
 	double ultraSmallH = 0.0001; //Small constant to derivative Potential
 		for (int jj = 0; jj < l.size(); jj++){
-			xMotionValue=-l.get(jj).getX()+w.getTestXCord();
-			yMotionValue=-l.get(jj).getY()+w.getTestYCord();
-			zMotionValue=-l.get(jj).getZ()+w.getTestZCord();
+			xMotionValue = -l.get(jj).getX() + w.getTestXCord();
+			yMotionValue = -l.get(jj).getY() + w.getTestYCord();
+			zMotionValue = -l.get(jj).getZ() + w.getTestZCord();
 				
-				deltaElectricForceX += (k * l.get(jj).getValue())/(Math.sqrt(Math.pow(yMotionValue,2)+Math.pow(xMotionValue + ultraSmallH,2)+Math.pow(zMotionValue,2)));
-				deltaElectricForceY += (k * l.get(jj).getValue())/(Math.sqrt(Math.pow(yMotionValue + ultraSmallH,2)+Math.pow(xMotionValue,2)+Math.pow(zMotionValue,2)));
-				deltaElectricForceZ += (k * l.get(jj).getValue())/(Math.sqrt(Math.pow(yMotionValue,2)+Math.pow(xMotionValue,2)+Math.pow(zMotionValue + ultraSmallH,2)));
-		}
-		electricForceX=(deltaElectricForceX-Potential)/ultraSmallH;
+				deltaElectricForceX += (k * l.get(jj).getValue()) / (Math.sqrt(Math.pow(yMotionValue,2) + Math.pow(xMotionValue + ultraSmallH,2) + Math.pow(zMotionValue,2)));
+				deltaElectricForceY += (k * l.get(jj).getValue()) / (Math.sqrt(Math.pow(yMotionValue + ultraSmallH,2) + Math.pow(xMotionValue,2) + Math.pow(zMotionValue,2)));
+				deltaElectricForceZ += (k * l.get(jj).getValue()) / (Math.sqrt(Math.pow(yMotionValue,2) + Math.pow(xMotionValue,2) + Math.pow(zMotionValue + ultraSmallH,2)));
+		} 
+ 		electricForceX=(deltaElectricForceX-Potential)/ultraSmallH;
 		electricForceY=(deltaElectricForceY-Potential)/ultraSmallH;
 		electricForceZ=(deltaElectricForceZ-Potential)/ultraSmallH;
 	

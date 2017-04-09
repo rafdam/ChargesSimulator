@@ -6,10 +6,15 @@ import java.awt.HeadlessException;
 
 import javax.swing.JFrame;
 
-import com.sun.javafx.tk.Toolkit;
-import com.sun.prism.paint.Color;
+//import com.sun.javafx.tk.Toolkit;
+//import com.sun.prism.paint.Color;
 
 public class MainFrame extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	public MainFrame() throws HeadlessException {
 		setTitle("Charges Simulator");

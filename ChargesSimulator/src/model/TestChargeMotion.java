@@ -17,7 +17,7 @@ public class TestChargeMotion extends TestCharge implements ChargesPotentialInte
 	}
 	public double getElectricForceX() {
 		// TODO Auto-generated method stub
-		return 0;
+		return electricForceX;
 		}
 
 	//TestPullcomment
@@ -25,14 +25,14 @@ public class TestChargeMotion extends TestCharge implements ChargesPotentialInte
 
 	public double getElectricForceY() {
 		// TODO Auto-generated method stub
-		return 0;
+		return electricForceY;
 	}
 
 
 
 	public double getElectricForceZ() {
 		// TODO Auto-generated method stub
-		return 0;
+		return electricForceZ;
 	}
 	
 		double motionXCord = 0;
@@ -41,6 +41,15 @@ public class TestChargeMotion extends TestCharge implements ChargesPotentialInte
 		double motionXVelo = 0;
 		double motionYVelo = 0;
 		double motionZVelo = 0;
+		
+	public TestChargeMotion(){
+		motionXVelo = 0;
+		motionYVelo = 0;
+		motionZVelo = 0;
+		motionXCord = 0;
+		motionYCord = 0;
+		motionZCord = 0;
+	}
 		
 	public TestChargeMotion(ChargesPotential ch, TestCharge test1, double t ){
 		motionXVelo = ch.getElectricForceX() * test1.getTestChargeConstant() * t + test1.getTestChargeVelocityX();
@@ -75,27 +84,5 @@ public class TestChargeMotion extends TestCharge implements ChargesPotentialInte
 		return motionZCord;
 	}
 	
-	public static void main(String[] args) {
-	ChargesList List = new ChargesList();
-	TestPoint Point = new TestPoint(3,2,8);
-	TestCharge tCharge1 = new TestCharge(true , 0 , 0 , 0 );
-	TestCharge tCharge2 = new TestCharge(false , 0 , 0 , 0 );
-	StationaryCharge ch1 = new StationaryCharge(1,2,3,-4);
-	StationaryCharge ch2 = new StationaryCharge(5,10,3,8);
-	StationaryCharge ch3 = new StationaryCharge(8,2,5,10);
-	List.add(ch1);
-	List.add(ch2);
-	List.add(ch3);	
-	ChargesPotential Potential = new ChargesPotential(List, Point);
-	//System.out.println(Potential.getElectricForceX());
-	//System.out.println(Potential.getElectricForceY());
-	//System.out.println(Potential.getElectricForceZ());
-	TestChargeMotion chargeMotion = new TestChargeMotion(Potential, tCharge1, 0.001);
-	TestChargeMotion chargeMotion1 = new TestChargeMotion(Potential, tCharge2, 0.001);
-	System.out.println(Potential.getElectricForceX());
-	System.out.println(chargeMotion.getMotionXCord());
-	System.out.println(chargeMotion1.getMotionXCord());
-	System.out.println(tCharge1.getTestChargeConstant());
-	System.out.println(tCharge2.getTestChargeConstant());
-	}
+	
 }

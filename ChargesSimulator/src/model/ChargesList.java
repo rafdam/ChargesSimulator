@@ -16,6 +16,8 @@ public class ChargesList extends ArrayList<StationaryCharge> {
 		return super.add(ch);
 	}
 	
+	
+	
 }
 
 

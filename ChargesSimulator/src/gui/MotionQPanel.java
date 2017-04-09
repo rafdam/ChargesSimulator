@@ -7,6 +7,11 @@ import javax.swing.JPanel;
 
 public class MotionQPanel extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public MotionQPanel() {
 		setBounds(800, 350, 350, 250);
 		setBackground(Color.blue);
