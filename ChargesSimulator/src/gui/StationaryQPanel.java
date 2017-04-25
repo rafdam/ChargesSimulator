@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 public class StationaryQPanel extends JPanel {
 
 	public StationaryQPanel() {
-		setBounds(800, 50, 350, 250);
+
 		setBackground(Color.blue);
 		
 		
