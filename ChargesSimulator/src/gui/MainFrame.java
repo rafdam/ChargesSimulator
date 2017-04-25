@@ -28,38 +28,42 @@ public class MainFrame extends JFrame {
 		setLayout(new MigLayout());
 		setTitle("Charges Simulator");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();		
 		
-		double frameWidth =screenSize.height;
-		double frameHeight =0.7 * screenSize.height;
 		
-		Dimension frameDim = new Dimension((int) frameWidth, (int) frameHeight);		
-		setSize(frameDim);	
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();			
+		double leftPanelWidth =screenSize.height;
+		double leftPanelHeight =0.6 * screenSize.height;
+		Dimension leftPanelDim = new Dimension((int) leftPanelHeight, (int) leftPanelHeight);	
+		
+		double labelHeight = 0.1 * screenSize.height;
+		double lebelWidth = leftPanelHeight;
+		Dimension labelDim = new Dimension((int)lebelWidth, (int) labelHeight);
+		
+		double rightPanelWidth = leftPanelHeight / 2;
+		double rightPanelHeight = leftPanelHeight + labelHeight;
+		Dimension rightPanelDim = new Dimension((int) rightPanelWidth, (int) rightPanelHeight);
+		
 		
 		LeftMainPanel leftPanel = new LeftMainPanel();
 		RightMainPanel rightPanel = new RightMainPanel();
-		
-		leftPanel.setBackground(new Color(255,0,0));
-		rightPanel.setBackground(new Color(0,255,0));
-
-		add(leftPanel);
-		add(rightPanel);
-		//pack();
-				
-		
-	     
+		MainFrameTitleLabel titlelabel = new MainFrameTitleLabel();
 		
 		
+		leftPanel.setPreferredSize(leftPanelDim);
+		rightPanel.setPreferredSize(rightPanelDim);	
+		titlelabel.setPreferredSize(labelDim);		
 		
-		
-	
+		add(titlelabel);
+		add(rightPanel, "wrap, spany");
+		add(leftPanel);		
+		pack();	
 	}
 
 	
 	public static void main(String[] args) {
 	MainFrame mFrame = new MainFrame();
 	mFrame.setVisible(true);
-	mFrame.setResizable(false);
+	//mFrame.setResizable(false);
 	
 
 	}

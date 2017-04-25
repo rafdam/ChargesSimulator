@@ -1,20 +1,30 @@
 package gui;
 
+import java.awt.Color;
 import java.awt.LayoutManager;
 
 import javax.swing.JPanel;
+import javax.swing.border.LineBorder;
+
+import net.miginfocom.swing.MigLayout;
 
 public class RightMainPanel extends JPanel {
 
 	public RightMainPanel() {
+		setLayout(new MigLayout());
+		//setBackground(Color.WHITE);
+		//setBorder(new LineBorder(Color.BLACK, 5));
 		
+		MainTabbedPane tabbedPane = new MainTabbedPane();
+		add(tabbedPane,"width 100%, height 100%");
 		
-		
+		/*
 		StationaryQPanel stationaryQpanel = new StationaryQPanel(); // Panel for table and buttons with stationary charges
 		add(stationaryQpanel);
 		
 		MotionQPanel motionQpanel = new MotionQPanel(); // Panel for table and buttons with moving charges
 		add(motionQpanel);
+		*/
 	}
 
 	public RightMainPanel(LayoutManager layout) {

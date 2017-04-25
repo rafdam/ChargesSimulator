@@ -1,18 +1,26 @@
 package gui;
 
+import java.awt.Color;
 import java.awt.LayoutManager;
 
 import javax.swing.JPanel;
+import javax.swing.border.LineBorder;
 
 public class LeftMainPanel extends JPanel {
 
-	public LeftMainPanel() {
-	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public LeftMainPanel() {	
+		//setBackground(Color.LIGHT_GRAY);
+		setBorder(new LineBorder(Color.LIGHT_GRAY, 3));
 		
 		
 		
-		MainFrameTitleLabel titlelabel = new MainFrameTitleLabel();
-		add(titlelabel);
+		
+		
 		
 	}
 
