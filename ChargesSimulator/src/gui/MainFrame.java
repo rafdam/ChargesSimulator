@@ -1,5 +1,5 @@
 package gui;
-import java.awt.Dimension;
+import java.awt.Dimension; 
 //author: Mikolaj Czajka
 import java.awt.GraphicsConfiguration;
 import java.awt.GridBagConstraints;
@@ -10,6 +10,7 @@ import java.awt.Insets;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.border.Border;
+import net.miginfocom.swing.MigLayout;
 
 //import com.sun.javafx.tk.Toolkit;
 //import com.sun.prism.paint.Color;
@@ -25,7 +26,7 @@ public class MainFrame extends JFrame {
 		setTitle("Charges Simulator");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);		
 		setPreferredSize(new Dimension(1200,800));	
-		setLayout(new GridBagLayout());
+		setLayout(new MigLayout());
 		
 		LeftMainPanel leftPanel = new LeftMainPanel();
 		RightMainPanel rightPanel = new RightMainPanel();
