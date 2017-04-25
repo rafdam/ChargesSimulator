@@ -4,10 +4,18 @@ import java.awt.LayoutManager;
 
 import javax.swing.JPanel;
 
+import net.miginfocom.swing.MigLayout;
+
 public class TabPanel1 extends JPanel {
 
 	public TabPanel1() {
-		// TODO Auto-generated constructor stub
+		setLayout(new MigLayout());
+		
+		StationaryQPanel stationaryQpanel = new StationaryQPanel(); // table and buttons with stationary charges		
+		MotionQPanel motionQpanel = new MotionQPanel(); //  table and buttons with moving charges
+		
+		add(stationaryQpanel,"width 100%, height 50%, span");		
+		add(motionQpanel,"width 100%, height 50%");
 	}
 
 	public TabPanel1(LayoutManager layout) {

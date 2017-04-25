@@ -7,13 +7,13 @@ public class MainTabbedPane extends JTabbedPane {
 	
 	
 	public MainTabbedPane() {
-		JPanel tab1 = new JPanel();
+		TabPanel1 tab1 = new TabPanel1();
 		addTab("Charges", tab1);
 		
-		JPanel tab2 = new JPanel();
+		TabPanel2 tab2 = new TabPanel2();
 		addTab("Options", tab2);
 		
-		JPanel tab3 = new JPanel();
+		TabPanel3 tab3 = new TabPanel3();
 		addTab("Help", tab3);
 		
 		

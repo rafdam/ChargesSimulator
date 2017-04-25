@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.LayoutManager;
 
 import javax.swing.JPanel;
+import javax.swing.border.LineBorder;
 
 public class MotionQPanel extends JPanel {
 
@@ -13,7 +14,8 @@ public class MotionQPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	public MotionQPanel() {	
-		setBackground(Color.blue);
+				setBackground(Color.LIGHT_GRAY);
+				setBorder(new LineBorder(Color.BLACK, 3));
 	}
 
 	public MotionQPanel(LayoutManager layout) {

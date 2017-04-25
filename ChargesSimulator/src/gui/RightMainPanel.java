@@ -18,13 +18,7 @@ public class RightMainPanel extends JPanel {
 		MainTabbedPane tabbedPane = new MainTabbedPane();
 		add(tabbedPane,"width 100%, height 100%");
 		
-		/*
-		StationaryQPanel stationaryQpanel = new StationaryQPanel(); // Panel for table and buttons with stationary charges
-		add(stationaryQpanel);
 		
-		MotionQPanel motionQpanel = new MotionQPanel(); // Panel for table and buttons with moving charges
-		add(motionQpanel);
-		*/
 	}
 
 	public RightMainPanel(LayoutManager layout) {

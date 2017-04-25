@@ -4,13 +4,16 @@ import java.awt.Color;
 import java.awt.LayoutManager;
 
 import javax.swing.JPanel;
+import javax.swing.border.LineBorder;
+
+import net.miginfocom.swing.MigLayout;
 
 public class StationaryQPanel extends JPanel {
 
 	public StationaryQPanel() {
-
-		setBackground(Color.blue);
-		
+		setLayout(new MigLayout());
+		setBackground(Color.LIGHT_GRAY);
+		setBorder(new LineBorder(Color.BLACK, 3));		
 		
 	}
 
