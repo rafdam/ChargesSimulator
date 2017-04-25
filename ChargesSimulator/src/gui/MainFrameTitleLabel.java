@@ -7,7 +7,7 @@ public class MainFrameTitleLabel extends JLabel {
 
 	public MainFrameTitleLabel() {
 		super("CHARGES SIMULATOR");
-		setBounds(400, 10, 150, 40);
+		
 	}
 
 	public MainFrameTitleLabel(String arg0) {
