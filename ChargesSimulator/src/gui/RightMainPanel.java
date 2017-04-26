@@ -10,6 +10,11 @@ import net.miginfocom.swing.MigLayout;
 
 public class RightMainPanel extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public RightMainPanel() {
 		setLayout(new MigLayout());
 		//setBackground(Color.WHITE);
