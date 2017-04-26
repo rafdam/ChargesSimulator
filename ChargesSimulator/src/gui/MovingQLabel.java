@@ -1,12 +1,17 @@
 package gui;
 
+import java.awt.Font;
+
 import javax.swing.Icon;
 import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 public class MovingQLabel extends JLabel {
 
 	public MovingQLabel() {
-		// TODO Auto-generated constructor stub
+		super("Moving Charges");
+		setHorizontalAlignment(SwingConstants.CENTER);
+		setFont(new Font("Tahoma", Font.BOLD, 14));
 	}
 
 	public MovingQLabel(String text) {

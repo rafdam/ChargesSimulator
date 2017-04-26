@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 public class MovingQInPanel extends JPanel {
 
 	public MovingQInPanel() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public MovingQInPanel(LayoutManager layout) {

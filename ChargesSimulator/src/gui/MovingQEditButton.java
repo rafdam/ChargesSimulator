@@ -7,7 +7,7 @@ import javax.swing.JButton;
 public class MovingQEditButton extends JButton {
 
 	public MovingQEditButton() {
-		// TODO Auto-generated constructor stub
+		super("EDIT");
 	}
 
 	public MovingQEditButton(Icon icon) {

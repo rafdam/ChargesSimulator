@@ -7,7 +7,7 @@ import javax.swing.JButton;
 public class MovingQDeleteButton extends JButton {
 
 	public MovingQDeleteButton() {
-		// TODO Auto-generated constructor stub
+		super("DELETE");
 	}
 
 	public MovingQDeleteButton(Icon icon) {

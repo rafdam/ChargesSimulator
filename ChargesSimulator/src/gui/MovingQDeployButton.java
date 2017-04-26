@@ -7,7 +7,7 @@ import javax.swing.JButton;
 public class MovingQDeployButton extends JButton {
 
 	public MovingQDeployButton() {
-		// TODO Auto-generated constructor stub
+		super("DEPLOY");
 	}
 
 	public MovingQDeployButton(Icon icon) {
