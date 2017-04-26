@@ -7,7 +7,8 @@ import javax.swing.JButton;
 public class StationaryQEditButton extends JButton {
 
 	public StationaryQEditButton() {
-		// TODO Auto-generated constructor stub
+		super("EDIT");
+
 	}
 
 	public StationaryQEditButton(Icon icon) {

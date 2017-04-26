@@ -4,29 +4,28 @@ import javax.swing.Action;
 import javax.swing.Icon;
 import javax.swing.JButton;
 
-public class StationaryQDeleteButton extends JButton {
+public class MovingQAddButton extends JButton {
 
-	public StationaryQDeleteButton() {
-		super("DELETE");
-
+	public MovingQAddButton() {
+		// TODO Auto-generated constructor stub
 	}
 
-	public StationaryQDeleteButton(Icon icon) {
+	public MovingQAddButton(Icon icon) {
 		super(icon);
 		// TODO Auto-generated constructor stub
 	}
 
-	public StationaryQDeleteButton(String text) {
+	public MovingQAddButton(String text) {
 		super(text);
 		// TODO Auto-generated constructor stub
 	}
 
-	public StationaryQDeleteButton(Action a) {
+	public MovingQAddButton(Action a) {
 		super(a);
 		// TODO Auto-generated constructor stub
 	}
 
-	public StationaryQDeleteButton(String text, Icon icon) {
+	public MovingQAddButton(String text, Icon icon) {
 		super(text, icon);
 		// TODO Auto-generated constructor stub
 	}

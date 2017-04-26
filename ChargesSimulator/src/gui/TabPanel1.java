@@ -12,7 +12,7 @@ public class TabPanel1 extends JPanel {
 		setLayout(new MigLayout());
 		
 		StationaryQPanel stationaryQpanel = new StationaryQPanel(); // table and buttons with stationary charges		
-		MotionQPanel motionQpanel = new MotionQPanel(); //  table and buttons with moving charges
+		MovingQPanel motionQpanel = new MovingQPanel(); //  table and buttons with moving charges
 		
 		add(stationaryQpanel,"width 100%, height 50%, span");		
 		add(motionQpanel,"width 100%, height 50%");

@@ -7,7 +7,8 @@ import javax.swing.JButton;
 public class StationaryQDeployButton extends JButton {
 
 	public StationaryQDeployButton() {
-		// TODO Auto-generated constructor stub
+		super("DEPOY");
+
 	}
 
 	public StationaryQDeployButton(Icon icon) {
