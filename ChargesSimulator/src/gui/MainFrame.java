@@ -30,25 +30,34 @@ public class MainFrame extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	Dimension screenSize, leftPanelDim, labelDim, rightPanelDim;
+	static Dimension addFrameDim; 
+	
+	
 	public MainFrame() throws HeadlessException {
 		setLayout(new MigLayout());
 		setTitle("Charges Simulator");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		
-		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();			
+		 screenSize = Toolkit.getDefaultToolkit().getScreenSize();			
 		double leftPanelWidth =screenSize.height;
 		double leftPanelHeight =0.6 * screenSize.height;
-		Dimension leftPanelDim = new Dimension((int) leftPanelHeight, (int) leftPanelHeight);	
+		 leftPanelDim = new Dimension((int) leftPanelHeight, (int) leftPanelHeight);	
 		
 		double labelHeight = 0.1 * screenSize.height;
 		double lebelWidth = leftPanelHeight;
-		Dimension labelDim = new Dimension((int)lebelWidth, (int) labelHeight);
+		 labelDim = new Dimension((int)lebelWidth, (int) labelHeight);
 		
-		double rightPanelWidth = leftPanelHeight / 2;
+		double rightPanelWidth = leftPanelHeight / 2;		
 		double rightPanelHeight = leftPanelHeight + labelHeight;
-		Dimension rightPanelDim = new Dimension((int) rightPanelWidth, (int) rightPanelHeight);
+		rightPanelDim = new Dimension((int) rightPanelWidth, (int) rightPanelHeight);	
+		
+		double addFrameHeight = 0.4 * rightPanelHeight;
+		double addFrameWidth = 0.8 * rightPanelWidth;
+		addFrameDim = new Dimension((int) addFrameWidth, (int) addFrameHeight);
+	
+		
 		
 		
 		LeftMainPanel leftPanel = new LeftMainPanel();
@@ -66,6 +75,12 @@ public class MainFrame extends JFrame {
 		pack();	
 	}
 
+	static Dimension getAddFrameDim(){
+		return addFrameDim;
+	}
+	
+	
+	
 	
 	public static void main(String[] args) {
 	MainFrame mFrame = new MainFrame();

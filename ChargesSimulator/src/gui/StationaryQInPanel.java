@@ -3,11 +3,25 @@ package gui;
 import java.awt.LayoutManager;
 
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+
+import net.miginfocom.swing.MigLayout;
 
 public class StationaryQInPanel extends JPanel {
 
 	public StationaryQInPanel() {
-		// TODO Auto-generated constructor stub
+		setLayout(new MigLayout("", "[] []","[]"));
+		StationaryQTable table = new StationaryQTable();
+		JScrollPane pane = new JScrollPane();
+		add(table,"width 95%, height 100%");
+		add(pane,"width 5%, height 100%");
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	public StationaryQInPanel(LayoutManager layout) {
