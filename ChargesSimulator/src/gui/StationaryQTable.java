@@ -18,7 +18,7 @@ public class StationaryQTable extends JTable {
 	 static DefaultTableModel model;
 
 	public StationaryQTable() {
-		 Object[] columns = {"No","Charge","Value","Coord.","ON/OFF"}; //Columns names
+		 Object[] columns = {"Charge","Value","X","Y","Z","ON/OFF"}; //Columns names
 	     model = new DefaultTableModel(); 
 	     model.setColumnIdentifiers(columns);
 	     setModel(model);									//Setting default model of table

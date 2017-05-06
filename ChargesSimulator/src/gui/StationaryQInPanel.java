@@ -18,10 +18,12 @@ public class StationaryQInPanel extends JPanel {
 	
 	public StationaryQInPanel() {
 		setLayout(new MigLayout("", "[] []","[]"));
-		table = new StationaryQTable();
+		table = new StationaryQTable();		
+		add(table);
+		
+		
 		JScrollPane pane = new JScrollPane(table);
-		add(table,"width 95%, height 100%");
-		add(pane,"width 5%, height 100%");
+		add(pane);
 		
 		
 		

@@ -34,7 +34,7 @@ public class StationaryQAddFrame extends JFrame {
         coordinates = new JLabel("Coordinates (X,Y,Z)");
         
         
-        String[] chargeString = {"positive (+)", "negative (-)"};
+        String[] chargeString = {"positive", "negative"};
         cbCharges  = new JComboBox(chargeString);
         cbCharges.setSelectedIndex(1);        
         

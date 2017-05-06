@@ -83,10 +83,10 @@ public class StationaryQEditFrame extends JFrame {
 	                 
 	                 if(i >= 0) 
 	                 {
-	                	 StationaryQTable.model.setValueAt(tValue.getText(), i, 0);
-	                	 StationaryQTable.model.setValueAt(tCoordinateX.getText(), i, 1);
-	                	 StationaryQTable.model.setValueAt(tCoordinateY.getText(), i, 2);
-	                	 StationaryQTable.model.setValueAt(tCoordinateZ.getText(), i, 3);
+	                	 StationaryQTable.model.setValueAt(tValue.getText(), i, 1);
+	                	 StationaryQTable.model.setValueAt(tCoordinateX.getText(), i, 2);
+	                	 StationaryQTable.model.setValueAt(tCoordinateY.getText(), i, 3);
+	                	 StationaryQTable.model.setValueAt(tCoordinateZ.getText(), i, 4);
 	                 }
 	                 else{
 	                     System.out.println("Update Error");
