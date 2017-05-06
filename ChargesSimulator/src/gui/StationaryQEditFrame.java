@@ -25,6 +25,7 @@ public class StationaryQEditFrame extends JFrame {
 	JTextField  tValue, tCoordinateX, tCoordinateY,tCoordinateZ; 
 	JComboBox cbCharges;
 	JButton editThis;
+	String status;
 
 	public StationaryQEditFrame() throws HeadlessException {
 		setLayout(new MigLayout("", "[] [] [] []","[] [] [] []"));
@@ -35,10 +36,10 @@ public class StationaryQEditFrame extends JFrame {
         coordinates = new JLabel("Coordinates (X,Y,Z)");
         
         
-        String[] chargeString = {"positive (+)", "negative (-)"};
+        String[] chargeString = {"positive", "negative"};
         cbCharges  = new JComboBox(chargeString);
         cbCharges.setSelectedIndex(1);        
-        
+        status = new String("");
         
         tValue  =  new JTextField();        
         tCoordinateX  = new JTextField();  
@@ -64,11 +65,11 @@ public class StationaryQEditFrame extends JFrame {
 	             
 	             // i = the index of the selected row
 	             int i = StationaryQInPanel.table.getSelectedRow();
-	             
-	             tValue.setText(StationaryQTable.model.getValueAt(i, 0).toString());
-	             tCoordinateX.setText(StationaryQTable.model.getValueAt(i, 1).toString());
-	             tCoordinateY.setText(StationaryQTable.model.getValueAt(i, 2).toString());
-	             tCoordinateZ.setText(StationaryQTable.model.getValueAt(i, 3).toString());
+	          
+	             tValue.setText(StationaryQTable.model.getValueAt(i, 1).toString());
+	             tCoordinateX.setText(StationaryQTable.model.getValueAt(i, 2).toString());
+	             tCoordinateY.setText(StationaryQTable.model.getValueAt(i, 3).toString());
+	             tCoordinateZ.setText(StationaryQTable.model.getValueAt(i, 4).toString());
 	         }
 	         });
 	         
@@ -82,7 +83,11 @@ public class StationaryQEditFrame extends JFrame {
 	                 int i = StationaryQInPanel.table.getSelectedRow();
 	                 
 	                 if(i >= 0) 
-	                 {
+	                 {	
+	                	 status = (String) cbCharges.getSelectedItem();
+	                	 if(status == "positive"){StationaryQTable.model.setValueAt("(+)", i, 0);}
+		            	 else if(status == "negative"){StationaryQTable.model.setValueAt("(+)", i, 0);}	
+		            	 else{System.out.println(status);}
 	                	 StationaryQTable.model.setValueAt(tValue.getText(), i, 1);
 	                	 StationaryQTable.model.setValueAt(tCoordinateX.getText(), i, 2);
 	                	 StationaryQTable.model.setValueAt(tCoordinateY.getText(), i, 3);

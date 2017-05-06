@@ -18,9 +18,23 @@ public class StationaryQInPanel extends JPanel {
 	
 	public StationaryQInPanel() {
 		setLayout(new MigLayout("", "[] []","[]"));
-		table = new StationaryQTable();		
+		table = new StationaryQTable();	
 		add(table);
-		
+		// NOT WORKING @@@
+		int tableWidth = table.getWidth();
+		System.out.println(tableWidth);
+		 double column0w = tableWidth * 0.1; 
+		 double column1w = tableWidth * 0.4; 
+		 double column2w = tableWidth * 0.1; 
+		 double column3w = tableWidth * 0.1; 
+		 double column4w = tableWidth * 0.1; 
+		 double column5w = tableWidth * 0.2; 
+		 table.getColumnModel().getColumn(0).setWidth((int) column0w);
+		 table.getColumnModel().getColumn(1).setWidth((int) column1w);
+		 table.getColumnModel().getColumn(2).setWidth((int) column2w);
+		 table.getColumnModel().getColumn(3).setWidth((int) column3w);
+		 table.getColumnModel().getColumn(4).setWidth((int) column4w);
+		 table.getColumnModel().getColumn(5).setWidth((int) column5w);		
 		
 		JScrollPane pane = new JScrollPane(table);
 		add(pane);

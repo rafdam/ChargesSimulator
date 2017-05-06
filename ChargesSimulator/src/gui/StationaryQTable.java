@@ -18,7 +18,7 @@ public class StationaryQTable extends JTable {
 	 static DefaultTableModel model;
 
 	public StationaryQTable() {
-		 Object[] columns = {"Charge","Value","X","Y","Z","ON/OFF"}; //Columns names
+		 Object[] columns = {"Charge","Value[C]","X","Y","Z","ON/OFF"}; //Columns names
 	     model = new DefaultTableModel(); 
 	     model.setColumnIdentifiers(columns);
 	     setModel(model);									//Setting default model of table
@@ -28,13 +28,13 @@ public class StationaryQTable extends JTable {
 	     setForeground(Color.black);
 	     Font font = new Font("",1,14);
 	     setFont(font);
-	     setRowHeight(15);
-		
-	  // create JScrollPane	
+	     setRowHeight(15);	     
+	  
+	
 	}
 	
 	
-	
+
 	
 	
 	

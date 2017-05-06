@@ -66,11 +66,13 @@ public class StationaryQAddFrame extends JFrame {
 	             public void actionPerformed(ActionEvent e) {
 	              
 	                // row[0] = textId.getText();
+	            	 if(cbCharges.getSelectedItem() == "positive"){row[0] = "(+)";}
+	            	 else if(cbCharges.getSelectedItem() == "negative"){row[0] = "(-)";}
 	                 row[1] = tValue.getText();
 	                 row[2] = tCoordinateX.getText();
 	                 row[3] = tCoordinateY.getText();
 	                 row[4] = tCoordinateZ.getText();
-	                 
+	                 row[5] = "OFF";
 	                 // add row to the model
 	                 StationaryQTable.model.addRow(row);
 	             }

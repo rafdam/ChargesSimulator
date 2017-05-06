@@ -6,11 +6,6 @@ import java.awt.event.ActionListener;
 import javax.swing.Action;
 import javax.swing.Icon;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-
-import net.miginfocom.swing.MigLayout;
 
 public class StationaryQEditButton extends JButton {
 
