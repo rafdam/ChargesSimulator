@@ -9,10 +9,17 @@ import net.miginfocom.swing.MigLayout;
 
 public class StationaryQInPanel extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	static StationaryQTable table;
+	
+	
 	public StationaryQInPanel() {
 		setLayout(new MigLayout("", "[] []","[]"));
-		StationaryQTable table = new StationaryQTable();
-		JScrollPane pane = new JScrollPane();
+		table = new StationaryQTable();
+		JScrollPane pane = new JScrollPane(table);
 		add(table,"width 95%, height 100%");
 		add(pane,"width 5%, height 100%");
 		

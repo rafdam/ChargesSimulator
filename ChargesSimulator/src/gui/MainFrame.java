@@ -1,19 +1,10 @@
 package gui;
-import java.awt.Color;
 import java.awt.Dimension; 
-//author: Mikolaj Czajka
-import java.awt.GraphicsConfiguration;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.HeadlessException;
-import java.awt.Insets;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 
-import javax.swing.BorderFactory;
 import javax.swing.JFrame;
-import javax.swing.border.Border;
-
 import model.ChargesList;
 import model.ChargesPotential;
 import model.StationaryCharge;
@@ -41,7 +32,7 @@ public class MainFrame extends JFrame {
 		
 		
 		 screenSize = Toolkit.getDefaultToolkit().getScreenSize();			
-		double leftPanelWidth =screenSize.height;
+		//double leftPanelWidth =screenSize.height; unused by now
 		double leftPanelHeight =0.6 * screenSize.height;
 		 leftPanelDim = new Dimension((int) leftPanelHeight, (int) leftPanelHeight);	
 		
@@ -53,8 +44,8 @@ public class MainFrame extends JFrame {
 		double rightPanelHeight = leftPanelHeight + labelHeight;
 		rightPanelDim = new Dimension((int) rightPanelWidth, (int) rightPanelHeight);	
 		
-		double addFrameHeight = 0.4 * rightPanelHeight;
-		double addFrameWidth = 0.8 * rightPanelWidth;
+		double addFrameHeight = 0.2 * rightPanelHeight;
+		double addFrameWidth = 0.9 * rightPanelWidth;
 		addFrameDim = new Dimension((int) addFrameWidth, (int) addFrameHeight);
 	
 		

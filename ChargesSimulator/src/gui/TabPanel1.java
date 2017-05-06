@@ -8,6 +8,11 @@ import net.miginfocom.swing.MigLayout;
 
 public class TabPanel1 extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public TabPanel1() {
 		setLayout(new MigLayout());
 		

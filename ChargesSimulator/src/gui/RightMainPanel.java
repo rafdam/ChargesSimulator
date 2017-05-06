@@ -1,11 +1,8 @@
 package gui;
 
-import java.awt.Color;
 import java.awt.LayoutManager;
 
 import javax.swing.JPanel;
-import javax.swing.border.LineBorder;
-
 import net.miginfocom.swing.MigLayout;
 
 public class RightMainPanel extends JPanel {

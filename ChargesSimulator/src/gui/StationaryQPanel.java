@@ -10,6 +10,11 @@ import net.miginfocom.swing.MigLayout;
 
 public class StationaryQPanel extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public StationaryQPanel() {
 		setLayout(new MigLayout("", "[] [] [] []","[] [] [] []"));
 		setBackground(Color.LIGHT_GRAY);
