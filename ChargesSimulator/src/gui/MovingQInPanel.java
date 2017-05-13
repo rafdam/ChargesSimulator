@@ -6,6 +6,11 @@ import javax.swing.JPanel;
 
 public class MovingQInPanel extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public MovingQInPanel() {
 		
 	}

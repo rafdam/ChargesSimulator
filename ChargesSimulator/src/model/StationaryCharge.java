@@ -1,4 +1,7 @@
 package model;
+
+import java.awt.Graphics;
+
 //Author: rafdam
 public class StationaryCharge extends TestPoint {
 		
@@ -55,6 +58,21 @@ public class StationaryCharge extends TestPoint {
 		distanceFromZero = Math.sqrt(a*a+b*b+c*c);
 		
 	}
+	public static int DIAMETER = 50;
+	public static int qX = 30;           
+	public static int qY = 30;
+	public static int qZ = 30;
+    
+    public void DrawStationaryQ(Graphics g) {
+        g.fillOval(qX,qY,DIAMETER, DIAMETER);
+    }
+
+	
+    
+    
+   
+    
+    
 	
 
 }

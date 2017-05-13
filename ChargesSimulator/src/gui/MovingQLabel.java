@@ -8,6 +8,11 @@ import javax.swing.SwingConstants;
 
 public class MovingQLabel extends JLabel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public MovingQLabel() {
 		super("Moving Charges");
 		setHorizontalAlignment(SwingConstants.CENTER);

@@ -1,11 +1,15 @@
 package gui;
 
-import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
 public class MainTabbedPane extends JTabbedPane {
 	
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public MainTabbedPane() {
 		TabPanel1 tab1 = new TabPanel1();
 		addTab("Charges", tab1);

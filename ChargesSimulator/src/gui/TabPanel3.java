@@ -6,6 +6,11 @@ import javax.swing.JPanel;
 
 public class TabPanel3 extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public TabPanel3() {
 		// TODO Auto-generated constructor stub
 	}
