@@ -6,6 +6,11 @@ import javax.swing.JButton;
 
 public class MovingQDeployButton extends JButton {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public MovingQDeployButton() {
 		super("DEPLOY");
 	}
