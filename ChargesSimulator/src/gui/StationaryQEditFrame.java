@@ -65,10 +65,10 @@ public class StationaryQEditFrame extends JFrame {
 	             // i = the index of the selected row
 	             int i = StationaryQInPanel.table.getSelectedRow();
 	          
-	             tValue.setText(StationaryQTable.model.getValueAt(i, 1).toString());
-	             tCoordinateX.setText(StationaryQTable.model.getValueAt(i, 2).toString());
-	             tCoordinateY.setText(StationaryQTable.model.getValueAt(i, 3).toString());
-	             tCoordinateZ.setText(StationaryQTable.model.getValueAt(i, 4).toString());
+	             tValue.setText(StationaryQTable.model.getValueAt(i, 0).toString());
+	             tCoordinateX.setText(StationaryQTable.model.getValueAt(i, 1).toString());
+	             tCoordinateY.setText(StationaryQTable.model.getValueAt(i, 2).toString());
+	             tCoordinateZ.setText(StationaryQTable.model.getValueAt(i, 3).toString());
 	         }
 	         });
 	         
@@ -86,10 +86,10 @@ public class StationaryQEditFrame extends JFrame {
 	                	 if(status == "positive"){StationaryQTable.model.setValueAt("(+)", i, 0);}
 		            	 else if(status == "negative"){StationaryQTable.model.setValueAt("(+)", i, 0);}	
 		            	 else{System.out.println(status);}
-	                	 StationaryQTable.model.setValueAt(tValue.getText(), i, 1);
-	                	 StationaryQTable.model.setValueAt(tCoordinateX.getText(), i, 2);
-	                	 StationaryQTable.model.setValueAt(tCoordinateY.getText(), i, 3);
-	                	 StationaryQTable.model.setValueAt(tCoordinateZ.getText(), i, 4);
+	                	 StationaryQTable.model.setValueAt(tValue.getText(), i, 0);
+	                	 StationaryQTable.model.setValueAt(tCoordinateX.getText(), i, 1);
+	                	 StationaryQTable.model.setValueAt(tCoordinateY.getText(), i, 2);
+	                	 StationaryQTable.model.setValueAt(tCoordinateZ.getText(), i, 3);
 	                 }
 	                 else{
 	                     System.out.println("Update Error");

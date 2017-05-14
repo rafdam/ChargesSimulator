@@ -82,8 +82,9 @@ public class MainFrame extends JFrame {
 	MainFrame mFrame = new MainFrame();
 	mFrame.setVisible(true);
 	mFrame.setResizable(false);
+	ChargesList stationaryChargesList = new ChargesList();
 	/*TestPoint testPoint0 = new TestPoint(1, 2, 4);
-	*ChargesList stationaryChargesList = new ChargesList();
+	
 	*ArrayList<TestChargeMotion> TestChargeValues = new ArrayList<TestChargeMotion>();
 	*
 	*

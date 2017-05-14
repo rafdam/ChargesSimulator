@@ -7,6 +7,8 @@ import java.awt.LayoutManager;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
+import model.StationaryCharge;
+
 public class LeftMainPanel extends JPanel{
 
 	/**
@@ -17,16 +19,14 @@ public class LeftMainPanel extends JPanel{
 	public LeftMainPanel() {	
 		//setBackground(Color.LIGHT_GRAY);
 		setBorder(new LineBorder(Color.LIGHT_GRAY, 3));
-		
+			}
 	
-	
-		
-		
-		
-		
-		
-		
-	}
+	public void paintComponent(Graphics g, StationaryCharge a) {
+        super.paintComponent(g);  
+       
+    		a.DrawStationaryQ(g);
+        
+    }
 	
 	
 	

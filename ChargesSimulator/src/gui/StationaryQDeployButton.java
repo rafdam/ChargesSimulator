@@ -30,7 +30,7 @@ public class StationaryQDeployButton extends JButton {
             // i = the index of the selected row
             int i = StationaryQInPanel.table.getSelectedRow();
         
-            status = StationaryQTable.model.getValueAt(i, 5).toString();
+            status = StationaryQTable.model.getValueAt(i, 4).toString();
         }
         });
         
@@ -44,9 +44,15 @@ public class StationaryQDeployButton extends JButton {
                 
                 if(i >= 0) 
                 {
-                	if(status == "ON"){StationaryQTable.model.setValueAt("OFF", i, 5);}
+                	if(status == "ON"){
+                		StationaryQTable.model.setValueAt("OFF", i, 4);
+                		
+                	}
                 	
-                	else if(status == "OFF"){StationaryQTable.model.setValueAt("ON", i, 5);}
+                	else if(status == "OFF"){
+                		StationaryQTable.model.setValueAt("ON", i, 4);
+                		
+                		}
                	
                 	else{System.out.println("Deploy error");}
                 }
