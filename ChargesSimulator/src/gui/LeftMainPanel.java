@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.LayoutManager;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
@@ -19,14 +20,10 @@ public class LeftMainPanel extends JPanel{
 	public LeftMainPanel() {	
 		//setBackground(Color.LIGHT_GRAY);
 		setBorder(new LineBorder(Color.LIGHT_GRAY, 3));
+		setLayout(null);
 			}
 	
-	public void paintComponent(Graphics g, StationaryCharge a) {
-        super.paintComponent(g);  
-       
-    		a.DrawStationaryQ(g);
-        
-    }
+
 	
 	
 	
@@ -46,10 +43,27 @@ public class LeftMainPanel extends JPanel{
 		super(arg0, arg1);
 		// TODO Auto-generated constructor stub
 	}
-
+/*
 	public void DrawStationaryQ(Graphics g) {
 		// TODO Auto-generated method stub
-		
-	}
+
+	}	*/	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

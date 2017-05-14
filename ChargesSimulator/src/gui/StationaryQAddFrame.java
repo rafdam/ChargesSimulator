@@ -77,7 +77,6 @@ public class StationaryQAddFrame extends JFrame {
 	            	 
 	              
 	               
-	            	 StationaryCharge ch = new StationaryCharge(Double.parseDouble(tCoordinateX.getText()), Double.parseDouble(tCoordinateY.getText()), Double.parseDouble(tCoordinateZ.getText()), Double.parseDouble(tValue.getText()));
 	            	 
 	            	 
 	            	 row[0] = tValue.getText();

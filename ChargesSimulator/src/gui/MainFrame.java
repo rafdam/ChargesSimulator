@@ -1,11 +1,18 @@
 package gui;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.HeadlessException;
 import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+
 import model.ChargesList;
 import model.ChargesPotential;
 import model.StationaryCharge;
@@ -26,7 +33,8 @@ public class MainFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
 	Dimension screenSize, leftPanelDim, labelDim, rightPanelDim;
 	static Dimension addFrameDim; 
-	
+	static LeftMainPanel leftPanel;
+	public static BufferedImage image;
 	
 	public MainFrame() throws HeadlessException {
 		setLayout(new MigLayout());
@@ -54,7 +62,7 @@ public class MainFrame extends JFrame {
 		
 		
 		
-		LeftMainPanel leftPanel = new LeftMainPanel();
+		 leftPanel = new LeftMainPanel();
 		RightMainPanel rightPanel = new RightMainPanel();
 		MainFrameTitleLabel titlelabel = new MainFrameTitleLabel();
 		
@@ -73,8 +81,21 @@ public class MainFrame extends JFrame {
 		return addFrameDim;
 	}
 	
-	
-	
+	 public static void AddStationaryQ(StationaryCharge SCh){
+		 //Graphics2D g2 = (Graphics2D) g;
+		 
+		 	JLabel label = new JLabel();
+			System.out.println("dodaje wartości xD"+SCh.getX()+SCh.getY()+SCh.getZ());
+		
+			label.setText(Double.toString(SCh.getValue()));
+			label.setVisible(true);
+			label.setBounds((int)SCh.getX(), (int)SCh.getY(), 30, 30);
+			leftPanel.add(label);
+			leftPanel.repaint();      
+			
+		//	SCh.DrawStationaryQ(g);
+	 }
+	               
 	
 	
 	
