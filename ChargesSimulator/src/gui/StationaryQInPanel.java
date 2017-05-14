@@ -1,5 +1,6 @@
 package gui;
 
+import java.awt.Graphics;
 import java.awt.LayoutManager;
 
 import javax.swing.JPanel;
@@ -7,7 +8,7 @@ import javax.swing.JScrollPane;
 
 import net.miginfocom.swing.MigLayout;
 
-public class StationaryQInPanel extends JPanel {
+public class StationaryQInPanel extends JPanel implements StationaryQInterface{
 
 	/**
 	 * 
@@ -28,13 +29,13 @@ public class StationaryQInPanel extends JPanel {
 		 double column2w = tableWidth * 0.1; 
 		 double column3w = tableWidth * 0.1; 
 		 double column4w = tableWidth * 0.1; 
-		 double column5w = tableWidth * 0.2; 
+		 
 		 table.getColumnModel().getColumn(0).setWidth((int) column0w);
 		 table.getColumnModel().getColumn(1).setWidth((int) column1w);
 		 table.getColumnModel().getColumn(2).setWidth((int) column2w);
 		 table.getColumnModel().getColumn(3).setWidth((int) column3w);
 		 table.getColumnModel().getColumn(4).setWidth((int) column4w);
-		 table.getColumnModel().getColumn(5).setWidth((int) column5w);		
+		 	
 		
 		JScrollPane pane = new JScrollPane(table);
 		add(pane);
@@ -46,6 +47,8 @@ public class StationaryQInPanel extends JPanel {
 		
 		
 	}
+	
+	
 
 	public StationaryQInPanel(LayoutManager layout) {
 		super(layout);
@@ -60,6 +63,11 @@ public class StationaryQInPanel extends JPanel {
 	public StationaryQInPanel(LayoutManager layout, boolean isDoubleBuffered) {
 		super(layout, isDoubleBuffered);
 		// TODO Auto-generated constructor stub
+	}
+
+	public void DrawStationaryQ(Graphics g) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

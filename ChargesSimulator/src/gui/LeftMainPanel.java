@@ -1,12 +1,13 @@
 package gui;
 
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.LayoutManager;
 
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
-public class LeftMainPanel extends JPanel {
+public class LeftMainPanel extends JPanel implements StationaryQInterface{
 
 	/**
 	 * 
@@ -17,12 +18,24 @@ public class LeftMainPanel extends JPanel {
 		//setBackground(Color.LIGHT_GRAY);
 		setBorder(new LineBorder(Color.LIGHT_GRAY, 3));
 		
+	
+		
 		
 		
 		
 		
 		
 	}
+	
+	public void PaintComponent(Graphics g) {
+        super.paintComponent(g);  
+       
+        for( int i = 0; i < stationaryChargesList.size(); i++){
+        	stationaryChargesList.get(i).DrawStationaryQ(g);
+        }
+    }
+	
+	
 
 	public LeftMainPanel(LayoutManager arg0) {
 		super(arg0);
@@ -37,6 +50,11 @@ public class LeftMainPanel extends JPanel {
 	public LeftMainPanel(LayoutManager arg0, boolean arg1) {
 		super(arg0, arg1);
 		// TODO Auto-generated constructor stub
+	}
+
+	public void DrawStationaryQ(Graphics g) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

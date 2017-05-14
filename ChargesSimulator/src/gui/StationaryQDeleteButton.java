@@ -19,7 +19,6 @@ public class StationaryQDeleteButton extends JButton {
 		// button remove row
         addActionListener(new ActionListener(){
 
-            @Override
             public void actionPerformed(ActionEvent e) {
             
                 // i = the index of the selected row

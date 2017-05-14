@@ -21,7 +21,6 @@ public class StationaryQEditButton extends JButton {
 		
 		addActionListener(new ActionListener(){
 
-            @Override
             public void actionPerformed(ActionEvent e) {
              
            editFrame = new StationaryQEditFrame();

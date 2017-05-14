@@ -31,14 +31,13 @@ public class StationaryQEditFrame extends JFrame {
 		setLayout(new MigLayout("", "[] [] [] []","[] [] [] []"));
         setSize(MainFrame.getAddFrameDim()); 
         
-        charge = new JLabel("Charge");
+        
         value  = new JLabel("Value [C]"); 
         coordinates = new JLabel("Coordinates (X,Y,Z)");
         
         
         String[] chargeString = {"positive", "negative"};
-        cbCharges  = new JComboBox(chargeString);
-        cbCharges.setSelectedIndex(1);        
+              
         status = new String("");
         
         tValue  =  new JTextField();        
@@ -47,8 +46,8 @@ public class StationaryQEditFrame extends JFrame {
         tCoordinateZ  = new JTextField();        
         editThis = new JButton("EDIT");
         
-	         add(charge,"width 50%, height 25%");
-	         add(cbCharges,"width 75%, height 25%,span, wrap");
+	        
+	        
 	         add(value,"width 50%, height 25%");
 	         add(tValue,"width 50%, height 25%,span,wrap");
 	         add(coordinates,"width 50%, height 25%");
@@ -76,7 +75,6 @@ public class StationaryQEditFrame extends JFrame {
 	         // button update row
 	         editThis.addActionListener(new ActionListener(){
 
-	             @Override
 	             public void actionPerformed(ActionEvent e) {
 	              
 	                 // i = the index of the selected row
