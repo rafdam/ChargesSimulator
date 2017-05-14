@@ -7,7 +7,7 @@ import java.awt.LayoutManager;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
-public class LeftMainPanel extends JPanel implements StationaryQInterface{
+public class LeftMainPanel extends JPanel{
 
 	/**
 	 * 
@@ -19,6 +19,7 @@ public class LeftMainPanel extends JPanel implements StationaryQInterface{
 		setBorder(new LineBorder(Color.LIGHT_GRAY, 3));
 		
 	
+	
 		
 		
 		
@@ -27,13 +28,7 @@ public class LeftMainPanel extends JPanel implements StationaryQInterface{
 		
 	}
 	
-	public void PaintComponent(Graphics g) {
-        super.paintComponent(g);  
-       
-        for( int i = 0; i < stationaryChargesList.size(); i++){
-        	stationaryChargesList.get(i).DrawStationaryQ(g);
-        }
-    }
+	
 	
 	
 

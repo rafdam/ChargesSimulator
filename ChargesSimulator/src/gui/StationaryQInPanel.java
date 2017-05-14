@@ -8,7 +8,7 @@ import javax.swing.JScrollPane;
 
 import net.miginfocom.swing.MigLayout;
 
-public class StationaryQInPanel extends JPanel implements StationaryQInterface{
+public class StationaryQInPanel extends JPanel {
 
 	/**
 	 * 

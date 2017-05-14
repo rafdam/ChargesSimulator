@@ -3,6 +3,7 @@ package gui;
 
 
 import java.awt.Graphics;
+
 import java.awt.GraphicsConfiguration;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
@@ -14,12 +15,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import model.ChargesList;
+
 import model.StationaryCharge;
-import model.StationaryChargeInterface;
+
 import net.miginfocom.swing.MigLayout;
 
-public class StationaryQAddFrame extends JFrame implements StationaryQInterface{
+public class StationaryQAddFrame extends JFrame {
 	/**
 	 * 
 	 */
@@ -77,7 +78,7 @@ public class StationaryQAddFrame extends JFrame implements StationaryQInterface{
 	              
 	               
 	            	 StationaryCharge ch = new StationaryCharge(Double.parseDouble(tCoordinateX.getText()), Double.parseDouble(tCoordinateY.getText()), Double.parseDouble(tCoordinateZ.getText()), Double.parseDouble(tValue.getText()));
-	            	 stationaryChargesList.add(ch);
+	            	 
 	            	 
 	            	 row[0] = tValue.getText();
 	                 row[1] = tCoordinateX.getText();

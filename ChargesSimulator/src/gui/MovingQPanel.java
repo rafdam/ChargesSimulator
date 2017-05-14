@@ -26,14 +26,14 @@ public class MovingQPanel extends JPanel {
 		MovingQAddButton addButton = new MovingQAddButton();
 		MovingQEditButton editButton = new MovingQEditButton();
 		MovingQDeleteButton deleteButton = new MovingQDeleteButton();
-		MovingQDeployButton deployButton = new MovingQDeployButton();
+		//MovingQDeployButton deployButton = new MovingQDeployButton();
 		
 		add(label, "width 100%, height 5%, span, wrap");
 		add(inPanel,"width 100%, height 75%, span");
 		add(addButton,"width 33%, height 10%");
 		add(editButton,"width 33%, height 10%");
 		add(deleteButton,"wrap, width 33%, height 10%");
-		add(deployButton,"width 50%, height 10%, span, wrap, align center");
+		//add(deployButton,"width 50%, height 10%, span, wrap, align center");
 				
 				
 				
