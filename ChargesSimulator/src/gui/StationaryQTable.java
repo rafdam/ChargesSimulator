@@ -8,6 +8,8 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 import javax.swing.table.TableModel;
 
+import model.ChargesList;
+
 public class StationaryQTable extends JTable {
 
 	/**
@@ -16,13 +18,14 @@ public class StationaryQTable extends JTable {
 	private static final long serialVersionUID = 1L;
 	
 	 static DefaultTableModel model;
-
+	static ChargesList StationaryChargesList = new ChargesList();
+	
 	public StationaryQTable() {
 		 Object[] columns = {"Value[C]","X","Y","Z","ON/OFF"}; //Columns names
 	     model = new DefaultTableModel(); 
 	     model.setColumnIdentifiers(columns);
 	     setModel(model);									//Setting default model of table
-	     
+	    
 	     //Table look
 	     setBackground(Color.LIGHT_GRAY);
 	     setForeground(Color.black);
@@ -31,6 +34,10 @@ public class StationaryQTable extends JTable {
 	     setRowHeight(15);	     
 	  
 	
+	}
+	
+	public static ChargesList GetChargesList(){
+		return StationaryChargesList;
 	}
 	
 	

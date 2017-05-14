@@ -6,6 +6,7 @@ import java.awt.LayoutManager;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+import model.ChargesList;
 import net.miginfocom.swing.MigLayout;
 
 public class StationaryQInPanel extends JPanel {
@@ -21,6 +22,7 @@ public class StationaryQInPanel extends JPanel {
 		setLayout(new MigLayout("", "[] []","[]"));
 		table = new StationaryQTable();	
 		add(table);
+		
 		// NOT WORKING @@@
 		int tableWidth = table.getWidth();
 		System.out.println(tableWidth);

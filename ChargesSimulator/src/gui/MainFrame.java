@@ -3,6 +3,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.HeadlessException;
+import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -37,6 +38,7 @@ public class MainFrame extends JFrame {
 	public static BufferedImage image;
 	
 	public MainFrame() throws HeadlessException {
+		
 		setLayout(new MigLayout());
 		setTitle("Charges Simulator");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -62,11 +64,12 @@ public class MainFrame extends JFrame {
 		
 		
 		
-		 leftPanel = new LeftMainPanel();
+		leftPanel = new LeftMainPanel();
 		RightMainPanel rightPanel = new RightMainPanel();
 		MainFrameTitleLabel titlelabel = new MainFrameTitleLabel();
 		
 		
+		ChargesList StationaryChargesList = new ChargesList();
 		leftPanel.setPreferredSize(leftPanelDim);
 		rightPanel.setPreferredSize(rightPanelDim);	
 		titlelabel.setPreferredSize(labelDim);		
@@ -82,19 +85,21 @@ public class MainFrame extends JFrame {
 	}
 	
 	 public static void AddStationaryQ(StationaryCharge SCh){
-		 //Graphics2D g2 = (Graphics2D) g;
+		 	
 		 
 		 	JLabel label = new JLabel();
 			System.out.println("dodaje wartości xD"+SCh.getX()+SCh.getY()+SCh.getZ());
-		
+			
+			
 			label.setText(Double.toString(SCh.getValue()));
 			label.setVisible(true);
 			label.setBounds((int)SCh.getX(), (int)SCh.getY(), 30, 30);
 			leftPanel.add(label);
 			leftPanel.repaint();      
+			label.setToolTipText(Double.toString(SCh.getValue()));
 			
-		//	SCh.DrawStationaryQ(g);
 	 }
+	 
 	               
 	
 	
@@ -104,6 +109,7 @@ public class MainFrame extends JFrame {
 	mFrame.setVisible(true);
 	mFrame.setResizable(false);
 	ChargesList stationaryChargesList = new ChargesList();
+	
 	/*TestPoint testPoint0 = new TestPoint(1, 2, 4);
 	
 	*ArrayList<TestChargeMotion> TestChargeValues = new ArrayList<TestChargeMotion>();

@@ -19,7 +19,7 @@ public class StationaryQDeployButton extends JButton {
 	private static final long serialVersionUID = 1L;
 	String status;
 	double value, xx, yy, zz;
-	 StationaryCharge ch;
+	StationaryCharge ch;
 	 
 	public StationaryQDeployButton() {
 		super("ON / OFF");
@@ -38,7 +38,7 @@ public class StationaryQDeployButton extends JButton {
             yy =  Double.parseDouble(StationaryQTable.model.getValueAt(i, 2).toString());
             zz =  Double.parseDouble(StationaryQTable.model.getValueAt(i, 3).toString());
             ch = new StationaryCharge(xx,yy,zz,value);
-
+            
             status = StationaryQTable.model.getValueAt(i, 4).toString();
         }
         });
@@ -62,6 +62,7 @@ public class StationaryQDeployButton extends JButton {
                 	else if(status == "OFF"){
                 		StationaryQTable.model.setValueAt("ON", i, 4);
                 		MainFrame.AddStationaryQ(ch);
+                		StationaryQTable.GetChargesList().add(ch);
                 		System.out.println("dodaje wartości"+xx+yy+zz);
                 		}
                	

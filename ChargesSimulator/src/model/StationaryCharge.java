@@ -5,6 +5,7 @@ import java.awt.Graphics;
 //Author: rafdam
 public class StationaryCharge extends TestPoint {
 		
+		
 		public double getX() {
 			return xCord;
 		}
@@ -13,7 +14,7 @@ public class StationaryCharge extends TestPoint {
 			xCord = x;
 		}
 
-		public double getY() {
+		public  double getY() {
 			return yCord;
 		}
 
@@ -59,13 +60,17 @@ public class StationaryCharge extends TestPoint {
 		
 	}
 	public static int DIAMETER = 50;
-	public static int qX = 30;           
-	public static int qY = 30;
-	public static int qZ = 30;
+	
     
-    public void DrawStationaryQ(Graphics g) {
-        g.fillOval(qX,qY,DIAMETER, DIAMETER);
-    }
+	
+	
+	
+	
+
+	public void draw(Graphics g) {
+		g.fillOval( (int)xCord, (int)yCord, DIAMETER, DIAMETER);
+		
+	}
 
 	
 
