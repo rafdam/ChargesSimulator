@@ -13,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import model.StationaryCharge;
 import net.miginfocom.swing.MigLayout;
 
 public class StationaryQEditFrame extends JFrame {
@@ -23,7 +24,7 @@ public class StationaryQEditFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
 	JLabel charge, value, coordinates;
 	JTextField  tValue, tCoordinateX, tCoordinateY,tCoordinateZ; 
-	JComboBox cbCharges;
+	//JComboBox cbCharges;
 	JButton editThis;
 	String status;
 
@@ -36,7 +37,7 @@ public class StationaryQEditFrame extends JFrame {
         coordinates = new JLabel("Coordinates (X,Y,Z)");
         
         
-        String[] chargeString = {"positive", "negative"};
+        //String[] chargeString = {"positive", "negative"};
               
         status = new String("");
         
@@ -45,6 +46,7 @@ public class StationaryQEditFrame extends JFrame {
         tCoordinateY  = new JTextField();
         tCoordinateZ  = new JTextField();        
         editThis = new JButton("EDIT");
+        
         
 	        
 	        
@@ -80,18 +82,42 @@ public class StationaryQEditFrame extends JFrame {
 	                 // i = the index of the selected row
 	                 int i = StationaryQInPanel.table.getSelectedRow();
 	                 
+	                 
 	                 if(i >= 0) 
 	                 {	
-	                	 status = (String) cbCharges.getSelectedItem();
-	                	 if(status == "positive"){StationaryQTable.model.setValueAt("(+)", i, 0);}
-		            	 else if(status == "negative"){StationaryQTable.model.setValueAt("(+)", i, 0);}	
-		            	 else{System.out.println(status);}
-	                	 StationaryQTable.model.setValueAt(tValue.getText(), i, 0);
-	                	 StationaryQTable.model.setValueAt(tCoordinateX.getText(), i, 1);
-	                	 StationaryQTable.model.setValueAt(tCoordinateY.getText(), i, 2);
-	                	 StationaryQTable.model.setValueAt(tCoordinateZ.getText(), i, 3);
+	                	 if (StationaryQTable.model.getValueAt(i, 4).toString() == "OFF"){
+	                		 if(tValue.getText().equals("")){
+	      	            	   System.out.println("Uzupełnij wartośc ładunków"); 
+	      	            	   setVisible(false);
+	      	            	   dispose();
+	      	            	 
+	      	               }
+	      	               else if(tCoordinateX.getText().equals("") || tCoordinateY.getText().equals("")|| tCoordinateZ.getText().equals("") ){
+	  	            	   		setVisible(false);
+	  	            	   		dispose();
+	  	            	   		System.out.println("Uzupełnij wartość koordynatów"); 
+	      	               }
+	      	               else{
+	                		 StationaryQTable.model.setValueAt(tValue.getText(), i, 0);
+		                	 StationaryQTable.model.setValueAt(tCoordinateX.getText(), i, 1);
+		                	 StationaryQTable.model.setValueAt(tCoordinateY.getText(), i, 2);
+		                	 StationaryQTable.model.setValueAt(tCoordinateZ.getText(), i, 3);
+		                	 setVisible(false);
+	  	            	   	 dispose();
+	      	               }
+	                	 }
+	                	 
+	                	 else {
+	                		 setVisible(false);
+	  	            	   	 dispose();
+	                		 System.out.println("Wyłącz pierw ładunek");
+	                	 }
+	                	 
+	                     
 	                 }
 	                 else{
+	                	 setVisible(false);
+  	            	   	 dispose();
 	                     System.out.println("Update Error");
 	                 }
 	             }

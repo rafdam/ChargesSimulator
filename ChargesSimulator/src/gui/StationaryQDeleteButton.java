@@ -26,6 +26,7 @@ public class StationaryQDeleteButton extends JButton {
                 if(i >= 0){
                     // remove a row from jtable
                 	StationaryQTable.model.removeRow(i);
+                	
                 }
                 else{
                     System.out.println("Delete Error");

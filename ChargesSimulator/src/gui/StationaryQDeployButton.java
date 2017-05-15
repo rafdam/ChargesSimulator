@@ -55,7 +55,8 @@ public class StationaryQDeployButton extends JButton {
                 {
                 	if(status == "ON"){
                 		StationaryQTable.model.setValueAt("OFF", i, 4);
-                	
+                		StationaryQTable.GetChargesList().remove(StationaryQTable.GetChargesList().get(0));
+                		MainFrame.ChangeStationaryQ(ch);
                 		
                 	}
                 	

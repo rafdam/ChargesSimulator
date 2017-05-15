@@ -59,7 +59,7 @@ public class StationaryCharge extends TestPoint {
 		distanceFromZero = Math.sqrt(a*a+b*b+c*c);
 		
 	}
-	public static int DIAMETER = 50;
+	public static int DIAMETER = 15;
 	
     
 	

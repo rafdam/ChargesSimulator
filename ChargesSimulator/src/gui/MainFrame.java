@@ -69,7 +69,7 @@ public class MainFrame extends JFrame {
 		MainFrameTitleLabel titlelabel = new MainFrameTitleLabel();
 		
 		
-		ChargesList StationaryChargesList = new ChargesList();
+		
 		leftPanel.setPreferredSize(leftPanelDim);
 		rightPanel.setPreferredSize(rightPanelDim);	
 		titlelabel.setPreferredSize(labelDim);		
@@ -88,17 +88,16 @@ public class MainFrame extends JFrame {
 		 	
 		 
 		 	JLabel label = new JLabel();
-			System.out.println("dodaje wartości xD"+SCh.getX()+SCh.getY()+SCh.getZ());
-			
-			
-			label.setText(Double.toString(SCh.getValue()));
-			label.setVisible(true);
-			label.setBounds((int)SCh.getX(), (int)SCh.getY(), 30, 30);
-			leftPanel.add(label);
+			label.setVisible(false);
 			leftPanel.repaint();      
 			label.setToolTipText(Double.toString(SCh.getValue()));
 			
 	 }
+	 
+	 public static void ChangeStationaryQ(StationaryCharge SCh){
+		 	leftPanel.repaint();
+	 }
+	 
 	 
 	               
 	
@@ -108,7 +107,7 @@ public class MainFrame extends JFrame {
 	MainFrame mFrame = new MainFrame();
 	mFrame.setVisible(true);
 	mFrame.setResizable(false);
-	ChargesList stationaryChargesList = new ChargesList();
+	//ChargesList stationaryChargesList = new ChargesList();
 	
 	/*TestPoint testPoint0 = new TestPoint(1, 2, 4);
 	

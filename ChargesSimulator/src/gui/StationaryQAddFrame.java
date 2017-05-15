@@ -73,20 +73,32 @@ public class StationaryQAddFrame extends JFrame {
 	     	addThis.addActionListener(new ActionListener(){
 
 	             public void actionPerformed(ActionEvent e) {
+	            	 System.out.println(tValue.getText());
 	            	 
 	            	 
 	              
+	               if(tValue.getText().equals("")){
+	            	   System.out.println("Uzupełnij wartośc ładunków");   
+	               }
+	               else if(tCoordinateX.getText().equals("") || tCoordinateY.getText().equals("")|| tCoordinateZ.getText().equals("") ){
+	            	   
+	            		  System.out.println("Uzupełnij wartość koordynatów"); 
+	               }
+	               else{
+	            	   
+	            	   	 row[0] = tValue.getText();
+		                 row[1] = tCoordinateX.getText();
+		                 row[2] = tCoordinateY.getText();
+		                 row[3] = tCoordinateZ.getText();
+		                 row[4] = "OFF";
+		                 // add row to the model
+		                 StationaryQTable.model.addRow(row);
+	            	   
+	               }
 	               
 	            	 
 	            	 
-	            	 row[0] = tValue.getText();
-	                 row[1] = tCoordinateX.getText();
-	                 row[2] = tCoordinateY.getText();
-	                 row[3] = tCoordinateZ.getText();
-	                 row[4] = "OFF";
-	                 // add row to the model
-	                 StationaryQTable.model.addRow(row);
-	                 
+	            	 
 	                 
 	                 
 	             }
