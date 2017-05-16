@@ -4,6 +4,8 @@ import java.awt.Font;
 
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+//author: Czajka
+//Label with program title
 
 public class MainFrameTitleLabel extends JLabel {
 

@@ -1,12 +1,17 @@
 package gui;
 
 import java.awt.Color;
+
 import java.awt.LayoutManager;
 
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
 import net.miginfocom.swing.MigLayout;
+
+
+//author:Czajka
+//Panel of moving charges
 
 public class MovingQPanel extends JPanel {
 
@@ -21,7 +26,7 @@ public class MovingQPanel extends JPanel {
 		setBorder(new LineBorder(Color.BLACK, 3));		
 		
 		MovingQLabel label = new MovingQLabel();
-		MovingQInPanel inPanel = new MovingQInPanel();
+		MovingQInPanel inPanel = new MovingQInPanel(); //contain table of charges
 		
 		MovingQAddButton addButton = new MovingQAddButton();
 		MovingQEditButton editButton = new MovingQEditButton();
@@ -33,10 +38,7 @@ public class MovingQPanel extends JPanel {
 		add(addButton,"width 33%, height 10%");
 		add(editButton,"width 33%, height 10%");
 		add(deleteButton,"wrap, width 33%, height 10%");
-		//add(deployButton,"width 50%, height 10%, span, wrap, align center");
-				
-				
-				
+		//add(deployButton,"width 50%, height 10%, span, wrap, align center");				
 	}
 
 	public MovingQPanel(LayoutManager layout) {

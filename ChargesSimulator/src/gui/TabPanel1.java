@@ -6,6 +6,9 @@ import javax.swing.JPanel;
 
 import net.miginfocom.swing.MigLayout;
 
+//author:Czajka
+//first card of tabs - contains tables of charges
+
 public class TabPanel1 extends JPanel {
 
 	/**

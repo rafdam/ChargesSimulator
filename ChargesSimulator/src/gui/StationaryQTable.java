@@ -10,6 +10,9 @@ import javax.swing.table.TableModel;
 
 import model.ChargesList;
 
+//author:Czajka
+
+
 public class StationaryQTable extends JTable {
 
 	/**
@@ -17,35 +20,26 @@ public class StationaryQTable extends JTable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	 static DefaultTableModel model;
+	static DefaultTableModel model;
 	static ChargesList StationaryChargesList = new ChargesList();
 	
 	public StationaryQTable() {
 		 Object[] columns = {"Value[C]","X","Y","Z","ON/OFF"}; //Columns names
 	     model = new DefaultTableModel(); 
 	     model.setColumnIdentifiers(columns);
-	     setModel(model);									//Setting default model of table
+	     setModel(model);						//Setting default model of table
 	    
-	     //Table look
+	     // Table look //
 	     setBackground(Color.LIGHT_GRAY);
 	     setForeground(Color.black);
 	     Font font = new Font("",1,14);
 	     setFont(font);
-	     setRowHeight(15);	     
-	  
-	
+	     setRowHeight(15);
 	}
 	
 	public static ChargesList GetChargesList(){
 		return StationaryChargesList;
 	}
-	
-	
-
-	
-	
-	
-	
 
 	public StationaryQTable(TableModel arg0) {
 		super(arg0);

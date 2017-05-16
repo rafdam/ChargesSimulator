@@ -11,7 +11,8 @@ import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
 import model.StationaryCharge;
-
+//author: Czajka
+//PANEL WITH DISPLAYED CHARGES
 public class LeftMainPanel extends JPanel{
 
 	/**
@@ -19,7 +20,7 @@ public class LeftMainPanel extends JPanel{
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public LeftMainPanel() {	
+	public LeftMainPanel() { 	
 		//setBackground(Color.LIGHT_GRAY);
 		setBorder(new LineBorder(Color.LIGHT_GRAY, 3));
 		setLayout(null);

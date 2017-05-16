@@ -4,6 +4,9 @@ import javax.swing.Action;
 import javax.swing.Icon;
 import javax.swing.JButton;
 
+//author: Czajka
+//Button used to adding moving charges
+
 public class MovingQAddButton extends JButton {
 
 	/**

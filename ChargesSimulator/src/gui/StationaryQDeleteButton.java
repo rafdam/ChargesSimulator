@@ -7,6 +7,10 @@ import javax.swing.Action;
 import javax.swing.Icon;
 import javax.swing.JButton;
 
+
+//author: Czajka
+//button use for deleting stationary charges from table
+
 public class StationaryQDeleteButton extends JButton {
 
 	/**
@@ -16,18 +20,19 @@ public class StationaryQDeleteButton extends JButton {
 
 	public StationaryQDeleteButton() {
 		super("DELETE");
+		
 		// button remove row
         addActionListener(new ActionListener(){
-
             public void actionPerformed(ActionEvent e) {
             
                 // i = the index of the selected row
                 int i = StationaryQInPanel.table.getSelectedRow();
+                
                 if(i >= 0){
                     // remove a row from jtable
-                	StationaryQTable.model.removeRow(i);
-                	
+                	StationaryQTable.model.removeRow(i);                	
                 }
+                
                 else{
                     System.out.println("Delete Error");
                 }

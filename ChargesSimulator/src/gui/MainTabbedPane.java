@@ -2,12 +2,10 @@ package gui;
 
 import javax.swing.JTabbedPane;
 
-public class MainTabbedPane extends JTabbedPane {
-	
-	
-	/**
-	 * 
-	 */
+//author: Czajka
+//Tabbed Panes in main frame
+
+public class MainTabbedPane extends JTabbedPane {	 
 	private static final long serialVersionUID = 1L;
 
 	public MainTabbedPane() {
@@ -19,10 +17,7 @@ public class MainTabbedPane extends JTabbedPane {
 		
 		TabPanel3 tab3 = new TabPanel3();
 		addTab("Help", tab3);
-		
-		
-		
-		
+			
 	}
 
 	public MainTabbedPane(int arg0) {

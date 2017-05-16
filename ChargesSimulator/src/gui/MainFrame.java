@@ -24,7 +24,7 @@ import net.miginfocom.swing.MigLayout;
 
 //import com.sun.javafx.tk.Toolkit;
 //import com.sun.prism.paint.Color;
-// START WORKING U PIECE OF LOVELY COMPILER
+// author: Mikolaj Czajka
 
 
 public class MainFrame extends JFrame {
@@ -32,10 +32,10 @@ public class MainFrame extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	Dimension screenSize, leftPanelDim, labelDim, rightPanelDim;
-	static Dimension addFrameDim; 
-	static LeftMainPanel leftPanel;
-	public static BufferedImage image;
+	Dimension screenSize, leftPanelDim, labelDim, rightPanelDim; //definition of dimension of panels in main frame
+	static Dimension addFrameDim; 		    //dimension for small frame "adding charges"
+	static LeftMainPanel leftPanel; 	   	//panel where chares are display
+	public static BufferedImage image;	    //image of charge
 	
 	public MainFrame() throws HeadlessException {
 		
@@ -43,6 +43,8 @@ public class MainFrame extends JFrame {
 		setTitle("Charges Simulator");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
+		
+		// SETTING SIZE OF MAIN FRAME //
 		
 		 screenSize = Toolkit.getDefaultToolkit().getScreenSize();			
 		//double leftPanelWidth =screenSize.height; unused by now
@@ -59,20 +61,19 @@ public class MainFrame extends JFrame {
 		
 		double addFrameHeight = 0.2 * rightPanelHeight;
 		double addFrameWidth = 0.9 * rightPanelWidth;
-		addFrameDim = new Dimension((int) addFrameWidth, (int) addFrameHeight);
-	
-		
+		addFrameDim = new Dimension((int) addFrameWidth, (int) addFrameHeight);		
 		
 		
 		leftPanel = new LeftMainPanel();
 		RightMainPanel rightPanel = new RightMainPanel();
 		MainFrameTitleLabel titlelabel = new MainFrameTitleLabel();
+			
 		
-		
-		
-		leftPanel.setPreferredSize(leftPanelDim);
+		leftPanel.setPreferredSize(leftPanelDim);	//left panel will be always a square
 		rightPanel.setPreferredSize(rightPanelDim);	
-		titlelabel.setPreferredSize(labelDim);		
+		titlelabel.setPreferredSize(labelDim);	
+		
+		// ADDING ELEMENTS OF MAIN FRAME //
 		
 		add(titlelabel);
 		add(rightPanel, "wrap, spany");
@@ -80,12 +81,11 @@ public class MainFrame extends JFrame {
 		pack();	
 	}
 
-	static Dimension getAddFrameDim(){
+	static Dimension getAddFrameDim(){ 	//dimension of small frames - adding and deleting charges
 		return addFrameDim;
 	}
 	
-	 public static void AddStationaryQ(StationaryCharge SCh){
-		 	
+	 public static void AddStationaryQ(StationaryCharge SCh){ 	
 		 
 		 	JLabel label = new JLabel();
 			label.setVisible(false);

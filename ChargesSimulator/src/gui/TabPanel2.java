@@ -4,6 +4,9 @@ import java.awt.LayoutManager;
 
 import javax.swing.JPanel;
 
+//author:Czajka
+//second card of tabs - contains options of programm
+
 public class TabPanel2 extends JPanel {
 
 	/**

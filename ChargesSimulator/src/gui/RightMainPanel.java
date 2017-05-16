@@ -5,6 +5,9 @@ import java.awt.LayoutManager;
 import javax.swing.JPanel;
 import net.miginfocom.swing.MigLayout;
 
+//autor:Czajka
+
+
 public class RightMainPanel extends JPanel {
 
 	/**
@@ -17,7 +20,7 @@ public class RightMainPanel extends JPanel {
 		//setBackground(Color.WHITE);
 		//setBorder(new LineBorder(Color.BLACK, 5));
 		
-		MainTabbedPane tabbedPane = new MainTabbedPane();
+		MainTabbedPane tabbedPane = new MainTabbedPane(); //pane with cards" Charges, Help..."
 		add(tabbedPane,"width 100%, height 100%");
 		
 		

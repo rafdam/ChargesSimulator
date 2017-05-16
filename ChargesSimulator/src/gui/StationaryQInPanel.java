@@ -1,13 +1,15 @@
 package gui;
 
-import java.awt.Graphics;
+import java.awt.Graphics; 
 import java.awt.LayoutManager;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-import model.ChargesList;
 import net.miginfocom.swing.MigLayout;
+
+//author:Czajka
+//Panel contain table of stationary charges
 
 public class StationaryQInPanel extends JPanel {
 
@@ -23,7 +25,8 @@ public class StationaryQInPanel extends JPanel {
 		table = new StationaryQTable();	
 		add(table);
 		
-		// NOT WORKING @@@
+		// NOT WORKING @@@ trying to set column width (now they are random) //
+		/*
 		int tableWidth = table.getWidth();
 		System.out.println(tableWidth);
 		 double column0w = tableWidth * 0.1; 
@@ -37,17 +40,10 @@ public class StationaryQInPanel extends JPanel {
 		 table.getColumnModel().getColumn(2).setWidth((int) column2w);
 		 table.getColumnModel().getColumn(3).setWidth((int) column3w);
 		 table.getColumnModel().getColumn(4).setWidth((int) column4w);
-		 	
+		 */	
 		
-		JScrollPane pane = new JScrollPane(table);
-		add(pane);
-		
-		
-		
-		
-		
-		
-		
+		JScrollPane pane = new JScrollPane(table);  // Scroll for table of charges
+		add(pane);	
 	}
 	
 	

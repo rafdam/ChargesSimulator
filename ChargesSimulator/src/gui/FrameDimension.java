@@ -4,6 +4,11 @@ import java.awt.Dimension;
 
 public class FrameDimension extends Dimension {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public FrameDimension() {
 		// TODO Auto-generated constructor stub
 	}

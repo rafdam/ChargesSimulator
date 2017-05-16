@@ -4,6 +4,9 @@ import java.awt.LayoutManager;
 
 import javax.swing.JPanel;
 
+//author:Czajka
+//third card of tabs - contains help for user
+
 public class TabPanel3 extends JPanel {
 
 	/**

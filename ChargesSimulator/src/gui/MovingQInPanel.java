@@ -4,6 +4,9 @@ import java.awt.LayoutManager;
 
 import javax.swing.JPanel;
 
+//author:Czajka 
+//Panel contain table of moving charges
+
 public class MovingQInPanel extends JPanel {
 
 	/**

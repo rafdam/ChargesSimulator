@@ -6,6 +6,8 @@ import javax.swing.Icon;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
+//author:Czajka
+
 public class StationaryQLabel extends JLabel {
 
 	/**

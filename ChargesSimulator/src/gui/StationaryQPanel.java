@@ -8,6 +8,9 @@ import javax.swing.border.LineBorder;
 
 import net.miginfocom.swing.MigLayout;
 
+//author:Czajka
+//Panel cointains components of stationary charges (table and buttons)
+
 public class StationaryQPanel extends JPanel {
 
 	/**
@@ -33,14 +36,7 @@ public class StationaryQPanel extends JPanel {
 		add(addButton,"width 33%, height 10%");
 		add(editButton,"width 33%, height 10%");
 		add(deleteButton,"wrap, width 33%, height 10%");
-		add(deployButton,"width 50%, height 10%, span, wrap, align center");
-		
-		
-		
-		
-		
-		
-		
+		add(deployButton,"width 50%, height 10%, span, wrap, align center");			
 	}
 
 	public StationaryQPanel(LayoutManager layout) {
