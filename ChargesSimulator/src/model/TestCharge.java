@@ -1,6 +1,7 @@
 package model;
 //Author::rafdam
 
+import java.awt.Graphics;
 
 public class TestCharge {
 		
@@ -50,6 +51,8 @@ public class TestCharge {
 		}
 		
 	}
+	
+	
 	
 
 }

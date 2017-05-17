@@ -48,8 +48,8 @@ public class MainFrame extends JFrame {
 		
 		 screenSize = Toolkit.getDefaultToolkit().getScreenSize();			
 		//double leftPanelWidth =screenSize.height; unused by now
-		double leftPanelHeight =0.6 * screenSize.height;
-		 leftPanelDim = new Dimension((int) leftPanelHeight, (int) leftPanelHeight);	
+		double leftPanelHeight =0.85 * screenSize.height;
+		 leftPanelDim = new Dimension((int) (leftPanelHeight * 1) , (int) (leftPanelHeight*0.85 ));	
 		
 		double labelHeight = 0.1 * screenSize.height;
 		double lebelWidth = leftPanelHeight;
@@ -96,6 +96,10 @@ public class MainFrame extends JFrame {
 	 
 	 public static void ChangeStationaryQ(StationaryCharge SCh){
 		 	leftPanel.repaint();
+	 }
+	 
+	 public static void AddMovingQ(TestCharge TCh){
+		 leftPanel.repaint();
 	 }
 	 
 	 

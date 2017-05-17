@@ -101,7 +101,7 @@ public class StationaryQEditFrame extends JFrame {
 	                	 else {
 	                		 setVisible(false);
 	  	            	   	 dispose();
-	                		 System.out.println("Turn on charge at the first place");
+	                		 System.out.println("Turn off charge at the first place");
 	                	 }	                     
 	                 }
 	                 else{

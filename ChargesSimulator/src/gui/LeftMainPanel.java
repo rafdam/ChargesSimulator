@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
 import model.StationaryCharge;
+import model.TestCharge;
 //author: Czajka
 //PANEL WITH DISPLAYED CHARGES
 public class LeftMainPanel extends JPanel{
@@ -34,9 +35,12 @@ public class LeftMainPanel extends JPanel{
         super.paintComponent(g);
         for(int i = 0; i < StationaryQTable.GetChargesList().size(); i++){
         StationaryQTable.GetChargesList().get(i).draw(g);
-        }
-        
-        }
+        	}
+        	
+        	
+		}
+	
+	
 	
 
     
