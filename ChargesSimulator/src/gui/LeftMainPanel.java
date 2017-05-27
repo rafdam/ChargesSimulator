@@ -1,9 +1,11 @@
 package gui;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.LayoutManager;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.Ellipse2D;
@@ -32,7 +34,7 @@ public class LeftMainPanel extends JPanel{
 	int interval = 20;
 	static Timer timer;
 	
-
+	
 	
 	
 	
@@ -56,19 +58,53 @@ public class LeftMainPanel extends JPanel{
 			timer.stop();
 		}
 	}
-	
+	public static void draw(Graphics g){
+	Dimension screenSize;
+	HeatMap HM = new HeatMap();
+	double z;
+	double v = HM.getA();
+	screenSize = Toolkit.getDefaultToolkit().getScreenSize();	
+	for(int kk = 0; kk < 0.85 * screenSize.height; kk++){
+		for ( int ww = 0; ww < 0.85 * screenSize.height; ww++){
+			TestPoint testP = new TestPoint(kk,ww,0);
+			ChargesPotential ch = new ChargesPotential(StationaryQTable.GetChargesList(), testP);
+			z = ch.getPotential();
+			int RGB = (int)(v/z);
+			Color randomColour = new Color(RGB,255,255);
+			g.setColor(randomColour); 
+			g.fillOval( kk, ww, 2, 2);
+			//System.out.println(z);
+			
+			
+			
+			
+		
+	}
+		}
+	}
 	
 	public void paintComponent(Graphics g) {
-        super.paintComponent(g);
+		super.paintComponent(g);
+		
+		LeftMainPanel.draw(g);
+		
+		
+		
         for(int i = 0; i < StationaryQTable.GetChargesList().size(); i++){
         StationaryQTable.GetChargesList().get(i).draw(g);
         	}
         for(int j = 0; j < MovingQTable.GetQList().size(); j++){
         	MovingQTable.GetQList().get(j).draw(g);
         }
+        
+        
         	
         	
 		}
+	
+	
+	
+	
 	
 	class TimerAction implements ActionListener{
 

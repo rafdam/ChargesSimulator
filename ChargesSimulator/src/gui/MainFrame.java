@@ -116,6 +116,11 @@ static Dimension getAddFrameDim(){ 	//dimension of small frames - adding and del
 			label.setToolTipText(Double.toString(SCh.getValue()));
 			
 	 }
+			
+				
+				
+			
+	 
 	 
 	 
 	 

@@ -35,7 +35,7 @@ public class StationaryQAddFrame extends JFrame {
         setSize(MainFrame.getAddFrameDim());         
       
         // Componets of the frame //
-        value  = new JLabel("Value [C]"); 
+        value  = new JLabel("Value [C*10^(-19)]"); 
         coordinates = new JLabel("Coordinates (X,Y,Z)");            
         tValue  =  new JTextField();        
         tCoordinateX  = new JTextField();  

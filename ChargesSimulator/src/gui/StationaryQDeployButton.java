@@ -44,7 +44,7 @@ public class StationaryQDeployButton extends JButton {
             yy =  Double.parseDouble(StationaryQTable.model.getValueAt(i, 2).toString());
             zz =  Double.parseDouble(StationaryQTable.model.getValueAt(i, 3).toString());
             status = StationaryQTable.model.getValueAt(i, 4).toString();
-            ch = new StationaryCharge(xx,yy,zz,value/100000);          
+            ch = new StationaryCharge(xx,yy,zz,value*Math.pow(10, -19));          
         	}
         });
         
@@ -66,7 +66,9 @@ public class StationaryQDeployButton extends JButton {
                 	else if(status == "OFF"){ 		//Makes charge appear on screen and calculate all data
                 		StationaryQTable.model.setValueAt("ON", i, 4);
                 		MainFrame.AddStationaryQ(ch);
-                		StationaryQTable.GetChargesList().add(ch);                		
+                		StationaryQTable.GetChargesList().add(ch); 
+                		
+                		
                 		}
                	
                 	else{System.out.println("Deploy error");}
