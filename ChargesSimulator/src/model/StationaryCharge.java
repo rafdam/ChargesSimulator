@@ -3,7 +3,7 @@ package model;
 import java.awt.Graphics;
 
 //Author: rafdam
-public class StationaryCharge extends TestPoint {
+public class StationaryCharge {
 		
 		
 		public double getX() {

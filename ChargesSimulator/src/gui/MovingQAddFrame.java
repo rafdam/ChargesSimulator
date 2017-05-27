@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -19,11 +20,10 @@ public class MovingQAddFrame extends JFrame{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	
+	JComboBox tValue;
 	JLabel charge, value, coordinates, velocity;
-	JTextField  tValue, tCoordinateX, tCoordinateY,tCoordinateZ, tVelocityX, tVelocityY, tVelocityZ;	
+	JTextField  tCoordinateX, tCoordinateY,tCoordinateZ, tVelocityX, tVelocityY, tVelocityZ;	
 	JButton addThis;	
-	
 	
 	public MovingQAddFrame() throws HeadlessException {
 		super("ADD CHARGE");			
@@ -34,7 +34,7 @@ public class MovingQAddFrame extends JFrame{
         value  = new JLabel("Value [C]"); 
         coordinates = new JLabel("Coordinates (X,Y,Z)");  
         velocity = new JLabel ("Velocity (Vx, Vy, Vz)");
-        tValue  =  new JTextField();        
+        tValue  =  new JComboBox();        
         tCoordinateX  = new JTextField();  
         tCoordinateY  = new JTextField();
         tCoordinateZ  = new JTextField();  
@@ -42,6 +42,10 @@ public class MovingQAddFrame extends JFrame{
         tVelocityY = new JTextField();
         tVelocityZ = new JTextField();
         addThis = new JButton("ADD");
+        tValue.addItem("Electron");
+        tValue.addItem("Proton");
+        
+        
         
         		// Adding the componets //
 	         add(value,"width 50%, height 25%");
@@ -62,18 +66,17 @@ public class MovingQAddFrame extends JFrame{
 	     
 	     	addThis.addActionListener(new ActionListener(){
 	             public void actionPerformed(ActionEvent e) {
-	            	System.out.println(tValue.getText());    	            	 
-	              
-	               if(tValue.getText().equals("")){
-	            	   System.out.println("Please fill field with value of charge");   
-	               }
-	               else if(tCoordinateX.getText().equals("") || tCoordinateY.getText().equals("")|| tCoordinateZ.getText().equals("") || tVelocityX.getText().equals("") || tVelocityY.getText().equals("") || tVelocityZ.getText().equals("")){
+	            	
+	          //   tValue.getSelectedItem().toString();
+	            	    
+	               
+	               if(tCoordinateX.getText().equals("") || tCoordinateY.getText().equals("")|| tCoordinateZ.getText().equals("") || tVelocityX.getText().equals("") || tVelocityY.getText().equals("") || tVelocityZ.getText().equals("")){
 	            	   
 	            		  System.out.println("Please fill coordinates of charge"); 
 	               }
 	               else{
 	            	   	// DATA FOR TABLE OF CHARGE //
-	            	   	 row[0] = tValue.getText();
+	            	   	 row[0] = tValue.getSelectedItem().toString();
 		                 row[1] = tCoordinateX.getText();
 		                 row[2] = tCoordinateY.getText();
 		                 row[3] = tCoordinateZ.getText();

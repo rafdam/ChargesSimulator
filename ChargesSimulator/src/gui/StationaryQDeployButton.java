@@ -44,7 +44,7 @@ public class StationaryQDeployButton extends JButton {
             yy =  Double.parseDouble(StationaryQTable.model.getValueAt(i, 2).toString());
             zz =  Double.parseDouble(StationaryQTable.model.getValueAt(i, 3).toString());
             status = StationaryQTable.model.getValueAt(i, 4).toString();
-            ch = new StationaryCharge(xx,yy,zz,value);          
+            ch = new StationaryCharge(xx,yy,zz,value/100000);          
         	}
         });
         

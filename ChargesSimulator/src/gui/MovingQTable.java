@@ -10,19 +10,21 @@ import javax.swing.table.TableColumnModel;
 import javax.swing.table.TableModel;
 
 import model.ChargesList;
+import model.TestChargesList;
 
 public class MovingQTable extends JTable{
 private static final long serialVersionUID = 1L;
 	
 	static DefaultTableModel model;
-	static ChargesList StationaryChargesList = new ChargesList();
+	static TestChargesList MovingChargesList = new TestChargesList();
 	
 	public MovingQTable() {
 		 Object[] columns = {"+/-","X","Y","Z","Vx","Vy","Vz","ON/OFF"}; //Columns names
 	     model = new DefaultTableModel(); 
 	     model.setColumnIdentifiers(columns);
 	     setModel(model);						//Setting default model of table
-	    
+	     setDefaultEditor(Object.class, null);
+	     
 	     // Table look //
 	     setBackground(Color.LIGHT_GRAY);
 	     setForeground(Color.black);
@@ -31,8 +33,8 @@ private static final long serialVersionUID = 1L;
 	     setRowHeight(15);
 	}
 	
-	public static ChargesList GetChargesList(){
-		return StationaryChargesList;
+	public static TestChargesList GetQList(){
+		return MovingChargesList;
 	}
 
 	public MovingQTable(TableModel arg0) {

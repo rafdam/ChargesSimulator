@@ -28,7 +28,8 @@ public class StationaryQTable extends JTable {
 	     model = new DefaultTableModel(); 
 	     model.setColumnIdentifiers(columns);
 	     setModel(model);						//Setting default model of table
-	    
+	     setDefaultEditor(Object.class, null);
+	     
 	     // Table look //
 	     setBackground(Color.LIGHT_GRAY);
 	     setForeground(Color.black);

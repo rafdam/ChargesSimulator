@@ -15,6 +15,29 @@ public class TestCharge {
 	
 	
 	
+	public void setTestChargeVelocityX(double a){
+		testChargeVelocityX = a;
+	}
+	
+	public void setTestChargeVelocityY(double b){
+		testChargeVelocityY = b;
+	}
+	
+	public void setTestChargeVelocityZ(double c){
+		testChargeVelocityZ = c;
+	}
+	
+	public void setTestChargeXCord(double d){
+		testChargeXCord = d;
+	}
+	public void setTestChargeYCord(double e){
+		testChargeYCord = e;
+	}
+	public void setTestChargeZCord(double f){
+		testChargeZCord = f;
+	}
+	
+	
 	public double getTestChargeConstant(){
 		return testChargeConstant;
 	}
@@ -29,6 +52,16 @@ public class TestCharge {
 	
 	public double getTestChargeVelocityZ(){
 		return testChargeVelocityZ;
+	}
+	
+	public double getTestChargeCoordX(){
+		return testChargeXCord;
+	}
+	public double getTestChargeCoordY(){
+		return testChargeYCord;
+	}
+	public double getTestChargeCoordZ(){
+		return testChargeZCord;
 	}
 	
 	public TestCharge() {
@@ -49,6 +82,10 @@ public class TestCharge {
 		else{
 			testChargeConstant = 2.679538842*Math.pow(10,8);
 		}
+		
+	}
+	public void draw(Graphics g) {
+		g.fillOval( (int)testChargeXCord, (int)testChargeYCord, 20, 20);
 		
 	}
 	
