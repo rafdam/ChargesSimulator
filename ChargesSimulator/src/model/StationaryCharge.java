@@ -74,7 +74,7 @@ public class StationaryCharge {
 	
 
 	public void draw(Graphics g) {
-		Color randomColour = new Color(255,255,255);
+		Color randomColour = new Color(0,255,255);
 		g.setColor(randomColour);
 		g.fillOval( (int)xCord, (int)yCord, DIAMETER, DIAMETER);
 		

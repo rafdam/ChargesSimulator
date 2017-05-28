@@ -1,6 +1,6 @@
 package gui;
 
-import java.awt.Color;
+import java.awt.Color; 
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -86,7 +86,7 @@ public class LeftMainPanel extends JPanel{
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		
-		LeftMainPanel.draw(g);
+	
 		
 		
 		
@@ -108,7 +108,6 @@ public class LeftMainPanel extends JPanel{
 	
 	class TimerAction implements ActionListener{
 
-		@Override
 		public void actionPerformed(ActionEvent e) {
 			
 			for(int jj = 0 ; jj < MovingQTable.GetQList().size(); jj++){
@@ -125,7 +124,6 @@ public class LeftMainPanel extends JPanel{
 			MovingQTable.GetQList().get(jj).setTestChargeVelocityZ(TCM.getMotionZVelo());
 			
 			
-			System.out.println("SZMATOOOOO");
 			
 			
 		

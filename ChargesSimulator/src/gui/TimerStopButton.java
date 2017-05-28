@@ -13,7 +13,6 @@ public class TimerStopButton extends JButton {
 		super("STOP");
 		ActionListener stop = new ActionListener(){
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				LeftMainPanel.setAnimation(false);
 				

@@ -14,7 +14,6 @@ public class TimerStartButton extends JButton {
 		
 		ActionListener start = new ActionListener(){
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				LeftMainPanel.setAnimation(true);
 				
