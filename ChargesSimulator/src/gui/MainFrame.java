@@ -39,7 +39,7 @@ private static final long serialVersionUID = 1L;
 Dimension screenSize, leftPanelDim, labelDim, rightPanelDim; //definition of dimension of panels in main frame
 static Dimension addFrameDim; //dimension for small frame "adding charges"
 TopMainPanel topPanel;
-static LeftMainPanel leftPanel; 	   	//panel where chares are display
+static LeftMainPanel leftPanel; 	   	//panel where charges are display
 public static BufferedImage image;	    //image of charge
 
 

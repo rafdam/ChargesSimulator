@@ -9,7 +9,10 @@ import javax.swing.Action;
 import javax.swing.Icon;
 import javax.swing.JButton;
 
+import model.ChargesPotential;
+import model.HeatMap;
 import model.StationaryCharge;
+import model.TestPoint;
 
 
 //author:Czajka
@@ -25,6 +28,9 @@ public class StationaryQDeployButton extends JButton {
 	String status;	
 	StationaryCharge ch;
 	double value, xx, yy, zz;
+	ChargesPotential ChP;
+	HeatMap HM;
+	
 	 
 	public StationaryQDeployButton() {
 		super("ON / OFF");
@@ -62,11 +68,14 @@ public class StationaryQDeployButton extends JButton {
                 		StationaryQTable.GetChargesList().remove(StationaryQTable.GetChargesList().get(0));
                 		MainFrame.ChangeStationaryQ(ch);
                 		
+                		
                 	}                	
                 	else if(status == "OFF"){ 		//Makes charge appear on screen and calculate all data
                 		StationaryQTable.model.setValueAt("ON", i, 4);
                 		MainFrame.AddStationaryQ(ch);
                 		StationaryQTable.GetChargesList().add(ch); 
+                		//ChP = new ChargesPotential(StationaryQTable.GetChargesList(), new TestPoint(xx,yy,zz));
+                		HM = new HeatMap(StationaryQTable.GetChargesList());
                 		
                 		
                 		}

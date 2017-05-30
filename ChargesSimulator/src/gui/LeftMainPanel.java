@@ -18,6 +18,7 @@ import javax.swing.border.LineBorder;
 
 import model.ChargesList;
 import model.ChargesPotential;
+import model.HeatMap;
 import model.StationaryCharge;
 import model.TestCharge;
 import model.TestChargeMotion;
@@ -41,7 +42,7 @@ public class LeftMainPanel extends JPanel{
 	
 	
 	public LeftMainPanel() { 	
-		//setBackground(Color.LIGHT_GRAY);
+		
 		setBorder(new LineBorder(Color.LIGHT_GRAY, 3));
 		setLayout(null);
 		timer = new Timer(interval, new TimerAction());		
@@ -58,35 +59,20 @@ public class LeftMainPanel extends JPanel{
 			timer.stop();
 		}
 	}
-	public static void draw(Graphics g){
-	Dimension screenSize;
-	HeatMap HM = new HeatMap();
-	double z;
-	double v = HM.getA();
-	screenSize = Toolkit.getDefaultToolkit().getScreenSize();	
-	for(int kk = 0; kk < 0.85 * screenSize.height; kk++){
-		for ( int ww = 0; ww < 0.85 * screenSize.height; ww++){
-			TestPoint testP = new TestPoint(kk,ww,0);
-			ChargesPotential ch = new ChargesPotential(StationaryQTable.GetChargesList(), testP);
-			z = ch.getPotential();
-			int RGB = (int)(v/z);
-			Color randomColour = new Color(RGB,255,255);
-			g.setColor(randomColour); 
-			g.fillOval( kk, ww, 2, 2);
-			//System.out.println(z);
-			
-			
-			
-			
-		
-	}
-		}
-	}
-	
+
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		
 	
+		try{
+		for(int o = 0; o < HeatMap.getHeatMap().size(); o++){
+			HeatMap.getHeatMap().get(o).draw(g);
+			}
+		}
+		catch(NullPointerException e){
+			
+		}
+		
 		
 		
 		
@@ -97,10 +83,7 @@ public class LeftMainPanel extends JPanel{
         	MovingQTable.GetQList().get(j).draw(g);
         }
         
-        
-        	
-        	
-		}
+}
 	
 	
 	

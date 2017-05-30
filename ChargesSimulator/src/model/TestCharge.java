@@ -1,6 +1,7 @@
 package model;
 //Author::rafdam
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 public class TestCharge {
@@ -76,16 +77,17 @@ public class TestCharge {
 			testChargeZCord = g;
 		
 		if (a == false){
-			testChargeConstant = 14.592*Math.pow(10,12);
+			testChargeConstant = -14.592*Math.pow(10,12);
 			}
 		
 		else{
-			testChargeConstant = -2.679538842*Math.pow(10,8);
+			testChargeConstant = 2.679538842*Math.pow(10,8);
 		}
 		
 	}
 	public void draw(Graphics g) {
-		g.fillOval( (int)testChargeXCord, (int)testChargeYCord, 20, 20);
+		g.setColor(Color.black);
+		g.fillOval( (int)testChargeXCord-10, (int)testChargeYCord-10, 20, 20);
 		
 	}
 	
