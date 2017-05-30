@@ -28,7 +28,7 @@ public class StationaryQDeployButton extends JButton {
 	String status;	
 	StationaryCharge ch;
 	double value, xx, yy, zz;
-	ChargesPotential ChP;
+	
 	HeatMap HM;
 	
 	 
@@ -74,7 +74,7 @@ public class StationaryQDeployButton extends JButton {
                 		StationaryQTable.model.setValueAt("ON", i, 4);
                 		MainFrame.AddStationaryQ(ch);
                 		StationaryQTable.GetChargesList().add(ch); 
-                		//ChP = new ChargesPotential(StationaryQTable.GetChargesList(), new TestPoint(xx,yy,zz));
+                		
                 		HM = new HeatMap(StationaryQTable.GetChargesList());
                 		
                 		
