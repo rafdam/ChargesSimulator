@@ -27,9 +27,11 @@ public class StationaryQDeployButton extends JButton {
 	
 	String status;	
 	StationaryCharge ch;
-	double value, xx, yy, zz;
-	
+	double  xx, yy, zz;
+	double value;
 	HeatMap HM;
+	
+	
 	
 	 
 	public StationaryQDeployButton() {
@@ -48,9 +50,8 @@ public class StationaryQDeployButton extends JButton {
             value = Double.parseDouble(StationaryQTable.model.getValueAt(i, 0).toString());
             xx =  Double.parseDouble(StationaryQTable.model.getValueAt(i, 1).toString());
             yy =  Double.parseDouble(StationaryQTable.model.getValueAt(i, 2).toString());
-            zz =  Double.parseDouble(StationaryQTable.model.getValueAt(i, 3).toString());
             status = StationaryQTable.model.getValueAt(i, 4).toString();
-            ch = new StationaryCharge(xx,yy,zz,value*Math.pow(10, -19));          
+            ch = new StationaryCharge(xx,yy,value*Math.pow(10, -19));          
         	}
         });
         
@@ -74,8 +75,9 @@ public class StationaryQDeployButton extends JButton {
                 		StationaryQTable.model.setValueAt("ON", i, 4);
                 		MainFrame.AddStationaryQ(ch);
                 		StationaryQTable.GetChargesList().add(ch); 
+                		//HM = new HeatMap(StationaryQTable.GetChargesList());
                 		
-                		HM = new HeatMap(StationaryQTable.GetChargesList());
+                		
                 		
                 		
                 		}

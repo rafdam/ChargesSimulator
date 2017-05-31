@@ -54,10 +54,10 @@ public class TestChargeMotion extends TestCharge implements ChargesPotentialInte
 	public TestChargeMotion(ChargesPotential ch, TestCharge test1, double t ){
 		motionXVelo = ch.getElectricForceX() * test1.getTestChargeConstant() * t + test1.getTestChargeVelocityX();
 		motionYVelo = ch.getElectricForceY() * test1.getTestChargeConstant() * t + test1.getTestChargeVelocityY();
-		motionZVelo = ch.getElectricForceZ() * test1.getTestChargeConstant() * t + test1.getTestChargeVelocityZ();
+		
 		motionXCord = ch.getElectricForceX() * test1.getTestChargeConstant() * Math.pow(t, 2) + test1.getTestChargeVelocityX()*t + test1.testChargeXCord;
 		motionYCord = ch.getElectricForceY() * test1.getTestChargeConstant() * Math.pow(t, 2) + test1.getTestChargeVelocityY()*t + test1.testChargeYCord;
-		motionZCord = ch.getElectricForceZ() * test1.getTestChargeConstant() * Math.pow(t, 2) + test1.getTestChargeVelocityZ()*t + test1.testChargeZCord;
+		
 		}
 	
 	public double getMotionXVelo(){

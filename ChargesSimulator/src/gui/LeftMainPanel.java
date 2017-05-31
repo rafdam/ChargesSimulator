@@ -94,17 +94,17 @@ public class LeftMainPanel extends JPanel{
 		public void actionPerformed(ActionEvent e) {
 			
 			for(int jj = 0 ; jj < MovingQTable.GetQList().size(); jj++){
-				TestPoint testPoint = new TestPoint(MovingQTable.GetQList().get(jj).getTestChargeCoordX(), MovingQTable.GetQList().get(jj).getTestChargeCoordY(), MovingQTable.GetQList().get(jj).getTestChargeCoordZ());
+				TestPoint testPoint = new TestPoint(MovingQTable.GetQList().get(jj).getTestChargeCoordX(), MovingQTable.GetQList().get(jj).getTestChargeCoordY());
 				
 						
 			ChargesPotential ch = new ChargesPotential(StationaryQTable.GetChargesList(), testPoint);
 			TestChargeMotion TCM = new TestChargeMotion(ch ,MovingQTable.GetQList().get(jj), (double)interval/1000);
 			MovingQTable.GetQList().get(jj).setTestChargeXCord(TCM.getMotionXCord());
 			MovingQTable.GetQList().get(jj).setTestChargeYCord(TCM.getMotionYCord());
-			MovingQTable.GetQList().get(jj).setTestChargeZCord(TCM.getMotionZCord());
+			
 			MovingQTable.GetQList().get(jj).setTestChargeVelocityX(TCM.getMotionXVelo());
 			MovingQTable.GetQList().get(jj).setTestChargeVelocityY(TCM.getMotionYVelo());
-			MovingQTable.GetQList().get(jj).setTestChargeVelocityZ(TCM.getMotionZVelo());
+		
 			
 			
 			

@@ -29,13 +29,7 @@ public class StationaryCharge {
 			yCord = y;
 		}
 
-		public double getZ() {
-			return zCord;
-		}
-
-		public void setZ(double z) {
-			zCord = z;
-		}
+	
 
 		public double getValue() {
 			return value;
@@ -51,19 +45,18 @@ public class StationaryCharge {
 		
 		double xCord = 0;
 		double yCord = 0;
-		double zCord = 0;
 		double value = 0;
 		double distanceFromZero=0;
 	
 	public StationaryCharge(){
 		
 	}
-	public StationaryCharge(double a, double b, double c, double d) {
+	public StationaryCharge(double a, double b, double d) {
 		xCord = a;
 		yCord = b;
-		zCord = c;
+		
 		value = d;
-		distanceFromZero = Math.sqrt(a*a+b*b+c*c);
+		distanceFromZero = Math.sqrt(a*a+b*b);
 		
 	}
 	public static int DIAMETER = 16;
@@ -76,8 +69,8 @@ public class StationaryCharge {
 
 	public void draw(Graphics g) {
 		
-		g.setColor(Color.blue);
-		g.fillOval((int)xCord-8, (int)yCord-8, DIAMETER, DIAMETER);
+		g.setColor(Color.PINK);
+		g.fillOval((int)(xCord-8), (int)(yCord-8), DIAMETER, DIAMETER);
 		
 	}
 	

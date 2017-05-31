@@ -20,6 +20,7 @@ import javax.swing.Timer;
 
 import model.ChargesList;
 import model.ChargesPotential;
+import model.HeatMap;
 import model.StationaryCharge;
 import model.TestCharge;
 import model.TestChargeMotion;
@@ -47,7 +48,6 @@ public static BufferedImage image;	    //image of charge
 
 
 public MainFrame() throws HeadlessException {
-	
 	setLayout(new MigLayout());
 	setTitle("Charges Simulator");
 	setDefaultCloseOperation(EXIT_ON_CLOSE);

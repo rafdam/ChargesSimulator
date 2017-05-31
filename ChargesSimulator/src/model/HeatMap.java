@@ -14,8 +14,8 @@ public class HeatMap {
 	double a, b;
 	static ArrayList<ChargesPotential> heatmap;
 	ArrayList<Double> potentialValue;
-	double maxValue = 0;
-	double changeColor = 0;
+	static double maxValue = 0;
+	
 	
 	
 	public HeatMap(ChargesList ChL){
@@ -30,7 +30,7 @@ public class HeatMap {
 		
 		for(int kk = 0; kk < x ; kk++){
 			for ( int ww = 0; ww < y ; ww++){
-				TestPoint testP = new TestPoint(kk,ww,0);
+				TestPoint testP = new TestPoint(kk, ww);
 				ChargesPotential ch = new ChargesPotential(ChL, testP);
 				heatmap.add(ch);
 				potentialValue.add(ch.getPotential());
@@ -38,10 +38,10 @@ public class HeatMap {
 			}
 		}
 		maxValue = Collections.max(potentialValue);
-		System.out.println(maxValue);
+		
 	}
 	
-	public double getMaxValue(){
+	public static double getMaxValue(){
 		return maxValue;
 	}
 	
