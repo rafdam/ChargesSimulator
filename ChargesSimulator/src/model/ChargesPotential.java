@@ -84,8 +84,8 @@ public class ChargesPotential extends ChargesList {
 	
 	double ultraSmallH = 0.001; //Small constant to derivative Potential
 		for (int jj = 0; jj < l.size(); jj++){
-			xMotionValue = (-l.get(jj).getX() + 0.001*w.getTestXCord());
-			yMotionValue = (-l.get(jj).getY() + 0.001*w.getTestYCord());
+			xMotionValue = (-l.get(jj).getX() + w.getTestXCord());
+			yMotionValue = (-l.get(jj).getY() + w.getTestYCord());
 			
 			
 				Potential += (k * l.get(jj).getValue()) / (Math.sqrt(Math.pow(yMotionValue,2) + Math.pow(xMotionValue,2)));

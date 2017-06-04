@@ -48,8 +48,8 @@ public class StationaryQDeployButton extends JButton {
             int i = StationaryQInPanel.table.getSelectedRow();
             
             value = Double.parseDouble(StationaryQTable.model.getValueAt(i, 0).toString());
-            xx =  0.001*Double.parseDouble(StationaryQTable.model.getValueAt(i, 1).toString());
-            yy =  0.001*Double.parseDouble(StationaryQTable.model.getValueAt(i, 2).toString());
+            xx =  Double.parseDouble(StationaryQTable.model.getValueAt(i, 1).toString());
+            yy =  Double.parseDouble(StationaryQTable.model.getValueAt(i, 2).toString());
             status = StationaryQTable.model.getValueAt(i, 4).toString();
             ch = new StationaryCharge(xx,yy,value*Math.pow(10, -20));          
         	}

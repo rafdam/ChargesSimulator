@@ -42,7 +42,7 @@ public class HeatMap {
 		
 		
 		for( int ii = 0 ; ii < ChL.size(); ii++){
-			testP = new TestPoint(1000*ChL.get(ii).getX()+300, 1000*ChL.get(ii).getY()+300);
+			testP = new TestPoint(ChL.get(ii).getX()+300, ChL.get(ii).getY()+300);
 			ch = new ChargesPotential(ChL, testP);
 			potentialValue.add(ch.getPotential());
 			maxValue = Collections.max(potentialValue);

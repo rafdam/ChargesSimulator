@@ -72,9 +72,9 @@ public class TestCharge {
 			testChargeVelocityX = b; 
 			testChargeVelocityY = c;
 			testChargeVelocityZ = d;
-			testChargeXCord = 0.001*e;
-			testChargeYCord = 0.001*f;
-			testChargeZCord = 0.001*g;
+			testChargeXCord = e;
+			testChargeYCord = f;
+			testChargeZCord = g;
 		
 		if (a == false){
 			testChargeConstant = +14.592*Math.pow(10,12);
@@ -87,7 +87,7 @@ public class TestCharge {
 	}
 	public void draw(Graphics g) {
 		g.setColor(Color.black);
-		g.fillOval( (int)(1000*testChargeXCord-10), (int)(1000*testChargeYCord-10), 20, 20);
+		g.fillOval( (int)(testChargeXCord-10), (int)(testChargeYCord-10), 20, 20);
 		
 	}
 	
