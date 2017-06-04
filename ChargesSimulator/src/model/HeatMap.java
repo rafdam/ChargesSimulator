@@ -15,6 +15,8 @@ public class HeatMap {
 	static ArrayList<ChargesPotential> heatmap;
 	ArrayList<Double> potentialValue;
 	static double maxValue = 0;
+	ChargesPotential ch;
+	TestPoint testP;
 	
 	
 	
@@ -28,16 +30,37 @@ public class HeatMap {
 		heatmap = new ArrayList<ChargesPotential>();
 		potentialValue = new ArrayList<Double>();
 		
-		for(int kk = 0; kk < x ; kk++){
-			for ( int ww = 0; ww < y ; ww++){
-				TestPoint testP = new TestPoint(kk, ww);
-				ChargesPotential ch = new ChargesPotential(ChL, testP);
+		for(int kk = 0; kk < x/4 ; kk++){
+			for ( int ww = 0; ww < y/4 ; ww++){
+				testP = new TestPoint(4*kk, 4*ww);
+				ch = new ChargesPotential(ChL, testP);
 				heatmap.add(ch);
-				potentialValue.add(ch.getPotential());
-					
+				
+				
 			}
 		}
+		
+		/*testP = new TestPoint(ChL.get(0).getX()+10, ChL.get(0).getY()+10);
+		ch = new ChargesPotential(ChL, testP);
+		maxValue = ch.getPotential();
+		*/
+		for( int ii = 0 ; ii < ChL.size(); ii++){
+			testP = new TestPoint(ChL.get(ii).getX()+2, ChL.get(ii).getY()+2);
+			ch = new ChargesPotential(ChL, testP);
+			potentialValue.add(ch.getPotential());
+			maxValue = Collections.max(potentialValue);
+		}
+		
+		
+		/*if(Collections.max(potentialValue) > Math.pow(10, -8)){
+			maxValue = Math.pow(10, -8);
+		}
+		else{
 		maxValue = Collections.max(potentialValue);
+		}
+		*/
+		
+		System.out.println(maxValue);
 		
 	}
 	

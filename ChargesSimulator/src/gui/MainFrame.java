@@ -133,6 +133,10 @@ static Dimension getAddFrameDim(){ 	//dimension of small frames - adding and del
 		 leftPanel.repaint();
 	 }
 	 
+	 public static void CreateHeatMap(){
+		 leftPanel.repaint();
+	 }
+	 
 	
 	 
 	               

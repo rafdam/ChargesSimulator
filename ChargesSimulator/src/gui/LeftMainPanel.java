@@ -98,7 +98,7 @@ public class LeftMainPanel extends JPanel{
 				
 						
 			ChargesPotential ch = new ChargesPotential(StationaryQTable.GetChargesList(), testPoint);
-			TestChargeMotion TCM = new TestChargeMotion(ch ,MovingQTable.GetQList().get(jj), (double)interval/1000);
+			TestChargeMotion TCM = new TestChargeMotion(ch ,MovingQTable.GetQList().get(jj), (double)interval/1000000);
 			MovingQTable.GetQList().get(jj).setTestChargeXCord(TCM.getMotionXCord());
 			MovingQTable.GetQList().get(jj).setTestChargeYCord(TCM.getMotionYCord());
 			

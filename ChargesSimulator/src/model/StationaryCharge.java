@@ -70,7 +70,7 @@ public class StationaryCharge {
 	public void draw(Graphics g) {
 		
 		g.setColor(Color.PINK);
-		g.fillOval((int)(xCord-8), (int)(yCord-8), DIAMETER, DIAMETER);
+		g.fillOval((int)(1000*xCord-8), (int)(1000*yCord-8), DIAMETER, DIAMETER);
 		
 	}
 	

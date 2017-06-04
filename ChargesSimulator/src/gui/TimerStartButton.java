@@ -12,15 +12,7 @@ public class TimerStartButton extends JButton {
 	public TimerStartButton() {
 		super("START");
 		
-		ActionListener start = new ActionListener(){
-
-			public void actionPerformed(ActionEvent e) {
-				LeftMainPanel.setAnimation(true);
-				
-				
-			}
-		};
-		this.addActionListener(start);
+		
 	}
 	
 

@@ -26,8 +26,34 @@ public class TopMainPanel extends JPanel {
 	setLayout(new MigLayout("","[] []", "[] []"));
 	
 	MainFrameTitleLabel Title = new MainFrameTitleLabel();
-	TimerStartButton startButton = new TimerStartButton();
-	TimerStopButton stopButton = new TimerStopButton();
+	final TimerStartButton startButton = new TimerStartButton();
+	final TimerStopButton stopButton = new TimerStopButton();
+	
+	stopButton.setEnabled(false);
+	
+	ActionListener start = new ActionListener(){
+
+		public void actionPerformed(ActionEvent e) {
+		startButton.setEnabled(false);
+		stopButton.setEnabled(true);
+		LeftMainPanel.setAnimation(true);
+			
+			
+		}
+	};
+	startButton.addActionListener(start);
+	
+	ActionListener stop = new ActionListener(){
+
+		public void actionPerformed(ActionEvent e) {
+			LeftMainPanel.setAnimation(false);
+			startButton.setEnabled(true);
+			stopButton.setEnabled(false);
+			
+		}
+		
+	};
+	stopButton.addActionListener(stop);
 	
 	
 	add(Title,"width 100%, height 50%, span,wrap");

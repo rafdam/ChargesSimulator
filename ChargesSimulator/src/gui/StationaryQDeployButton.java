@@ -48,10 +48,10 @@ public class StationaryQDeployButton extends JButton {
             int i = StationaryQInPanel.table.getSelectedRow();
             
             value = Double.parseDouble(StationaryQTable.model.getValueAt(i, 0).toString());
-            xx =  Double.parseDouble(StationaryQTable.model.getValueAt(i, 1).toString());
-            yy =  Double.parseDouble(StationaryQTable.model.getValueAt(i, 2).toString());
+            xx =  0.001*Double.parseDouble(StationaryQTable.model.getValueAt(i, 1).toString());
+            yy =  0.001*Double.parseDouble(StationaryQTable.model.getValueAt(i, 2).toString());
             status = StationaryQTable.model.getValueAt(i, 4).toString();
-            ch = new StationaryCharge(xx,yy,value*Math.pow(10, -19));          
+            ch = new StationaryCharge(xx,yy,value*Math.pow(10, -20));          
         	}
         });
         
@@ -66,7 +66,7 @@ public class StationaryQDeployButton extends JButton {
                 {
                 	if(status == "ON"){				 //If user click ON/OFF button charge will be turn off and disapear from screen
                 		StationaryQTable.model.setValueAt("OFF", i, 4);
-                		StationaryQTable.GetChargesList().remove(StationaryQTable.GetChargesList().get(0));
+                		StationaryQTable.GetChargesList().remove(StationaryQTable.GetChargesList().get(i));
                 		MainFrame.ChangeStationaryQ(ch);
                 		
                 		

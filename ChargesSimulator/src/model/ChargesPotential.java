@@ -70,10 +70,9 @@ public class ChargesPotential extends ChargesList {
 	
 	for (int ii=0; ii<l.size(); ii++){
 		
-	xMotionValue = (-l.get(ii).getX() + w.getTestXCord());
-	yMotionValue = (-l.get(ii).getY() + w.getTestYCord());
 	
-	Potential += (k * l.get(ii).getValue()) / (Math.sqrt(Math.pow(yMotionValue,2) + Math.pow(xMotionValue,2)));
+	
+	
 	
 	}
 	
@@ -85,9 +84,15 @@ public class ChargesPotential extends ChargesList {
 	
 	double ultraSmallH = 0.001; //Small constant to derivative Potential
 		for (int jj = 0; jj < l.size(); jj++){
-			xMotionValue = -l.get(jj).getX() + w.getTestXCord();
-			yMotionValue = -l.get(jj).getY() + w.getTestYCord();
+			xMotionValue = (-l.get(jj).getX() + 0.001*w.getTestXCord());
+			yMotionValue = (-l.get(jj).getY() + 0.001*w.getTestYCord());
 			
+			
+				Potential += (k * l.get(jj).getValue()) / (Math.sqrt(Math.pow(yMotionValue,2) + Math.pow(xMotionValue,2)));
+			
+			
+			
+				
 				
 				deltaElectricForceX += (k * l.get(jj).getValue()) / (Math.sqrt(Math.pow(yMotionValue,2) + Math.pow(xMotionValue + ultraSmallH,2) + Math.pow(xMotionValue,2)));
 				deltaElectricForceY += (k * l.get(jj).getValue()) / (Math.sqrt(Math.pow(yMotionValue + ultraSmallH,2) + Math.pow(xMotionValue,2) + Math.pow(yMotionValue,2)));
@@ -102,40 +107,67 @@ public class ChargesPotential extends ChargesList {
 		
 		
 	public void draw(Graphics g) {
-		if(Potential<Math.pow(10,-15)){
-			g.setColor(Color.DARK_GRAY);
-		}
-		else if(Potential<Math.pow(10, -14)&Potential>Math.pow(10, -15)){
-			g.setColor(Color.gray);
-		}
-		else if(Potential <Math.pow(10, -13)&Potential > Math.pow(10,-14)){
-			g.setColor(Color.BLUE);
-		}
-		else if(Potential < Math.pow(10, -12)&Potential > Math.pow(10,-13)){
-			g.setColor(Color.red);
-		}
-		else if(Potential < Math.pow(10, -11)&Potential > Math.pow(10,-12)){
-			g.setColor(Color.yellow);
-		}
-		else if(Potential < Math.pow(10, -10)&Potential > Math.pow(10,-11)){
-			g.setColor(Color.black);
-		}
-		else{
-			g.setColor(Color.green);
-		}
 		
-		/*try{
-		Color PotColor = new Color(100, 0, (int)(Potential/(HeatMap.getMaxValue()) * 255));
+		
+		
+		try{
+			
+		Color PotColor = new Color(100, 255, (int)(Potential/(HeatMap.getMaxValue()) * 255));
 		g.setColor(PotColor);
+			
+			
 		
 		}
 		catch(IllegalArgumentException e){
-			g.setColor(Color.RED);
+			try{
+			Color PotColor = new Color(255,100, (int)(Potential*0.9/(HeatMap.getMaxValue())*255));
+			g.setColor(PotColor);
+			}
+			catch(IllegalArgumentException a){
+				try{
+					Color PotColor = new Color(150,50, (int)(Potential*0.75/(HeatMap.getMaxValue())*255));
+					g.setColor(PotColor);
+					}
+				catch(IllegalArgumentException b){
+					try{
+						Color PotColor = new Color(255,100, (int)(Potential*0.5/(HeatMap.getMaxValue())*255));
+						g.setColor(PotColor);
+					}
+					catch(IllegalArgumentException c){
+						try{
+							Color PotColor = new Color(255,100, (int)(Potential*0.25/(HeatMap.getMaxValue())*255));
+							g.setColor(PotColor);
+						}
+						catch(IllegalArgumentException d){
+							
+							try{
+								Color PotColor = new Color(255,100, (int)(Potential*0.1/(HeatMap.getMaxValue())*255));
+								g.setColor(PotColor);
+							}
+							catch(IllegalArgumentException f){
+								try{
+									Color PotColor = new Color(255,100, (int)(Potential*0.04/(HeatMap.getMaxValue())*255));
+								g.setColor(PotColor);
+									
+								}
+								catch(IllegalArgumentException p){
+									g.setColor(Color.gray);
+								}
+							}
+						}
+					}
+				}
+				
+				
 		}
-		*/
-		g.fillOval((int)testCordX-1, (int)testCordY-1, 2, 2);
+		}
+	
 		
-	}
+		g.fillOval((int)(testCordX-1), (int)(testCordY-1), 5, 5);
+		
+		}
+}
+	
 	
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////
@@ -189,7 +221,7 @@ public class ChargesPotential extends ChargesList {
 		*/
 	
 	
-}
+
 	
 	
 	

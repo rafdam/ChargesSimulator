@@ -11,15 +11,7 @@ public class TimerStopButton extends JButton {
 
 	public TimerStopButton() {
 		super("STOP");
-		ActionListener stop = new ActionListener(){
-
-			public void actionPerformed(ActionEvent e) {
-				LeftMainPanel.setAnimation(false);
-				
-			}
-			
-		};
-		this.addActionListener(stop);
+		
 	}
 
 	public TimerStopButton(Icon icon) {
