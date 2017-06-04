@@ -20,7 +20,7 @@ public class TopMainPanel extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 4163362475437360265L;
-	HeatMap HM;
+
 	
 	public TopMainPanel() {
 	setLayout(new MigLayout("","[] []", "[] []"));

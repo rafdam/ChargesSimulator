@@ -40,25 +40,16 @@ public class HeatMap {
 			}
 		}
 		
-		/*testP = new TestPoint(ChL.get(0).getX()+10, ChL.get(0).getY()+10);
-		ch = new ChargesPotential(ChL, testP);
-		maxValue = ch.getPotential();
-		*/
+		
 		for( int ii = 0 ; ii < ChL.size(); ii++){
-			testP = new TestPoint(ChL.get(ii).getX()+2, ChL.get(ii).getY()+2);
+			testP = new TestPoint(1000*ChL.get(ii).getX()+300, 1000*ChL.get(ii).getY()+300);
 			ch = new ChargesPotential(ChL, testP);
 			potentialValue.add(ch.getPotential());
 			maxValue = Collections.max(potentialValue);
 		}
 		
 		
-		/*if(Collections.max(potentialValue) > Math.pow(10, -8)){
-			maxValue = Math.pow(10, -8);
-		}
-		else{
-		maxValue = Collections.max(potentialValue);
-		}
-		*/
+		
 		
 		System.out.println(maxValue);
 		
