@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class TestCharge {
+		//Class defining test charge which can be either electron or proton
+		//The charge must be defined by x/y coords and velocity
 		
 		double testChargeVelocityX = 0; 
 		double testChargeVelocityY = 0;
@@ -68,24 +70,25 @@ public class TestCharge {
 	public TestCharge() {
 		// TODO Auto-generated constructor stub
 	}
-	public TestCharge(boolean a, double b, double c, double d, double e, double f, double g){
+	public TestCharge(boolean a, double b, double c, double e, double f){ // main constructor of the test charge, must be fully completed
+			// boolean a is decision which charge is it ( electron or proton )
 			testChargeVelocityX = b; 
 			testChargeVelocityY = c;
-			testChargeVelocityZ = d;
+		
 			testChargeXCord = e;
 			testChargeYCord = f;
-			testChargeZCord = g;
+			
 		
 		if (a == false){
-			testChargeConstant = +14.592*Math.pow(10,12);
+			testChargeConstant = +14.592*Math.pow(10,12); // constant variable of electron combined by mass and value
 			}
 		
 		else{
-			testChargeConstant = -2.679538842*Math.pow(10,8);
-		}
+			testChargeConstant = -2.679538842*Math.pow(10,8); // constant variable of proton combined by mass and value
+		} 
 		
 	}
-	public void draw(Graphics g) {
+	public void draw(Graphics g) { // drawing black circle as a representation of moving charge 
 		g.setColor(Color.black);
 		g.fillOval( (int)(testChargeXCord-10), (int)(testChargeYCord-10), 20, 20);
 		

@@ -51,7 +51,7 @@ public class StationaryQDeployButton extends JButton {
             xx =  Double.parseDouble(StationaryQTable.model.getValueAt(i, 1).toString());
             yy =  Double.parseDouble(StationaryQTable.model.getValueAt(i, 2).toString());
             status = StationaryQTable.model.getValueAt(i, 4).toString();
-            ch = new StationaryCharge(xx,yy,value*Math.pow(10, -20));          
+            ch = new StationaryCharge(xx,yy,value*Math.pow(10, -20)); //creating new basic object to later add it to stationarychargesList          
         	}
         });
         
@@ -75,7 +75,6 @@ public class StationaryQDeployButton extends JButton {
                 		StationaryQTable.model.setValueAt("ON", i, 4);
                 		MainFrame.AddStationaryQ(ch);
                 		StationaryQTable.GetChargesList().add(ch); 
-                		//HM = new HeatMap(StationaryQTable.GetChargesList());
                 		
                 		
                 		

@@ -24,16 +24,17 @@ import model.TestCharge;
 import model.TestChargeMotion;
 import model.TestChargesList;
 import model.TestPoint;
-//author: Czajka
+//author: Czajka & rafdam
 //PANEL WITH DISPLAYED CHARGES
 public class LeftMainPanel extends JPanel{
+	
 
 	/**
 	 * 
 	 */	
 	private static final long serialVersionUID = 1L;
-	int interval = 20;
-	static Timer timer;
+	int interval = 20; // time jump between each tick of timer - 20ms
+	static Timer timer; // Object of superclass Timer
 	
 	
 	
@@ -51,7 +52,7 @@ public class LeftMainPanel extends JPanel{
 		}
 	
 	
-	public static void setAnimation(boolean turnOnOff){
+	public static void setAnimation(boolean turnOnOff){//creating animation, turning on/off timer 
 		if(turnOnOff){
 			timer.start();
 		}
@@ -60,11 +61,11 @@ public class LeftMainPanel extends JPanel{
 		}
 	}
 
-	public void paintComponent(Graphics g) {
+	public void paintComponent(Graphics g) {//drawing each component on the panel, stat charges, mov charges and HeatMap ( 700 000 ovals - bad efficiency )
 		super.paintComponent(g);
-		
+		//drawing all the dynamic components taken from a static arraylists let us draw them all on 1 thread 
 	
-		try{
+		try{//drawing potentials
 		for(int o = 0; o < HeatMap.getHeatMap().size(); o++){
 			HeatMap.getHeatMap().get(o).draw(g);
 			}
@@ -75,10 +76,11 @@ public class LeftMainPanel extends JPanel{
 		
 		
 		
-		
+		//drawing stat charges
         for(int i = 0; i < StationaryQTable.GetChargesList().size(); i++){
         StationaryQTable.GetChargesList().get(i).draw(g);
         	}
+        //drawing TestCharges
         for(int j = 0; j < MovingQTable.GetQList().size(); j++){
         	MovingQTable.GetQList().get(j).draw(g);
         }
@@ -89,7 +91,8 @@ public class LeftMainPanel extends JPanel{
 	
 	
 	
-	class TimerAction implements ActionListener{
+	class TimerAction implements ActionListener{ // definition of recurency in animation using objects and calc from model
+		// time is changed my interval
 
 		public void actionPerformed(ActionEvent e) {
 			

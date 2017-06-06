@@ -9,10 +9,10 @@ import java.awt.Toolkit;
 
 import gui.StationaryQTable;
 
-//Author: rafdam
 public class StationaryCharge {
-		
-		
+		//Author: rafdam
+		//Class defining basic object which is stationary charge generating electric field and potential
+	
 		public double getX() {
 			return xCord;
 		}
@@ -43,10 +43,10 @@ public class StationaryCharge {
 			return distanceFromZero;
 		}
 		
-		double xCord = 0;
+		double xCord = 0; // Coordinates ( 1m = 1pix)
 		double yCord = 0;
-		double value = 0;
-		double distanceFromZero=0;
+		double value = 0; // charge value in coulombs
+		double distanceFromZero=0; //r vector
 	
 	public StationaryCharge(){
 		
@@ -67,7 +67,7 @@ public class StationaryCharge {
 	
 	
 
-	public void draw(Graphics g) {
+	public void draw(Graphics g) { // drawing a stationary charge as a pink oval (moved x/y oval coords are centering the oval to the right place)
 		
 		g.setColor(Color.PINK);
 		g.fillOval((int)(xCord-8), (int)(yCord-8), DIAMETER, DIAMETER);

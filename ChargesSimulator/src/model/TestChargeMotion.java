@@ -3,35 +3,39 @@ package model;
 import java.util.ArrayList;
 
 public class TestChargeMotion extends TestCharge implements ChargesPotentialInterface{
+	
+	// class fully counting all the changes within test charge, like motion and velocity
+	// all the calculations are using ChargesPotential class, and test charge
+	// time is taken from timer later
 
 	public TestChargeMotion(ArrayList<StationaryCharge> l, TestPoint w) {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-	
-	
-	
-	public void ChargesPotential(ArrayList<StationaryCharge> l, TestPoint w) {
-		// TODO Auto-generated method stub
-		
-	}
-	public double getElectricForceX() {
-		// TODO Auto-generated method stub
-		return electricForceX;
-		}
-
-	//TestPullcomment
+}
 
 
-	public double getElectricForceY() {
-		// TODO Auto-generated method stub
-		return electricForceY;
+
+public void ChargesPotential(ArrayList<StationaryCharge> l, TestPoint w) {
+	// TODO Auto-generated method stub
+	
+}
+public double getElectricForceX() {
+	// TODO Auto-generated method stub
+	return electricForceX;
 	}
 
+//TestPullcomment
 
 
-	public double getElectricForceZ() {
-		// TODO Auto-generated method stub
+public double getElectricForceY() {
+	// TODO Auto-generated method stub
+	return electricForceY;
+}
+
+
+
+public double getElectricForceZ() {
+	// TODO Auto-generated method stub
 		return electricForceZ;
 	}
 	
@@ -52,12 +56,12 @@ public class TestChargeMotion extends TestCharge implements ChargesPotentialInte
 	}
 		
 	public TestChargeMotion(ChargesPotential ch, TestCharge test1, double t ){
-		motionXVelo = ch.getElectricForceX() * test1.getTestChargeConstant() * t + test1.getTestChargeVelocityX();
+		motionXVelo = ch.getElectricForceX() * test1.getTestChargeConstant() * t + test1.getTestChargeVelocityX(); // velocity in t time
 		motionYVelo = ch.getElectricForceY() * test1.getTestChargeConstant() * t + test1.getTestChargeVelocityY();
 		
 		motionXCord = ch.getElectricForceX() * test1.getTestChargeConstant() * Math.pow(t, 2) + test1.getTestChargeVelocityX()*t + test1.testChargeXCord;
 		motionYCord = ch.getElectricForceY() * test1.getTestChargeConstant() * Math.pow(t, 2) + test1.getTestChargeVelocityY()*t + test1.testChargeYCord;
-		
+		// coordinates in t time
 		}
 	
 	public double getMotionXVelo(){

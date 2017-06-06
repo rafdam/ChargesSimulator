@@ -3,6 +3,8 @@ package model;
 import java.util.ArrayList;
 
 public class TestChargesList extends ArrayList<TestCharge> {
+	
+	// Just and arraylist of testcharges which let us calculate on them and draw them without any problems
 
 	/**
 	 * 

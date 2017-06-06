@@ -1,6 +1,6 @@
 package gui;
 
-import java.awt.Color;
+import java.awt.Color; 
 import java.awt.Component;
 import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
@@ -15,6 +15,9 @@ import model.HeatMap;
 import net.miginfocom.swing.MigLayout;
 
 public class TopMainPanel extends JPanel {
+	
+	//Author: Czajka & rafdam
+	//Panel with title and timer buttons
 
 	/**
 	 * 
@@ -31,7 +34,9 @@ public class TopMainPanel extends JPanel {
 	
 	stopButton.setEnabled(false);
 	
-	ActionListener start = new ActionListener(){
+	
+	// action listeners to start and stop animation
+	ActionListener start = new ActionListener(){ 
 
 		public void actionPerformed(ActionEvent e) {
 		startButton.setEnabled(false);
