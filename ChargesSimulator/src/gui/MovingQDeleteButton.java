@@ -26,11 +26,11 @@ public MovingQDeleteButton() {
             int i = MovingQInPanel.table.getSelectedRow();	                 
             
             if(i >= 0){	
-           	 if (MovingQTable.model.getValueAt(i, 7).toString() == "ON"){
+           	 if (MovingQTable.model.getValueAt(i, 5).toString() == "ON"){
            		System.out.println("Turn off charge at the first place");         
            	 }
            	 
-           	 else if (MovingQTable.model.getValueAt( i,  7).toString() == "OFF"){
+           	 else if (MovingQTable.model.getValueAt( i,  5).toString() == "OFF"){
            		MovingQTable.model.removeRow(i); 
            	 }
            	 else{

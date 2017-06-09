@@ -25,7 +25,7 @@ public class StationaryQAddFrame extends JFrame {
 	
 	
 	JLabel charge, value, coordinates;
-	JTextField  tValue, tCoordinateX, tCoordinateY,tCoordinateZ;	
+	JTextField  tValue, tCoordinateX, tCoordinateY;	
 	JButton addThis;	
 	
 	
@@ -36,11 +36,11 @@ public class StationaryQAddFrame extends JFrame {
       
         // Componets of the frame //
         value  = new JLabel("Value [C*10^(-19)]"); 
-        coordinates = new JLabel("Coordinates (X,Y,Z)");            
+        coordinates = new JLabel("Coordinates (X,Y)");            
         tValue  =  new JTextField();        
         tCoordinateX  = new JTextField();  
         tCoordinateY  = new JTextField();
-        tCoordinateZ  = new JTextField();        
+               
         addThis = new JButton("ADD");
         
         		// Adding the componets //
@@ -48,8 +48,7 @@ public class StationaryQAddFrame extends JFrame {
 	         add(tValue,"width 50%, height 25%,span,wrap");
 	         add(coordinates,"width 50%, height 25%");
 	         add(tCoordinateX,"width 12%, height 25%");
-	         add(tCoordinateY,"width 12%, height 25%,");
-	         add(tCoordinateZ, "width 12%, height 25%,wrap");
+	         add(tCoordinateY,"width 12%, height 25%,wrap");
 	         add(addThis,"width 50%, height 25%");
 	         
 	         
@@ -63,20 +62,25 @@ public class StationaryQAddFrame extends JFrame {
 	               if(tValue.getText().equals("")){
 	            	   System.out.println("Please fill field with value of charge");   
 	               }
-	               else if(tCoordinateX.getText().equals("") || tCoordinateY.getText().equals("")|| tCoordinateZ.getText().equals("") ){
+	               else if(tCoordinateX.getText().equals("") || tCoordinateY.getText().equals("")){
 	            	   
 	            		  System.out.println("Please fill coordinates of charge"); 
 	               }
 	               else{
 	            	   	// DATA FOR TABLE OF CHARGE //
+	            	   try{
 	            	   	 row[0] = tValue.getText();
 		                 row[1] = tCoordinateX.getText();
 		                 row[2] = tCoordinateY.getText();
-		                 row[3] = tCoordinateZ.getText();
-		                 row[4] = "OFF";
+		                 
+		                 row[3] = "OFF";
 		                 
 		                 // add row to the model
-		                 StationaryQTable.model.addRow(row);	            	   
+		                 StationaryQTable.model.addRow(row);
+	            	   }
+	            	   catch(NumberFormatException z){
+	            		   System.out.println("Fill the charge with numbers");
+	            	   }
 	               }                 
 	             }
 	         });	

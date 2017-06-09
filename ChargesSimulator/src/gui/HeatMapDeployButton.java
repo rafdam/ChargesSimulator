@@ -18,7 +18,7 @@ public class HeatMapDeployButton extends JCheckBox{
 	/**
 	 * 
 	 */
-	boolean status;
+	static boolean status;
 	private static final long serialVersionUID = 1L;
 	public HeatMapDeployButton(){
 		super("Off");
@@ -35,6 +35,10 @@ public class HeatMapDeployButton extends JCheckBox{
 					MainFrame.leftPanel.repaint();
 					setText("On");
 					status = true;
+					System.out.println("ON");
+					TopMainPanel.startButton.setEnabled(false);
+					TopMainPanel.stopButton.setEnabled(false);//Making Animation unable to run
+					
 					
 				}
 				else{
@@ -43,6 +47,7 @@ public class HeatMapDeployButton extends JCheckBox{
 					setText("Off");
 					status = false;
 					System.out.println("OFF");
+					TopMainPanel.startButton.setEnabled(true);//making animation able to run
 					
 				}
 			}

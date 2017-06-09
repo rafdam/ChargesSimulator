@@ -24,7 +24,7 @@ public class StationaryQTable extends JTable {
 	static ChargesList StationaryChargesList = new ChargesList();
 	
 	public StationaryQTable() {
-		 Object[] columns = {"Value[C]*10^(-19)","X","Y","Z","ON/OFF"}; //Columns names
+		 Object[] columns = {"Value[C]*10^(-19)","X","Y","ON/OFF"}; //Columns names
 	     model = new DefaultTableModel(); 
 	     model.setColumnIdentifiers(columns);
 	     setModel(model);						//Setting default model of table

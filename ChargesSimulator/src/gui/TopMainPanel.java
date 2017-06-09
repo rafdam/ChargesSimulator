@@ -23,16 +23,20 @@ public class TopMainPanel extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 4163362475437360265L;
+	static TimerStartButton startButton;
+	static TimerStopButton stopButton; // defining animation buttons
 
 	
 	public TopMainPanel() {
 	setLayout(new MigLayout("","[] []", "[] []"));
 	
 	MainFrameTitleLabel Title = new MainFrameTitleLabel();
-	final TimerStartButton startButton = new TimerStartButton();
-	final TimerStopButton stopButton = new TimerStopButton();
+	startButton = new TimerStartButton();//creating animation buttons
+	stopButton = new TimerStopButton();
 	
 	stopButton.setEnabled(false);
+	
+	
 	
 	
 	// action listeners to start and stop animation
@@ -41,7 +45,8 @@ public class TopMainPanel extends JPanel {
 		public void actionPerformed(ActionEvent e) {
 		startButton.setEnabled(false);
 		stopButton.setEnabled(true);
-		LeftMainPanel.setAnimation(true);
+		LeftMainPanel.setAnimation(true);//running animation
+		StationaryQPanel.HMdeployButton.setEnabled(false);//Unabling to draw heatmap
 			
 			
 		}
@@ -54,11 +59,13 @@ public class TopMainPanel extends JPanel {
 			LeftMainPanel.setAnimation(false);
 			startButton.setEnabled(true);
 			stopButton.setEnabled(false);
+			StationaryQPanel.HMdeployButton.setEnabled(true);//abling to draw heatmap
 			
 		}
 		
 	};
 	stopButton.addActionListener(stop);
+	
 	
 	
 	add(Title,"width 100%, height 50%, span,wrap");

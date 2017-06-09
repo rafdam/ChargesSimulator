@@ -19,7 +19,7 @@ private static final long serialVersionUID = 1L;
 	static TestChargesList MovingChargesList = new TestChargesList();
 	
 	public MovingQTable() {
-		 Object[] columns = {"+/-","X","Y","Z","Vx","Vy","Vz","ON/OFF"}; //Columns names
+		 Object[] columns = {"+/-","X","Y","Vx","Vy","ON/OFF"}; //Columns names
 	     model = new DefaultTableModel(); 
 	     model.setColumnIdentifiers(columns);
 	     setModel(model);						//Setting default model of table

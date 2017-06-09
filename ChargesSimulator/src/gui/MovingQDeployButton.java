@@ -50,11 +50,11 @@ public MovingQDeployButton() {
        //all the values must be parsed to double from table-model which must be parsed to string before
        xx = Double.parseDouble(MovingQTable.model.getValueAt(i, 1).toString());
        yy = Double.parseDouble(MovingQTable.model.getValueAt(i, 2).toString());
-       zz = Double.parseDouble(MovingQTable.model.getValueAt(i, 3).toString());
-       vx =  Double.parseDouble(MovingQTable.model.getValueAt(i, 4).toString());
-       vy =  Double.parseDouble(MovingQTable.model.getValueAt(i, 5).toString());
-       vz =  Double.parseDouble(MovingQTable.model.getValueAt(i, 6).toString());
-       status = MovingQTable.model.getValueAt(i, 7).toString();
+      
+       vx =  Double.parseDouble(MovingQTable.model.getValueAt(i, 3).toString());
+       vy =  Double.parseDouble(MovingQTable.model.getValueAt(i, 4).toString());
+       
+       status = MovingQTable.model.getValueAt(i, 5).toString();
        ch = new TestCharge(val,vx,vy,xx, yy);      //creating object of testcharge  
    	
    }
@@ -70,13 +70,13 @@ public MovingQDeployButton() {
            if(i >= 0) 
            {
            	if(status == "ON"){				 //If user click ON/OFF button charge will be turn off and disapear from screen
-           		MovingQTable.model.setValueAt("OFF", i, 7);
+           		MovingQTable.model.setValueAt("OFF", i, 5);
            		MovingQTable.GetQList().remove(MovingQTable.GetQList().get(i)); // removing i'th charge from the list of testcharges
            		MainFrame.AddMovingQ(ch);
            		
            	}                	
            	else if(status == "OFF"){ 		//Makes charge appear on screen and calculate all data
-           		MovingQTable.model.setValueAt("ON", i, 7);
+           		MovingQTable.model.setValueAt("ON", i, 5);
            		MainFrame.AddMovingQ(ch); // adding charge to the list
            		MovingQTable.GetQList().add(ch);                		
            		}

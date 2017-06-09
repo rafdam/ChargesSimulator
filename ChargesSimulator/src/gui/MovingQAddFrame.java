@@ -32,8 +32,8 @@ public class MovingQAddFrame extends JFrame{
       
         // Componets of the frame //
         value  = new JLabel("Value [C]"); 
-        coordinates = new JLabel("Coordinates (X,Y,Z)");  
-        velocity = new JLabel ("Velocity (Vx, Vy, Vz)");
+        coordinates = new JLabel("Coordinates (X,Y)");  
+        velocity = new JLabel ("Velocity (Vx, Vy)");
         tValue  =  new JComboBox();        
         tCoordinateX  = new JTextField();  
         tCoordinateY  = new JTextField();
@@ -52,17 +52,17 @@ public class MovingQAddFrame extends JFrame{
 	         add(tValue,"width 50%, height 25%,span,wrap");
 	         add(coordinates,"width 50%, height 25%");
 	         add(tCoordinateX,"width 12%, height 25%");
-	         add(tCoordinateY,"width 12%, height 25%,");
-	         add(tCoordinateZ, "width 12%, height 25%,wrap");
+	         add(tCoordinateY,"width 12%, height 25%,wrap");
+	      
 	         add(velocity,"width 50%,height 25%");
 	         add(tVelocityX,"width 12%, height 25%");
-	         add(tVelocityY,"width 12%, height 25%");
-	         add(tVelocityZ,"width 12%, height 25%,wrap");
+	         add(tVelocityY,"width 12%, height 25%, wrap");
+	    
 	         add(addThis,"width 50%, height 25%");
 	         
 	         
 	   // create an array of objects to set the row data
-	     final Object[] row = new Object[8];    
+	     final Object[] row = new Object[6];    
 	     
 	     	addThis.addActionListener(new ActionListener(){
 	             public void actionPerformed(ActionEvent e) {
@@ -70,7 +70,7 @@ public class MovingQAddFrame extends JFrame{
 	          //   tValue.getSelectedItem().toString();
 	            	    
 	               
-	               if(tCoordinateX.getText().equals("") || tCoordinateY.getText().equals("")|| tCoordinateZ.getText().equals("") || tVelocityX.getText().equals("") || tVelocityY.getText().equals("") || tVelocityZ.getText().equals("")){
+	               if(tCoordinateX.getText().equals("") || tCoordinateY.getText().equals("") || tVelocityX.getText().equals("") || tVelocityY.getText().equals("")){
 	            	   
 	            		  System.out.println("Please fill coordinates of charge"); 
 	               }
@@ -79,11 +79,11 @@ public class MovingQAddFrame extends JFrame{
 	            	   	 row[0] = tValue.getSelectedItem().toString();
 		                 row[1] = tCoordinateX.getText();
 		                 row[2] = tCoordinateY.getText();
-		                 row[3] = tCoordinateZ.getText();
-		                 row[4] = tVelocityX.getText();
-		                 row[5] = tVelocityY.getText();
-		                 row[6] = tVelocityZ.getText();
-		                 row[7] = "OFF";
+		                 
+		                 row[3] = tVelocityX.getText();
+		                 row[4] = tVelocityY.getText();
+		                
+		                 row[5] = "OFF";
 		                 
 		                 // add row to the model
 		                 MovingQTable.model.addRow(row);	            	   

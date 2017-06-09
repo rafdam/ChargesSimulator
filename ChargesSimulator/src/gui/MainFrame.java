@@ -82,7 +82,7 @@ leftPanel = new LeftMainPanel();
 
 
 RightMainPanel rightPanel = new RightMainPanel();
-//MainFrameTitleLabel titlelabel = new MainFrameTitleLabel();
+
 
 topPanel = new TopMainPanel();
 
@@ -144,10 +144,9 @@ static Dimension getAddFrameDim(){ 	//dimension of small frames - adding and del
 	
 	
 	public static void main(String[] args) {
-	MainFrame mFrame = new MainFrame();
+	MainFrame mFrame = new MainFrame();//Creating Frame ( application )
 	mFrame.setVisible(true);
 	mFrame.setResizable(false);
-	
 	
 
 	}

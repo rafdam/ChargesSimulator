@@ -28,8 +28,8 @@ public class MovingQEditFrame extends JFrame {
     
     //  COMPONENTS OF EDIT FRAME //
     value  = new JLabel("Value [C]"); 
-    coordinates = new JLabel("Coordinates (X,Y,Z)");  
-    velocities = new JLabel("Velocity (X,Y,Z)");
+    coordinates = new JLabel("Coordinates (X,Y)");  
+    velocities = new JLabel("Velocity (X,Y)");
     status = new String("");        
     tValue  =  new JComboBox();        
     tCoordinateX  = new JTextField();  
@@ -50,12 +50,12 @@ public class MovingQEditFrame extends JFrame {
          add(tValue,"width 50%, height 25%,span,wrap");
          add(coordinates,"width 50%, height 25%");
          add(tCoordinateX,"width 12%, height 25%");
-         add(tCoordinateY,"width 12%, height 25%");
-         add(tCoordinateZ, "width 12%, height 25%,wrap");
+         add(tCoordinateY,"width 12%, height 25%, wrap");
+        
          add(velocities,"width 50%, height 25%");
          add(tVeloX,"width 12%, height 25%");
-         add(tVeloY,"width 12%, height 25%,");
-         add(tVeloZ,"width 12%, height 25%,wrap");
+         add(tVeloY,"width 12%, height 25%,wrap");
+         
          add(editThis,"width 50%, height 25%");
          
          // get selected row data From table to textfields 
@@ -69,10 +69,10 @@ public class MovingQEditFrame extends JFrame {
              
              tCoordinateX.setText(MovingQTable.model.getValueAt(i, 1).toString());
              tCoordinateY.setText(MovingQTable.model.getValueAt(i, 2).toString());
-             tCoordinateZ.setText(MovingQTable.model.getValueAt(i, 3).toString());
-             tVeloX.setText(MovingQTable.model.getValueAt(i, 4).toString());
-             tVeloY.setText(MovingQTable.model.getValueAt(i, 5).toString());
-             tVeloZ.setText(MovingQTable.model.getValueAt(i, 6).toString());
+             
+             tVeloX.setText(MovingQTable.model.getValueAt(i, 3).toString());
+             tVeloY.setText(MovingQTable.model.getValueAt(i, 4).toString());
+             
              
              
          }
@@ -86,16 +86,16 @@ public class MovingQEditFrame extends JFrame {
                  int i = MovingQInPanel.table.getSelectedRow();	                 
                  
                  if(i >= 0){	
-                	 if (MovingQTable.model.getValueAt(i, 7).toString() == "OFF"){
+                	 if (MovingQTable.model.getValueAt(i, 5).toString() == "OFF"){
                 		 	
 	      	              
 	      	            	MovingQTable.model.setValueAt(tValue.getSelectedItem(), i, 0);
 	      	            	MovingQTable.model.setValueAt(tCoordinateX.getText(), i, 1);
 	      	            	MovingQTable.model.setValueAt(tCoordinateY.getText(), i, 2);
-	      	            	MovingQTable.model.setValueAt(tCoordinateZ.getText(), i, 3);
-	      	            	MovingQTable.model.setValueAt(tVeloX.getText(),i,4);
-	      	            	MovingQTable.model.setValueAt(tVeloY.getText(),i,5);
-	      	            	MovingQTable.model.setValueAt(tVeloZ.getText(),i,6);
+	      	            	
+	      	            	MovingQTable.model.setValueAt(tVeloX.getText(),i,3);
+	      	            	MovingQTable.model.setValueAt(tVeloY.getText(),i,4);
+	      	            	
 		                	setVisible(false);
 	  	            	   	dispose();
 	      	               
