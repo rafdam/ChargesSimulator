@@ -28,11 +28,11 @@ public class StationaryQDeleteButton extends JButton {
                 int i = StationaryQInPanel.table.getSelectedRow();	                 
                 
                 if(i >= 0){	
-               	 if (StationaryQTable.model.getValueAt(i, 4).toString() == "ON"){
+               	 if (StationaryQTable.model.getValueAt(i, 3).toString() == "ON"){
                		System.out.println("Turn off charge at the first place");         
                	 }
                	 
-               	 else if (StationaryQTable.model.getValueAt( i,  4).toString() == "OFF"){
+               	 else if (StationaryQTable.model.getValueAt( i,  3).toString() == "OFF"){
                		StationaryQTable.model.removeRow(i); 
                	 }
                	 else{

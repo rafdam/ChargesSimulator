@@ -24,7 +24,7 @@ public class StationaryQEditFrame extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	JTextField  tValue, tCoordinateX, tCoordinateY,tCoordinateZ; 
+	JTextField  tValue, tCoordinateX, tCoordinateY; 
 	JLabel charge, value, coordinates;
 	JButton editThis;
 	String status;
@@ -35,12 +35,12 @@ public class StationaryQEditFrame extends JFrame {
         
         //  COMPONENTS OF EDIT FRAME //
         value  = new JLabel("Value [C]"); 
-        coordinates = new JLabel("Coordinates (X,Y,Z)");             
+        coordinates = new JLabel("Coordinates (X,Y)");             
         status = new String("");        
         tValue  =  new JTextField();        
         tCoordinateX  = new JTextField();  
         tCoordinateY  = new JTextField();
-        tCoordinateZ  = new JTextField();        
+             
         editThis = new JButton("EDIT");
         
         
@@ -50,8 +50,8 @@ public class StationaryQEditFrame extends JFrame {
 	         add(tValue,"width 50%, height 25%,span,wrap");
 	         add(coordinates,"width 50%, height 25%");
 	         add(tCoordinateX,"width 12%, height 25%");
-	         add(tCoordinateY,"width 12%, height 25%");
-	         add(tCoordinateZ, "width 12%, height 25%,wrap");
+	         add(tCoordinateY,"width 12%, height 25%,wrap");
+	         
 	         add(editThis,"width 50%, height 25%");
 	         
 	         // get selected row data From table to textfields 
@@ -65,7 +65,7 @@ public class StationaryQEditFrame extends JFrame {
 	             tValue.setText(StationaryQTable.model.getValueAt(i, 0).toString());
 	             tCoordinateX.setText(StationaryQTable.model.getValueAt(i, 1).toString());
 	             tCoordinateY.setText(StationaryQTable.model.getValueAt(i, 2).toString());
-	             tCoordinateZ.setText(StationaryQTable.model.getValueAt(i, 3).toString());
+	             
 	         }
 	         });
 	         
@@ -77,13 +77,13 @@ public class StationaryQEditFrame extends JFrame {
 	                 int i = StationaryQInPanel.table.getSelectedRow();	                 
 	                 
 	                 if(i >= 0){	
-	                	 if (StationaryQTable.model.getValueAt(i, 4).toString() == "OFF"){
+	                	 if (StationaryQTable.model.getValueAt(i, 3).toString() == "OFF"){
 	                		 	if(tValue.getText().equals("")){
 		      	            	   System.out.println("Please fill field with value of charge"); 
 		      	            	   setVisible(false);
 		      	            	   dispose();	      	            	 
 		      	               }
-		      	               else if(tCoordinateX.getText().equals("") || tCoordinateY.getText().equals("")|| tCoordinateZ.getText().equals("") ){
+		      	               else if(tCoordinateX.getText().equals("") || tCoordinateY.getText().equals("")){
 		  	            	   		setVisible(false);
 		  	            	   		dispose();
 		  	            	   		System.out.println("Please fill coordinates of charge"); 
@@ -92,7 +92,7 @@ public class StationaryQEditFrame extends JFrame {
 		                		 StationaryQTable.model.setValueAt(tValue.getText(), i, 0);
 			                	 StationaryQTable.model.setValueAt(tCoordinateX.getText(), i, 1);
 			                	 StationaryQTable.model.setValueAt(tCoordinateY.getText(), i, 2);
-			                	 StationaryQTable.model.setValueAt(tCoordinateZ.getText(), i, 3);
+			                	
 			                	 setVisible(false);
 		  	            	   	 dispose();
 		      	               }

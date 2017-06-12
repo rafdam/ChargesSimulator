@@ -57,7 +57,7 @@ public class StationaryQAddFrame extends JFrame {
 	     
 	     	addThis.addActionListener(new ActionListener(){
 	             public void actionPerformed(ActionEvent e) {
-	            	System.out.println(tValue.getText());    	            	 
+	            	   	            	 
 	              
 	               if(tValue.getText().equals("")){
 	            	   System.out.println("Please fill field with value of charge");   
