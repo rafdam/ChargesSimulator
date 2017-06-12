@@ -63,7 +63,7 @@ public class StationaryCharge {
 		distanceFromZero = Math.sqrt(a*a+b*b);
 		
 	}
-	public static int DIAMETER = 16;
+	public static int DIAMETER = 32;
 	
     
 	
@@ -76,9 +76,12 @@ public class StationaryCharge {
 		//g.setColor(Color.PINK);
 		//g.fillOval((int)(xCord-8), (int)(yCord-8), DIAMETER, DIAMETER);
 		
-		ImageIcon imgIcon = new ImageIcon("Images/positive.png");
+		ImageIcon imgIcon = new ImageIcon();
+		if(value > 0){imgIcon = new ImageIcon("Images/positive.png");}
+		else if(value < 0){imgIcon = new ImageIcon("Images/negative.png");}
+		else{imgIcon = new ImageIcon("Images/neutral.png");}
 		Image img = imgIcon.getImage();
-		g.drawImage(img, (int)(xCord-8), (int)(yCord-8), DIAMETER, DIAMETER, null);
+		g.drawImage(img, (int)(xCord-16), (int)(yCord-16), DIAMETER, DIAMETER, null);
 		
 	}
 	
