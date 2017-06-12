@@ -52,8 +52,10 @@ public class StationaryQDeployButton extends JButton {
             xx 	   = Double.parseDouble(StationaryQTable.model.getValueAt(i, 1).toString());
             yy 	   = Double.parseDouble(StationaryQTable.model.getValueAt(i, 2).toString());
             status = StationaryQTable.model.getValueAt(i, 3).toString();
-            ch = new StationaryCharge(xx,yy,value*Math.pow(10, -20)); //creating new basic object 
-            														  //to later add it to stationarychargesList          
+            ch = new StationaryCharge(xx,yy,value*Math.pow(10, -20)); //creating new basic object 														  //to later add it to stationarychargesList    
+            
+            
+            
         	}
         });
         
@@ -73,9 +75,14 @@ public class StationaryQDeployButton extends JButton {
 	                	}   
 	                	
 	                	else if(status == "OFF"){ 		//Makes charge appear on screen and calculate all data
+	                		try{
 	                		StationaryQTable.model.setValueAt("ON", i, 3);
 	                		MainFrame.AddStationaryQ(ch);
-	                		StationaryQTable.GetChargesList().add(ch);                 		
+	                		StationaryQTable.GetChargesList().add(ch);        
+	                		}
+	                		catch(NumberFormatException z){
+	                			JOptionPane.showMessageDialog(MainFrame.leftPanel, "Error during inizalization of charge");
+	                		}
 	                	}
 	               	
 	                	else{JOptionPane.showMessageDialog(MainFrame.leftPanel, 

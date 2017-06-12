@@ -68,13 +68,18 @@ public class StationaryQAddFrame extends JFrame {
 		                 row[1] = tCoordinateX.getText();
 		                 row[2] = tCoordinateY.getText();		                 
 		                 row[3] = "OFF";
+		                 double valuee  = Double.parseDouble(tValue.getText().toString());
+		                 double xx 	   = Double.parseDouble(tCoordinateX.getText().toString());
+		                 double yy 	   = Double.parseDouble(tCoordinateY.getText().toString());
+		                 
 		                 
 		                 // add row to the model
-		                 StationaryQTable.model.addRow(row);
+		                 
 	            	   }
 	            	   catch(NumberFormatException z){
-	            		   JOptionPane.showMessageDialog(MainFrame.leftPanel, "Error during inizalization of charge");
+	            		   JOptionPane.showMessageDialog(MainFrame.leftPanel, "Error - Try filling fields with numbers");
 	            	   }
+	            	   StationaryQTable.model.addRow(row);
 	               }                 
 	             }
 	        });	
