@@ -73,6 +73,7 @@ public class MovingQAddFrame extends JFrame{
 	            	   JOptionPane.showMessageDialog(MainFrame.leftPanel, "All of fields need to be filled.");
 	               }
 	               else{
+	            	   try{
 	            	   	// DATA FOR TABLE OF CHARGE //
 	            	   	 row[0] = tValue.getSelectedItem().toString();
 		                 row[1] = tCoordinateX.getText();
@@ -80,9 +81,19 @@ public class MovingQAddFrame extends JFrame{
 		                 row[3] = tVelocityX.getText();
 		                 row[4] = tVelocityY.getText();		                
 		                 row[5] = "OFF";
+		                 double valuee = Double.parseDouble(tValue.getSelectedItem().toString());
+		                 double xx = Double.parseDouble(tCoordinateX.getText().toString());
+		                 double yy = Double.parseDouble(tCoordinateY.getText().toString());
+		                
+		                 double vx =  Double.parseDouble(tVelocityX.getText().toString());
+		                 double vy =  Double.parseDouble(tVelocityY.getText().toString());
 		                 
 		                 // add row to the model
-		                 MovingQTable.model.addRow(row);	            	   
+		                 MovingQTable.model.addRow(row);	 
+		                 }
+		                 catch(NumberFormatException z){
+		                	 JOptionPane.showMessageDialog(MainFrame.leftPanel, "Error - try filling fields with numbers");
+		                 }
 	               }                 
 	             }
 	         });	
