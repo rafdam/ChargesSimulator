@@ -4,9 +4,13 @@ import java.awt.Color;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.image.ImageObserver;
 
+import javax.swing.ImageIcon;
 
+import gui.MainFrame;
 import gui.StationaryQTable;
 
 public class StationaryCharge {
@@ -68,9 +72,13 @@ public class StationaryCharge {
 	
 
 	public void draw(Graphics g) { // drawing a stationary charge as a pink oval (moved x/y oval coords are centering the oval to the right place)
+	
+		//g.setColor(Color.PINK);
+		//g.fillOval((int)(xCord-8), (int)(yCord-8), DIAMETER, DIAMETER);
 		
-		g.setColor(Color.PINK);
-		g.fillOval((int)(xCord-8), (int)(yCord-8), DIAMETER, DIAMETER);
+		ImageIcon imgIcon = new ImageIcon("Images/positive.png");
+		Image img = imgIcon.getImage();
+		g.drawImage(img, (int)(xCord-8), (int)(yCord-8), DIAMETER, DIAMETER, null);
 		
 	}
 	

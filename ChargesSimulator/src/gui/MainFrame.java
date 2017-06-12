@@ -38,10 +38,12 @@ public class MainFrame extends JFrame {
  */
 private static final long serialVersionUID = 1L;
 
+
+public static MainFrame mFrame;
 Dimension screenSize, leftPanelDim, labelDim, rightPanelDim; //definition of dimension of panels in main frame
 static Dimension addFrameDim; //dimension for small frame "adding charges"
 MainPanelTop topPanel;
-static MainPanelLeft leftPanel; //panel where charges are display
+public static MainPanelLeft leftPanel; //panel where charges are display
 static MainPanelRight rightPanel;			
 public static BufferedImage image;	    //image of charge
 
@@ -137,7 +139,7 @@ static Dimension getAddFrameDim(){ 	//dimension of small frames - adding and del
 	
 	
 	public static void main(String[] args) {
-	MainFrame mFrame = new MainFrame();//Creating Frame ( application )
+	mFrame = new MainFrame();//Creating Frame ( application )
 	mFrame.setVisible(true);
 	mFrame.setResizable(false);
 	

@@ -3,6 +3,9 @@ package model;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
 
 public class TestCharge {
 		//Class defining test charge which can be either electron or proton
@@ -89,9 +92,11 @@ public class TestCharge {
 		
 	}
 	public void draw(Graphics g) { // drawing black circle as a representation of moving charge 
-		g.setColor(Color.black);
-		g.fillOval( (int)(testChargeXCord-10), (int)(testChargeYCord-10), 20, 20);
-		
+		//g.setColor(Color.black);
+		//g.fillOval( (int)(testChargeXCord-10), (int)(testChargeYCord-10), 20, 20);
+		ImageIcon imgIcon = new ImageIcon("Images/proton.png");
+		Image img = imgIcon.getImage();
+		g.drawImage(img, (int)(testChargeXCord-10), (int)(testChargeYCord-10),  20,  20, null);
 	}
 	
 	
