@@ -26,7 +26,7 @@ import model.TestChargesList;
 import model.TestPoint;
 //author: Czajka & rafdam
 //PANEL WITH DISPLAYED CHARGES
-public class LeftMainPanel extends JPanel{
+public class MainPanelLeft extends JPanel{
 	
 
 	/**
@@ -42,7 +42,7 @@ public class LeftMainPanel extends JPanel{
 	
 	
 	
-	public LeftMainPanel() { 	
+	public MainPanelLeft() { 	
 		
 		setBorder(new LineBorder(Color.LIGHT_GRAY, 3));
 		setLayout(null);

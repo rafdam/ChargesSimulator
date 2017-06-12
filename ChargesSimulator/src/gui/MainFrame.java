@@ -1,5 +1,5 @@
 package gui;
-import java.awt.Color;
+import java.awt.Color; 
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -37,10 +37,12 @@ public class MainFrame extends JFrame {
  * 
  */
 private static final long serialVersionUID = 1L;
+
 Dimension screenSize, leftPanelDim, labelDim, rightPanelDim; //definition of dimension of panels in main frame
 static Dimension addFrameDim; //dimension for small frame "adding charges"
-TopMainPanel topPanel;
-static LeftMainPanel leftPanel; 	   	//panel where charges are display
+MainPanelTop topPanel;
+static MainPanelLeft leftPanel; //panel where charges are display
+MainPanelRight rightPanel;			
 public static BufferedImage image;	    //image of charge
 
 
@@ -75,16 +77,9 @@ double addFrameWidth = 0.9 * rightPanelWidth;
 addFrameDim = new Dimension((int) addFrameWidth, (int) addFrameHeight);		
 
 
-leftPanel = new LeftMainPanel();
-
-
-
-
-
-RightMainPanel rightPanel = new RightMainPanel();
-
-
-topPanel = new TopMainPanel();
+leftPanel = new MainPanelLeft();
+rightPanel = new MainPanelRight();
+topPanel = new MainPanelTop();
 
 
 leftPanel.setPreferredSize(leftPanelDim);	//left panel will be always a square
@@ -94,20 +89,24 @@ topPanel.setPreferredSize(labelDim);
 
 
 
-// ADDING ELEMENTS OF MAIN FRAME ////////////////////////////////////////////////////////////
+// ADDING ELEMENTS OF MAIN FRAME ///////
 
 add(topPanel);
 add(rightPanel, "wrap, spany");
-	add(leftPanel);		
-	pack();	
+add(leftPanel);		
+pack();	
 }
+
+////////////////////////////////////////
+
+
 
 static Dimension getAddFrameDim(){ 	//dimension of small frames - adding and deleting charges
 	return addFrameDim;
 }
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
  public static void AddStationaryQ(StationaryCharge SCh){ 	
 	 
 	 	JLabel label = new JLabel();
@@ -115,13 +114,7 @@ static Dimension getAddFrameDim(){ 	//dimension of small frames - adding and del
 		leftPanel.repaint();      
 		label.setToolTipText(Double.toString(SCh.getValue()));
 		
- }
-		
-			
-			
-		
- 
- 
+ } 
  
  
  public static void ChangeStationaryQ(StationaryCharge SCh){
@@ -140,7 +133,7 @@ static Dimension getAddFrameDim(){ 	//dimension of small frames - adding and del
 
  
                
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	
 	
 	public static void main(String[] args) {

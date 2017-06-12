@@ -8,13 +8,14 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
+import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JPanel;
 
 import model.HeatMap;
 import net.miginfocom.swing.MigLayout;
 
-public class TopMainPanel extends JPanel {
+public class MainPanelTop extends JPanel {
 	
 	//Author: Czajka & rafdam
 	//Panel with title and timer buttons
@@ -23,46 +24,47 @@ public class TopMainPanel extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 4163362475437360265L;
-	static TimerStartButton startButton;
-	static TimerStopButton stopButton; // defining animation buttons
+	
+	// defining animation buttons
+	static JButton startButton;
+	static JButton stopButton; 
 
 	
-	public TopMainPanel() {
-	setLayout(new MigLayout("","[] []", "[] []"));
 	
+	public MainPanelTop() {
+		
+	setLayout(new MigLayout("","[] []", "[] []"));	
 	MainFrameTitleLabel Title = new MainFrameTitleLabel();
-	startButton = new TimerStartButton();//creating animation buttons
-	stopButton = new TimerStopButton();
+	
+	//creating animation buttons
+	startButton = new JButton("START");
+	stopButton = new JButton("STOP");
 	
 	stopButton.setEnabled(false);
 	
 	
 	
-	
 	// action listeners to start and stop animation
 	ActionListener start = new ActionListener(){ 
-
 		public void actionPerformed(ActionEvent e) {
 		startButton.setEnabled(false);
 		stopButton.setEnabled(true);
-		LeftMainPanel.setAnimation(true);//running animation
-		StationaryQPanel.HMdeployButton.setEnabled(false);//Unabling to draw heatmap
-			
-			
+		MainPanelLeft.setAnimation(true);   //running animation
+		//StationaryQPanel.HMdeployButton.setEnabled(false);//Unabling to draw heatmap			
 		}
 	};
 	startButton.addActionListener(start);
 	
+	
+	
+	
 	ActionListener stop = new ActionListener(){
-
 		public void actionPerformed(ActionEvent e) {
-			LeftMainPanel.setAnimation(false);
+			MainPanelLeft.setAnimation(false);
 			startButton.setEnabled(true);
 			stopButton.setEnabled(false);
-			StationaryQPanel.HMdeployButton.setEnabled(true);//abling to draw heatmap
-			
-		}
-		
+			//StationaryQPanel.HMdeployButton.setEnabled(true);//abling to draw heatmap	
+			}		
 	};
 	stopButton.addActionListener(stop);
 	
@@ -76,19 +78,5 @@ public class TopMainPanel extends JPanel {
 	
 	
 	
-	public TopMainPanel(LayoutManager arg0) {
-		super(arg0);
-		// TODO Auto-generated constructor stub
-	}
-
-	public TopMainPanel(boolean arg0) {
-		super(arg0);
-		// TODO Auto-generated constructor stub
-	}
-
-	public TopMainPanel(LayoutManager arg0, boolean arg1) {
-		super(arg0, arg1);
-		// TODO Auto-generated constructor stub
-	}
 
 }

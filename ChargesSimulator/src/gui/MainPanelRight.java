@@ -8,14 +8,14 @@ import net.miginfocom.swing.MigLayout;
 //autor:Czajka
 
 
-public class RightMainPanel extends JPanel {
+public class MainPanelRight extends JPanel {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public RightMainPanel() {
+	public MainPanelRight() {
 		setLayout(new MigLayout());
 		//setBackground(Color.WHITE);
 		//setBorder(new LineBorder(Color.BLACK, 5));
@@ -26,17 +26,17 @@ public class RightMainPanel extends JPanel {
 		
 	}
 
-	public RightMainPanel(LayoutManager layout) {
+	public MainPanelRight(LayoutManager layout) {
 		super(layout);
 		// TODO Auto-generated constructor stub
 	}
 
-	public RightMainPanel(boolean isDoubleBuffered) {
+	public MainPanelRight(boolean isDoubleBuffered) {
 		super(isDoubleBuffered);
 		// TODO Auto-generated constructor stub
 	}
 
-	public RightMainPanel(LayoutManager layout, boolean isDoubleBuffered) {
+	public MainPanelRight(LayoutManager layout, boolean isDoubleBuffered) {
 		super(layout, isDoubleBuffered);
 		// TODO Auto-generated constructor stub
 	}
