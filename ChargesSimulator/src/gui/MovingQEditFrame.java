@@ -87,16 +87,30 @@ public class MovingQEditFrame extends JFrame {
                  
                  if(i >= 0){	
                 	 if (MovingQTable.model.getValueAt(i, 5).toString() == "OFF"){                		 	
-	      	              
-	      	            	MovingQTable.model.setValueAt(tValue.getSelectedItem(), i, 0);
-	      	            	MovingQTable.model.setValueAt(tCoordinateX.getText(), i, 1);
-	      	            	MovingQTable.model.setValueAt(tCoordinateY.getText(), i, 2);
+                		 try{
+     	            	   
+     	            	   	
+     		                
+     		                 double xx = Double.parseDouble(tCoordinateX.getText().toString());
+     		                 double yy = Double.parseDouble(tCoordinateY.getText().toString());
+     		                
+     		                 double vx =  Double.parseDouble(tVeloX.getText().toString());
+     		                 double vy =  Double.parseDouble(tVeloY.getText().toString());
+     		                 MovingQTable.model.setValueAt(tValue.getSelectedItem(), i, 0);
+	      	            	 MovingQTable.model.setValueAt(tCoordinateX.getText(), i, 1);
+	      	            	 MovingQTable.model.setValueAt(tCoordinateY.getText(), i, 2);
 	      	            	
-	      	            	MovingQTable.model.setValueAt(tVeloX.getText(),i,3);
-	      	            	MovingQTable.model.setValueAt(tVeloY.getText(),i,4);
+	      	            	 MovingQTable.model.setValueAt(tVeloX.getText(),i,3);
+	      	            	 MovingQTable.model.setValueAt(tVeloY.getText(),i,4);
 	      	            	
 		                	setVisible(false);
-	  	            	   	dispose();	      	               
+	  	            	   	dispose();	
+     		                  
+     		                 }
+     		                 catch(NumberFormatException z){
+     		                	 JOptionPane.showMessageDialog(MainFrame.leftPanel, "Error - try filling fields with numbers");
+     		                 }
+	      	            	      	               
                 	 }
                 	 
                 	 else {

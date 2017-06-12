@@ -71,7 +71,7 @@ public class StationaryQAddFrame extends JFrame {
 		                 double valuee  = Double.parseDouble(tValue.getText().toString());
 		                 double xx 	   = Double.parseDouble(tCoordinateX.getText().toString());
 		                 double yy 	   = Double.parseDouble(tCoordinateY.getText().toString());
-		                 
+		                 StationaryQTable.model.addRow(row);
 		                 
 		                 // add row to the model
 		                 
@@ -79,7 +79,7 @@ public class StationaryQAddFrame extends JFrame {
 	            	   catch(NumberFormatException z){
 	            		   JOptionPane.showMessageDialog(MainFrame.leftPanel, "Error - Try filling fields with numbers");
 	            	   }
-	            	   StationaryQTable.model.addRow(row);
+	            	   
 	               }                 
 	             }
 	        });	

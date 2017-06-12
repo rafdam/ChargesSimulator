@@ -81,7 +81,7 @@ public class MovingQAddFrame extends JFrame{
 		                 row[3] = tVelocityX.getText();
 		                 row[4] = tVelocityY.getText();		                
 		                 row[5] = "OFF";
-		                 double valuee = Double.parseDouble(tValue.getSelectedItem().toString());
+		                
 		                 double xx = Double.parseDouble(tCoordinateX.getText().toString());
 		                 double yy = Double.parseDouble(tCoordinateY.getText().toString());
 		                

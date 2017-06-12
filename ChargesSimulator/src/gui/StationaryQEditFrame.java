@@ -63,7 +63,8 @@ public class StationaryQEditFrame extends JFrame {
 	          
 	             tValue.setText(StationaryQTable.model.getValueAt(i, 0).toString());
 	             tCoordinateX.setText(StationaryQTable.model.getValueAt(i, 1).toString());
-	             tCoordinateY.setText(StationaryQTable.model.getValueAt(i, 2).toString());	             
+	             tCoordinateY.setText(StationaryQTable.model.getValueAt(i, 2).toString());	  
+	             
 	         	}
 	         });
 	         
@@ -84,11 +85,24 @@ public class StationaryQEditFrame extends JFrame {
 			      	               }			      	              
 			      	               
 			      	               else{
-			                		 StationaryQTable.model.setValueAt(tValue.getText(), i, 0);
-				                	 StationaryQTable.model.setValueAt(tCoordinateX.getText(), i, 1);
-				                	 StationaryQTable.model.setValueAt(tCoordinateY.getText(), i, 2);				                	
-				                	 setVisible(false);
-			  	            	   	 dispose();
+			      	            	 try{
+			    	            	   	 
+			    		                 double valuee  = Double.parseDouble(tValue.getText().toString());
+			    		                 double xx 	   = Double.parseDouble(tCoordinateX.getText().toString());
+			    		                 double yy 	   = Double.parseDouble(tCoordinateY.getText().toString());
+			    		                 StationaryQTable.model.setValueAt(tValue.getText(), i, 0);
+			    		                 StationaryQTable.model.setValueAt(tCoordinateX.getText(), i, 1);
+			    		                 StationaryQTable.model.setValueAt(tCoordinateY.getText(), i, 2);				                	
+			    		                 setVisible(false);
+			  	            	   	 	 dispose();
+			    		                 
+			    		                 // add row to the model
+			    		                 
+			    	            	   }
+			    	            	   catch(NumberFormatException z){
+			    	            		   JOptionPane.showMessageDialog(MainFrame.leftPanel, "Error - Try filling fields with numbers");
+			    	            	   }
+			                		 
 			      	               }
 	                	 }	                	 
 	                	 else {
