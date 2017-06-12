@@ -63,7 +63,7 @@ public MainFrame() throws HeadlessException {
 
  screenSize = Toolkit.getDefaultToolkit().getScreenSize();			
 //double leftPanelWidth =screenSize.height; unused by now
-double leftPanelHeight =0.85 * screenSize.height;
+double leftPanelHeight =0.7 * screenSize.height;
  leftPanelDim = new Dimension((int) (leftPanelHeight * 1) , (int) (leftPanelHeight));	
 
 double labelHeight = 0.15 * screenSize.height;
