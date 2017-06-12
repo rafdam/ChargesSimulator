@@ -19,7 +19,8 @@ private static final long serialVersionUID = 1L;
 	static TestChargesList MovingChargesList = new TestChargesList();
 	
 	public MovingQTable() {
-		 Object[] columns = {"+/-","X","Y","Vx","Vy","ON/OFF"}; //Columns names
+									//Columns names
+		 Object[] columns = {"+/-","X","Y","Vx","Vy","ON/OFF"}; 
 	     model = new DefaultTableModel(); 
 	     model.setColumnIdentifiers(columns);
 	     setModel(model);						//Setting default model of table
@@ -33,45 +34,21 @@ private static final long serialVersionUID = 1L;
 	     setRowHeight(15);
 	}
 	
+	
+	
+	
 	public static TestChargesList GetQList(){
 		return MovingChargesList;
 	}
 
-	public MovingQTable(TableModel arg0) {
-		super(arg0);
-		// TODO Auto-generated constructor stub
-	}
-
-	public MovingQTable(TableModel arg0, TableColumnModel arg1) {
-		super(arg0, arg1);
-		// TODO Auto-generated constructor stub
-	}
-
-	public MovingQTable(int arg0, int arg1) {
-		super(arg0, arg1);
-		// TODO Auto-generated constructor stub
-	}
+	
 	
 /*
 	public StationaryQTable(Vector arg0, Vector<?> arg1) {
 		super(arg0, arg1);
 		// TODO Auto-generated constructor stub
 	}
-*/														// It need some arguments ??
+*/												// It need some arguments ??
 	
-	
-	public MovingQTable(Object[][] arg0, Object[] arg1) {
-		super(arg0, arg1);
-		// TODO Auto-generated constructor stub
-	}
-
-	public MovingQTable(TableModel arg0, TableColumnModel arg1, ListSelectionModel arg2) {
-		super(arg0, arg1, arg2);
-		// TODO Auto-generated constructor stub
-	}
-
-	
-
-}
-
+}	
 

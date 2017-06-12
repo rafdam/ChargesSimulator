@@ -29,7 +29,7 @@ import net.miginfocom.swing.MigLayout;
 
 //import com.sun.javafx.tk.Toolkit;
 //import com.sun.prism.paint.Color;
-// author: Mikolaj Czajka
+// author: Czajka & Rafdam
 
 
 public class MainFrame extends JFrame {
@@ -42,7 +42,7 @@ Dimension screenSize, leftPanelDim, labelDim, rightPanelDim; //definition of dim
 static Dimension addFrameDim; //dimension for small frame "adding charges"
 MainPanelTop topPanel;
 static MainPanelLeft leftPanel; //panel where charges are display
-MainPanelRight rightPanel;			
+static MainPanelRight rightPanel;			
 public static BufferedImage image;	    //image of charge
 
 

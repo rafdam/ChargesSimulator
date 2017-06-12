@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.Action;
 import javax.swing.Icon;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 
 //author: Czajka
@@ -28,20 +29,23 @@ public class StationaryQDeleteButton extends JButton {
                 int i = StationaryQInPanel.table.getSelectedRow();	                 
                 
                 if(i >= 0){	
-               	 if (StationaryQTable.model.getValueAt(i, 3).toString() == "ON"){
-               		System.out.println("Turn off charge at the first place");         
-               	 }
-               	 
-               	 else if (StationaryQTable.model.getValueAt( i,  3).toString() == "OFF"){
-               		StationaryQTable.model.removeRow(i); 
-               	 }
-               	 else{
-               		 System.out.println("Delete error");
-               	 }
+	               	 if (StationaryQTable.model.getValueAt(i, 3).toString() == "ON"){
+	               		JOptionPane.showMessageDialog(MainFrame.leftPanel, 
+	               				"Turn OFF charge before deleting it.");               		        
+	               	 }
+	               	 
+	               	 else if (StationaryQTable.model.getValueAt( i,  3).toString() == "OFF"){
+	               		StationaryQTable.model.removeRow(i); 
+	               	 }
+	               	 
+	               	 else{
+	               		JOptionPane.showMessageDialog(MainFrame.leftPanel,
+	               				"Error during deleting, try to select the charge once more.");
+	               	 	}
                  }
-                else{
-               	 
-                    System.out.println("Update Error");
+                else{  
+                	JOptionPane.showMessageDialog(MainFrame.leftPanel, 
+                			"Error during deleting, probably there is no charges to delete or none charge is select.");                   
                 }
             }
         });
@@ -73,25 +77,4 @@ public class StationaryQDeleteButton extends JButton {
         	// i = the index of the selected row
             
 	}
-
-	public StationaryQDeleteButton(Icon icon) {
-		super(icon);
-		// TODO Auto-generated constructor stub
-	}
-
-	public StationaryQDeleteButton(String text) {
-		super(text);
-		// TODO Auto-generated constructor stub
-	}
-
-	public StationaryQDeleteButton(Action a) {
-		super(a);
-		// TODO Auto-generated constructor stub
-	}
-
-	public StationaryQDeleteButton(String text, Icon icon) {
-		super(text, icon);
-		// TODO Auto-generated constructor stub
-	}
-
 }

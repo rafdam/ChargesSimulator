@@ -1,7 +1,5 @@
 package gui;
 
-
-
 import java.awt.Graphics;
 
 import java.awt.GraphicsConfiguration;
@@ -11,6 +9,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import net.miginfocom.swing.MigLayout;
 
@@ -56,57 +55,28 @@ public class StationaryQAddFrame extends JFrame {
 	     final Object[] row = new Object[5];    
 	     
 	     	addThis.addActionListener(new ActionListener(){
-	             public void actionPerformed(ActionEvent e) {
-	            	   	            	 
-	              
-	               if(tValue.getText().equals("")){
-	            	   System.out.println("Please fill field with value of charge");   
-	               }
-	               else if(tCoordinateX.getText().equals("") || tCoordinateY.getText().equals("")){
-	            	   
-	            		  System.out.println("Please fill coordinates of charge"); 
-	               }
+	             public void actionPerformed(ActionEvent e) { 	
+	            	 
+	               if(tValue.getText().equals("") || tCoordinateX.getText().equals("") || tCoordinateY.getText().equals("")){
+	            	   JOptionPane.showMessageDialog(MainFrame.leftPanel, "All of fields need to be filled.");
+	               }	               
+	               
 	               else{
 	            	   	// DATA FOR TABLE OF CHARGE //
 	            	   try{
 	            	   	 row[0] = tValue.getText();
 		                 row[1] = tCoordinateX.getText();
-		                 row[2] = tCoordinateY.getText();
-		                 
+		                 row[2] = tCoordinateY.getText();		                 
 		                 row[3] = "OFF";
 		                 
 		                 // add row to the model
 		                 StationaryQTable.model.addRow(row);
 	            	   }
 	            	   catch(NumberFormatException z){
-	            		   System.out.println("Fill the charge with numbers");
+	            		   JOptionPane.showMessageDialog(MainFrame.leftPanel, "Error during inizalization of charge");
 	            	   }
 	               }                 
 	             }
-	         });	
+	        });	
 	}
-	
-
-	public StationaryQAddFrame(GraphicsConfiguration arg0) {
-		super(arg0);
-		// TODO Auto-generated constructor stub
-	}
-
-	public StationaryQAddFrame(String arg0) throws HeadlessException {
-		super(arg0);
-		// TODO Auto-generated constructor stub
-	}
-
-	public StationaryQAddFrame(String arg0, GraphicsConfiguration arg1) {
-		super(arg0, arg1);
-		// TODO Auto-generated constructor stub
-	}
-
-	public void DrawStationaryQ(Graphics g) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	
-
 }

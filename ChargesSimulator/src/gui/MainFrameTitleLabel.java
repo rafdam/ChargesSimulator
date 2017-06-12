@@ -17,8 +17,7 @@ public class MainFrameTitleLabel extends JLabel {
 	public MainFrameTitleLabel() {
 		super("CHARGES SIMULATOR");
 		setHorizontalAlignment(SwingConstants.CENTER);
-		setFont(new Font("Tahoma", Font.BOLD, 40));
-		
+		setFont(new Font("Tahoma", Font.BOLD, 40));		
 	}
 
 	

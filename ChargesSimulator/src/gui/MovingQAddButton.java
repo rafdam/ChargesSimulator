@@ -11,12 +11,14 @@ import javax.swing.JButton;
 //Button used to adding moving charges
 
 public class MovingQAddButton extends JButton {
-
+	
 	/**
 	 * 
 	 */
+	private static final long serialVersionUID = 1L;
 	
-	StationaryQAddFrame addFrame;	
+	StationaryQAddFrame addFrame;
+	
 	
 	public MovingQAddButton() {
 		super("ADD");
@@ -29,28 +31,4 @@ public class MovingQAddButton extends JButton {
         });
 				
 	}
-	private static final long serialVersionUID = 1L;
-
-	
-
-	public MovingQAddButton(Icon icon) {
-		super(icon);
-		// TODO Auto-generated constructor stub
-	}
-
-	public MovingQAddButton(String text) {
-		super(text);
-		// TODO Auto-generated constructor stub
-	}
-
-	public MovingQAddButton(Action a) {
-		super(a);
-		// TODO Auto-generated constructor stub
-	}
-
-	public MovingQAddButton(String text, Icon icon) {
-		super(text, icon);
-		// TODO Auto-generated constructor stub
-	}
-
 }

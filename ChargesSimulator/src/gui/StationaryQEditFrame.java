@@ -10,6 +10,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import net.miginfocom.swing.MigLayout;
@@ -39,8 +40,7 @@ public class StationaryQEditFrame extends JFrame {
         status = new String("");        
         tValue  =  new JTextField();        
         tCoordinateX  = new JTextField();  
-        tCoordinateY  = new JTextField();
-             
+        tCoordinateY  = new JTextField();             
         editThis = new JButton("EDIT");
         
         
@@ -55,8 +55,7 @@ public class StationaryQEditFrame extends JFrame {
 	         add(editThis,"width 50%, height 25%");
 	         
 	         // get selected row data From table to textfields 
-	         StationaryQInPanel.table.addMouseListener(new MouseAdapter(){
-	         
+	         StationaryQInPanel.table.addMouseListener(new MouseAdapter(){	         
 	         @Override
 	         public void mouseClicked(MouseEvent e){	             
 	             // i = the index of the selected row
@@ -64,9 +63,8 @@ public class StationaryQEditFrame extends JFrame {
 	          
 	             tValue.setText(StationaryQTable.model.getValueAt(i, 0).toString());
 	             tCoordinateX.setText(StationaryQTable.model.getValueAt(i, 1).toString());
-	             tCoordinateY.setText(StationaryQTable.model.getValueAt(i, 2).toString());
-	             
-	         }
+	             tCoordinateY.setText(StationaryQTable.model.getValueAt(i, 2).toString());	             
+	         	}
 	         });
 	         
 	         // button update row
@@ -78,58 +76,36 @@ public class StationaryQEditFrame extends JFrame {
 	                 
 	                 if(i >= 0){	
 	                	 if (StationaryQTable.model.getValueAt(i, 3).toString() == "OFF"){
-	                		 	if(tValue.getText().equals("")){
-		      	            	   System.out.println("Please fill field with value of charge"); 
-		      	            	   setVisible(false);
-		      	            	   dispose();	      	            	 
-		      	               }
-		      	               else if(tCoordinateX.getText().equals("") || tCoordinateY.getText().equals("")){
-		  	            	   		setVisible(false);
-		  	            	   		dispose();
-		  	            	   		System.out.println("Please fill coordinates of charge"); 
-		      	               }
-		      	               else{
-		                		 StationaryQTable.model.setValueAt(tValue.getText(), i, 0);
-			                	 StationaryQTable.model.setValueAt(tCoordinateX.getText(), i, 1);
-			                	 StationaryQTable.model.setValueAt(tCoordinateY.getText(), i, 2);
-			                	
-			                	 setVisible(false);
-		  	            	   	 dispose();
-		      	               }
-	                	 }
-	                	 
+	                		 
+		                		 	if(tValue.getText().equals("") || tCoordinateX.getText().equals("") || tCoordinateY.getText().equals(""))
+		                		 	{
+		                		 		JOptionPane.showMessageDialog(MainFrame.leftPanel, 
+		                		 			   "All of fields need to be filled."); 			      	            	        	            	 
+			      	               }			      	              
+			      	               
+			      	               else{
+			                		 StationaryQTable.model.setValueAt(tValue.getText(), i, 0);
+				                	 StationaryQTable.model.setValueAt(tCoordinateX.getText(), i, 1);
+				                	 StationaryQTable.model.setValueAt(tCoordinateY.getText(), i, 2);				                	
+				                	 setVisible(false);
+			  	            	   	 dispose();
+			      	               }
+	                	 }	                	 
 	                	 else {
 	                		 setVisible(false);
 	  	            	   	 dispose();
-	                		 System.out.println("Turn off charge at the first place");
+	  	            	   JOptionPane.showMessageDialog(MainFrame.leftPanel, 
+            		 			   "Turn OFF the charge before editing it"); 
 	                	 }	                     
 	                 }
+	         	
 	                 else{
-	                	 setVisible(false);
-  	            	   	 dispose();
-	                     System.out.println("Update Error");
+	                	 JOptionPane.showMessageDialog(MainFrame.leftPanel, 
+          		 			   "Edit Error - Probably there is no charge or none of charge is selected.");
 	                 }
 	             }
-	         });
-		
-		
+	         });	
 		
 
 	}
-
-	public StationaryQEditFrame(GraphicsConfiguration arg0) {
-		super(arg0);
-		// TODO Auto-generated constructor stub
-	}
-
-	public StationaryQEditFrame(String arg0) throws HeadlessException {
-		super(arg0);
-		// TODO Auto-generated constructor stub
-	}
-
-	public StationaryQEditFrame(String arg0, GraphicsConfiguration arg1) {
-		super(arg0, arg1);
-		// TODO Auto-generated constructor stub
-	}
-
 }

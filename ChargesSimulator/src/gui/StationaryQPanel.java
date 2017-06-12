@@ -32,8 +32,7 @@ public class StationaryQPanel extends JPanel {
 		setBorder(new LineBorder(Color.BLACK, 3));		
 		
 		StationaryQLabel label = new StationaryQLabel();
-		StationaryQInPanel inPanel = new StationaryQInPanel();
-		
+		StationaryQInPanel inPanel = new StationaryQInPanel();		
 		StationaryQAddButton addButton = new StationaryQAddButton();
 		StationaryQEditButton editButton = new StationaryQEditButton();
 		StationaryQDeleteButton deleteButton = new StationaryQDeleteButton();
@@ -41,19 +40,23 @@ public class StationaryQPanel extends JPanel {
 		HMdeployButton = new HeatMapDeployButton();
 		ItemListener al1 = new ItemListener(){
 
-			/*public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				HM = new HeatMap(StationaryQTable.GetChargesList());
-				MainFrame.leftPanel.repaint();
-			}
-*/
-			public void itemStateChanged(ItemEvent arg0) {
-				// TODO Auto-generated method stub
-				HM = new HeatMap(StationaryQTable.GetChargesList());
-				MainFrame.leftPanel.repaint();
-			}
+					/*
+				 public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					HM = new HeatMap(StationaryQTable.GetChargesList());
+					MainFrame.leftPanel.repaint();
+				}
+				 	*/
 			
+			
+			
+		public void itemStateChanged(ItemEvent arg0) {				
+				HM = new HeatMap(StationaryQTable.GetChargesList());
+				MainFrame.leftPanel.repaint();
+			}			
 		};
+		
+		
 		HMdeployButton.addItemListener(al1);
 		
 		add(label, "width 100%, height 5%, span, wrap");
@@ -63,21 +66,6 @@ public class StationaryQPanel extends JPanel {
 		add(deleteButton,"wrap, width 33%, height 10%");
 		add(deployButton,"width 50%, height 10%, span, wrap, align center");
 		add(HMdeployButton,"width 20%, height 10%, span, wrap, align center ");
-	}
-
-	public StationaryQPanel(LayoutManager layout) {
-		super(layout);
-		// TODO Auto-generated constructor stub
-	}
-
-	public StationaryQPanel(boolean isDoubleBuffered) {
-		super(isDoubleBuffered);
-		// TODO Auto-generated constructor stub
-	}
-
-	public StationaryQPanel(LayoutManager layout, boolean isDoubleBuffered) {
-		super(layout, isDoubleBuffered);
-		// TODO Auto-generated constructor stub
 	}
 
 }

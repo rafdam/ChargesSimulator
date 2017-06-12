@@ -33,12 +33,8 @@ public class MainPanelLeft extends JPanel{
 	 * 
 	 */	
 	private static final long serialVersionUID = 1L;
-	int interval = 20; // time jump between each tick of timer - 20ms
+	int interval = 20; 	// time jump between each tick of timer - 20ms
 	static Timer timer; // Object of superclass Timer
-	
-	
-	
-	
 	
 	
 	
@@ -46,13 +42,11 @@ public class MainPanelLeft extends JPanel{
 		
 		setBorder(new LineBorder(Color.LIGHT_GRAY, 3));
 		setLayout(null);
-		timer = new Timer(interval, new TimerAction());		
-		
-		
+		timer = new Timer(interval, new TimerAction());			
 		}
+		
 	
-	
-	public static void setAnimation(boolean turnOnOff){//creating animation, turning on/off timer 
+	public static void setAnimation(boolean turnOnOff){		//creating animation, turning on/off timer 
 		if(turnOnOff){
 			timer.start();
 		}
@@ -61,18 +55,19 @@ public class MainPanelLeft extends JPanel{
 		}
 	}
 
-	public void paintComponent(Graphics g) {//drawing each component on the panel, stat charges, mov charges and HeatMap ( 700 000 ovals - bad efficiency )
-		super.paintComponent(g);
-		//drawing all the dynamic components taken from a static arraylists let us draw them all on 1 thread 
 	
-		try{//drawing potentials
+	public void paintComponent(Graphics g) {//drawing each component on the panel, 
+											//stat charges, mov charges and HeatMap ( 700 000 ovals - bad efficiency )
+		
+		super.paintComponent(g);			//drawing all the dynamic components
+											// taken from a static arraylists let us draw them all on 1 thread 
+	
+		try{								//drawing potentials
 		for(int o = 0; o < HeatMap.getHeatMap().size(); o++){
 			HeatMap.getHeatMap().get(o).draw(g);
 			}
 		}
-		catch(NullPointerException e){
-			
-		}
+		catch(NullPointerException e){}
 		
 		
 		
@@ -86,33 +81,24 @@ public class MainPanelLeft extends JPanel{
         }
         
 }
-	
-	
-	
-	
+		
 	
 	class TimerAction implements ActionListener{ // definition of recurency in animation using objects and calc from model
-		// time is changed my interval
+												 // time is changed my interval
 
 		public void actionPerformed(ActionEvent e) {
 			
 			for(int jj = 0 ; jj < MovingQTable.GetQList().size(); jj++){
-				TestPoint testPoint = new TestPoint(MovingQTable.GetQList().get(jj).getTestChargeCoordX(), MovingQTable.GetQList().get(jj).getTestChargeCoordY());
+				TestPoint testPoint = new TestPoint(MovingQTable.GetQList().get(jj).getTestChargeCoordX(), 
+													MovingQTable.GetQList().get(jj).getTestChargeCoordY());
 				
 						
 			ChargesPotential ch = new ChargesPotential(StationaryQTable.GetChargesList(), testPoint);
 			TestChargeMotion TCM = new TestChargeMotion(ch ,MovingQTable.GetQList().get(jj), (double)interval/1000);
 			MovingQTable.GetQList().get(jj).setTestChargeXCord(TCM.getMotionXCord());
-			MovingQTable.GetQList().get(jj).setTestChargeYCord(TCM.getMotionYCord());
-			
+			MovingQTable.GetQList().get(jj).setTestChargeYCord(TCM.getMotionYCord());			
 			MovingQTable.GetQList().get(jj).setTestChargeVelocityX(TCM.getMotionXVelo());
-			MovingQTable.GetQList().get(jj).setTestChargeVelocityY(TCM.getMotionYVelo());
-		
-			
-			
-			
-			
-		
+			MovingQTable.GetQList().get(jj).setTestChargeVelocityY(TCM.getMotionYVelo());		
 			}
 			repaint();
 		}

@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import net.miginfocom.swing.MigLayout;
@@ -52,12 +53,10 @@ public class MovingQAddFrame extends JFrame{
 	         add(tValue,"width 50%, height 25%,span,wrap");
 	         add(coordinates,"width 50%, height 25%");
 	         add(tCoordinateX,"width 12%, height 25%");
-	         add(tCoordinateY,"width 12%, height 25%,wrap");
-	      
+	         add(tCoordinateY,"width 12%, height 25%,wrap");	      
 	         add(velocity,"width 50%,height 25%");
 	         add(tVelocityX,"width 12%, height 25%");
-	         add(tVelocityY,"width 12%, height 25%, wrap");
-	    
+	         add(tVelocityY,"width 12%, height 25%, wrap");	    
 	         add(addThis,"width 50%, height 25%");
 	         
 	         
@@ -71,18 +70,15 @@ public class MovingQAddFrame extends JFrame{
 	            	    
 	               
 	               if(tCoordinateX.getText().equals("") || tCoordinateY.getText().equals("") || tVelocityX.getText().equals("") || tVelocityY.getText().equals("")){
-	            	   
-	            		  System.out.println("Please fill coordinates of charge"); 
+	            	   JOptionPane.showMessageDialog(MainFrame.leftPanel, "All of fields need to be filled.");
 	               }
 	               else{
 	            	   	// DATA FOR TABLE OF CHARGE //
 	            	   	 row[0] = tValue.getSelectedItem().toString();
 		                 row[1] = tCoordinateX.getText();
-		                 row[2] = tCoordinateY.getText();
-		                 
+		                 row[2] = tCoordinateY.getText();		                 
 		                 row[3] = tVelocityX.getText();
-		                 row[4] = tVelocityY.getText();
-		                
+		                 row[4] = tVelocityY.getText();		                
 		                 row[5] = "OFF";
 		                 
 		                 // add row to the model
@@ -91,27 +87,4 @@ public class MovingQAddFrame extends JFrame{
 	             }
 	         });	
 	}
-	
-
-	public MovingQAddFrame(GraphicsConfiguration arg0) {
-		super(arg0);
-		// TODO Auto-generated constructor stub
-	}
-
-	public MovingQAddFrame(String arg0) throws HeadlessException {
-		super(arg0);
-		// TODO Auto-generated constructor stub
-	}
-
-	public MovingQAddFrame(String arg0, GraphicsConfiguration arg1) {
-		super(arg0, arg1);
-		// TODO Auto-generated constructor stub
-	}
-
-	public void DrawMovingQ(Graphics g) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-
 }

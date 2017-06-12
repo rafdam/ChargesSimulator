@@ -26,8 +26,7 @@ public class MovingQPanel extends JPanel {
 		setBorder(new LineBorder(Color.BLACK, 3));		
 		
 		MovingQLabel label = new MovingQLabel();
-		MovingQInPanel inPanel = new MovingQInPanel(); //contain table of charges
-		
+		MovingQInPanel inPanel = new MovingQInPanel(); //contain table of charges		
 		MovingQAddButton addButton = new MovingQAddButton();
 		MovingQEditButton editButton = new MovingQEditButton();
 		MovingQDeleteButton deleteButton = new MovingQDeleteButton();
@@ -42,20 +41,4 @@ public class MovingQPanel extends JPanel {
 		add(deployButton,"width 50%, height 10%, span, wrap, align center");	
 					
 	}
-
-	public MovingQPanel(LayoutManager layout) {
-		super(layout);
-		// TODO Auto-generated constructor stub
-	}
-
-	public MovingQPanel(boolean isDoubleBuffered) {
-		super(isDoubleBuffered);
-		// TODO Auto-generated constructor stub
-	}
-
-	public MovingQPanel(LayoutManager layout, boolean isDoubleBuffered) {
-		super(layout, isDoubleBuffered);
-		// TODO Auto-generated constructor stub
-	}
-
 }

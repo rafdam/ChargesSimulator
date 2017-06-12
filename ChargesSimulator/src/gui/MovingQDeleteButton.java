@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.Action;
 import javax.swing.Icon;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 //author: Czajka
 //Button used to deleting moving charges
@@ -25,47 +26,25 @@ public MovingQDeleteButton() {
             // i = the index of the selected row
             int i = MovingQInPanel.table.getSelectedRow();	                 
             
-            if(i >= 0){	
-           	 if (MovingQTable.model.getValueAt(i, 5).toString() == "ON"){
-           		System.out.println("Turn off charge at the first place");         
-           	 }
-           	 
-           	 else if (MovingQTable.model.getValueAt( i,  5).toString() == "OFF"){
-           		MovingQTable.model.removeRow(i); 
-           	 }
-           	 else{
-           		 System.out.println("Delete error");
-           	 }
+	         if(i >= 0){	
+	           	 if (MovingQTable.model.getValueAt(i, 5).toString() == "ON"){
+	           		JOptionPane.showMessageDialog(MainFrame.leftPanel, 
+               				"Turn OFF charge before deleting it.");          
+	           	 }
+	           	 
+	           	 else if (MovingQTable.model.getValueAt( i,  5).toString() == "OFF"){
+	           		MovingQTable.model.removeRow(i); 
+	           	 }
+	           	 else{
+	           		JOptionPane.showMessageDialog(MainFrame.leftPanel,
+               				"Error during deleting, try to select the charge once more.");
+	           	 }
              }
-            else{
-           	 
-                System.out.println("Update Error");
+            else{           	 
+            	JOptionPane.showMessageDialog(MainFrame.leftPanel, 
+            			"Error during deleting, probably there is no charges to delete or none charge is select."); 
             }
         }
-    });
-	
-	
-        
+    });        
 }
-
-public MovingQDeleteButton(Icon icon) {
-	super(icon);
-	// TODO Auto-generated constructor stub
-}
-
-public MovingQDeleteButton(String text) {
-	super(text);
-	// TODO Auto-generated constructor stub
-}
-
-public MovingQDeleteButton(Action a) {
-	super(a);
-	// TODO Auto-generated constructor stub
-}
-
-public MovingQDeleteButton(String text, Icon icon) {
-	super(text, icon);
-	// TODO Auto-generated constructor stub
-}
-
 }

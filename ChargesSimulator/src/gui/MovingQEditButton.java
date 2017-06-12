@@ -16,7 +16,9 @@ public class MovingQEditButton extends JButton {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	MovingQEditFrame editFrame;
+	
 	public MovingQEditButton() {
 		super("EDIT");
 		
@@ -27,25 +29,4 @@ public class MovingQEditButton extends JButton {
             }
         });	
 	}
-
-	public MovingQEditButton(Icon icon) {
-		super(icon);
-		// TODO Auto-generated constructor stub
-	}
-
-	public MovingQEditButton(String text) {
-		super(text);
-		// TODO Auto-generated constructor stub
-	}
-
-	public MovingQEditButton(Action a) {
-		super(a);
-		// TODO Auto-generated constructor stub
-	}
-
-	public MovingQEditButton(String text, Icon icon) {
-		super(text, icon);
-		// TODO Auto-generated constructor stub
-	}
-
 }

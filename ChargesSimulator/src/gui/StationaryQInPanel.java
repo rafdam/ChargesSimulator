@@ -45,27 +45,4 @@ public class StationaryQInPanel extends JPanel {
 		JScrollPane pane = new JScrollPane(table);  // Scroll for table of charges
 		add(pane);	
 	}
-	
-	
-
-	public StationaryQInPanel(LayoutManager layout) {
-		super(layout);
-		// TODO Auto-generated constructor stub
-	}
-
-	public StationaryQInPanel(boolean isDoubleBuffered) {
-		super(isDoubleBuffered);
-		// TODO Auto-generated constructor stub
-	}
-
-	public StationaryQInPanel(LayoutManager layout, boolean isDoubleBuffered) {
-		super(layout, isDoubleBuffered);
-		// TODO Auto-generated constructor stub
-	}
-
-	public void DrawStationaryQ(Graphics g) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }
