@@ -96,8 +96,8 @@ public class TestCharge {
 		//g.fillOval( (int)(testChargeXCord-10), (int)(testChargeYCord-10), 20, 20);
 		
 		ImageIcon imgIcon = new ImageIcon();
-		if (testChargeConstant < 0){ imgIcon = new ImageIcon("Images/proton.png");}
-		else{imgIcon = new ImageIcon("Images/electron.png");}		
+		if (testChargeConstant < 0){ imgIcon = new ImageIcon("ChargesSimulator/src/resources/proton.png");}
+		else{imgIcon = new ImageIcon("ChargesSimulator/src/resources/electron.png");}		
 		Image img = imgIcon.getImage();
 		g.drawImage(img, (int)(testChargeXCord-10), (int)(testChargeYCord-10),  20,  20, null);
 	}
