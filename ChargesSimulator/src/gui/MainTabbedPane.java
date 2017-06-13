@@ -1,8 +1,11 @@
 package gui;
 
+import java.awt.Font;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
+import javax.swing.SwingConstants;
 
 import net.miginfocom.swing.MigLayout;
 
@@ -15,10 +18,11 @@ public class MainTabbedPane extends JTabbedPane {
 	JPanel tab1,tab2;	
 
 	public MainTabbedPane() {
-		tab1 = new JPanel();
-		addTab("Charges", tab1);		
+		tab1 = new JPanel();		
+		addTab("Charges", tab1);	
 		
-		tab2 = new JPanel();
+		
+		tab2 = new JPanel();	
 		addTab("Help", tab2);
 		
 		
@@ -36,8 +40,15 @@ public class MainTabbedPane extends JTabbedPane {
 		
 		/////  TAB 2   ///////
 		
-		JLabel helpLabel = new JLabel("Here we need to put some help for random people");
-		tab2.setLayout(new MigLayout());
+		String help = new String (
+				"How to use Charges Simulator:");
+		
+		JLabel helpLabel = new JLabel(help);		
+	
+		
+		helpLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		helpLabel.setFont(new Font("Tahoma", Font.CENTER_BASELINE, 14));
+		
 		tab2.add(helpLabel,"span");	
 		
 		

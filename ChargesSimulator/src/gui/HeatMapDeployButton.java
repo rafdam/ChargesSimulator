@@ -21,7 +21,8 @@ public class HeatMapDeployButton extends JCheckBox{
 	static boolean status;
 	private static final long serialVersionUID = 1L;
 	public HeatMapDeployButton(){
-		super("Off");
+		super("Potential Field OFF");
+		setToolTipText("Turn ON or OFF potential filed (WORKS ONLY WHEN ANIMATION IS OFF)");
 		status = false;
 		ActionListener al1 = new ActionListener(){
 
@@ -33,21 +34,21 @@ public class HeatMapDeployButton extends JCheckBox{
 				if(status == false){
 					HM = new HeatMap(StationaryQTable.GetChargesList()); //creating HM object which gonna be painted later
 					MainFrame.leftPanel.repaint();
-					setText("On");
+					setText("Potential Field ON");
 					status = true;
-					System.out.println("ON");
-					MainPanelTop.startButton.setEnabled(false);
-					MainPanelTop.stopButton.setEnabled(false);//Making Animation unable to run
+					//System.out.println("ON");
+					MovingQPanel.startButton.setEnabled(false);
+					MovingQPanel.stopButton.setEnabled(false);//Making Animation unable to run
 					
 					
 				}
 				else{
 					HeatMap.getHeatMap().removeAll(HeatMap.getHeatMap()); //deleting HM object and repainting panel to its before state
 					MainFrame.leftPanel.repaint();
-					setText("Off");
+					setText("Potential Field OFF");
 					status = false;
-					System.out.println("OFF");
-					MainPanelTop.startButton.setEnabled(true);//making animation able to run
+					//System.out.println("OFF");
+					MovingQPanel.startButton.setEnabled(true);//making animation able to run
 					
 				}
 			}
