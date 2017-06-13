@@ -76,12 +76,12 @@ public class StationaryCharge {
 		//g.setColor(Color.PINK);
 		//g.fillOval((int)(xCord-8), (int)(yCord-8), DIAMETER, DIAMETER);
 		
-		ImageIcon imgIcon = new ImageIcon();
-		if(value > 0){imgIcon = new ImageIcon("ChargesSimulator/src/resources/positive.png");}
-		else if(value < 0){imgIcon = new ImageIcon("ChargesSimulator/src/resources/negative.png");}
-		else{imgIcon = new ImageIcon("ChargesSimulator/src/resources/neutral.png");}
-		Image img = imgIcon.getImage();
-		g.drawImage(img, (int)(xCord-16), (int)(yCord-16), DIAMETER, DIAMETER, null);
+		
+		if(value > 0){g.setColor(Color.RED);}
+		else if(value < 0){g.setColor(Color.BLUE);}
+		else{g.setColor(Color.GRAY);}
+		
+		g.fillOval((int)(xCord-16), (int)(yCord-16), DIAMETER, DIAMETER);
 		
 	}
 	
